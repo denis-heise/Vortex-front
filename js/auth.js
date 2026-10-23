@@ -87,21 +87,21 @@ const initAuthStorageState = () => {
 	updateUI(isAuthorized);
 };
 
+window.toggleElements = (popup, targetMode) => {
+	const forms = popup.querySelectorAll('[data-form]');
+	const titles = popup.querySelectorAll('[data-title]');
+	const wrapperButtons = popup.querySelectorAll('[data-wrapper-button]');
+
+	popup.classList.toggle('is-registration', targetMode === 'registration');
+	forms.forEach(form => form.classList.toggle('is-hidden', form.getAttribute('data-form') !== targetMode));
+	titles.forEach(title => title.classList.toggle('is-hidden', title.getAttribute('data-title') !== targetMode));
+	wrapperButtons.forEach((wrapper) => wrapper.classList.toggle('is-hidden', wrapper.getAttribute('data-wrapper-button') === targetMode));
+	popup.classList.toggle('is-status', targetMode === 'forgot');
+};
+
 const initPopupTabsToggle = () => {
 	const popup = document.querySelector('[data-popup="login"]');
 	if (!popup) return;
-
-	const toggleElements = (targetMode) => {
-		const forms = popup.querySelectorAll('[data-form]');
-		const titles = popup.querySelectorAll('[data-title]');
-		const wrapperButtons = popup.querySelectorAll('[data-wrapper-button]');
-
-		popup.classList.toggle('is-registration', targetMode === 'registration');
-		forms.forEach(form => form.classList.toggle('is-hidden', form.getAttribute('data-form') !== targetMode));
-		titles.forEach(title => title.classList.toggle('is-hidden', title.getAttribute('data-title') !== targetMode));
-		wrapperButtons.forEach((wrapper) => wrapper.classList.toggle('is-hidden', wrapper.getAttribute('data-wrapper-button') === targetMode));
-		popup.classList.toggle('is-status', targetMode === 'forgot');
-	};
 
 	popup.addEventListener('click', (evt) => {
 		const toggleBtn = evt.target.closest('[data-button-toggle]');
@@ -109,7 +109,7 @@ const initPopupTabsToggle = () => {
 
 		evt.preventDefault();
 		const targetMode = toggleBtn.getAttribute('data-button-toggle');
-		toggleElements(targetMode);
+		window.toggleElements(popup, targetMode);
 	});
 };
 

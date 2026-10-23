@@ -103,6 +103,14 @@ const initPopupManager = () => {
                 selectedItems?.forEach(item => item.classList.remove('is-selected'));
             }
         }
+
+		if (popup.getAttribute('data-popup') === 'login' && !popup.classList.contains('is-registration')) {
+			if (typeof window.toggleElements === 'function') {
+				setTimeout(() => {
+					window.toggleElements(popup, 'auth');
+				}, 350);
+			}
+		}
     };
 
     const closeAllPopups = (excludePopupKey = null) => {
