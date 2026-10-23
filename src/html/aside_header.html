@@ -1,0 +1,101 @@
+		<aside class="sidebar">
+			<header class="sidebar__header">
+				<a class="sidebar__logo-link" href="index.html" aria-label="На главную страницу">
+					<svg class="sidebar__logo-icon" width="200" height="50" aria-hidden="true">
+						<use href="@img/sprite.svg#logo"></use>
+					</svg>
+				</a>
+			</header>
+
+			<nav class="sidebar__nav" aria-label="Боковое меню" data-scrollable-block>
+				<ul class="sidebar__menu">
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="index.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_home"></use>
+							</svg>
+							<span class="sidebar__text">Главная</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="catalog.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_catalog"></use>
+							</svg>
+							<span class="sidebar__text">Каталог</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="orders.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_orders"></use>
+							</svg>
+							<span class="sidebar__text">Мои заказы</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="reserves.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_lock"></use>
+							</svg>
+							<span class="sidebar__text">Резервы</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="favorites.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#star"></use>
+							</svg>
+							<span class="sidebar__text">Избранное</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="contacts.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#phone"></use>
+							</svg>
+							<span class="sidebar__text">Контакты</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="profile.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#profile"></use>
+							</svg>
+							<span class="sidebar__text">Профиль</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<button class="sidebar__link" type="button" data-button-open="feedback">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#question"></use>
+							</svg>
+							<span class="sidebar__text">Задать вопрос</span>
+						</button>
+					</li>
+					<li class="sidebar__item sidebar__item--mobile is-hidden">
+						<button class="sidebar__link sidebar__link--exit" type="button" data-element="exit">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#exit"></use>
+							</svg>
+							<span class="sidebar__text">Выйти</span>
+						</button>
+					</li>
+				</ul>
+
+				<div class="sidebar__bottom">
+					<button class="sidebar__link" type="button" data-element="login">
+						<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+							<use href="@img/sprite.svg#profile"></use>
+						</svg>
+						<span class="sidebar__text">Войти</span>
+					</button>
+					<button class="sidebar__link is-hidden" type="button" data-element="exit" data-need-auth>
+						<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+							<use href="@img/sprite.svg#exit"></use>
+						</svg>
+						<span class="sidebar__text">Выйти</span>
+					</button>
+				</div>
+			</nav>
+		</aside>

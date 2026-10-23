@@ -1,0 +1,81 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.wrapper-input--toggle {
+	margin: auto 0;
+	block-size: fit-content;
+	inline-size: fit-content;
+}
+
+.wrapper-input__toggle-label {
+	@include m.display-row(12);
+	cursor: pointer;
+	user-select: none;
+	inline-size: fit-content;
+}
+
+.wrapper-input__toggle-checkbox {
+	position: absolute;
+	margin: -1px;
+	border: 0;
+	block-size: 1px;
+	inline-size: 1px;
+	padding: 0;
+	overflow: hidden;
+}
+
+.wrapper-input__toggle-switch {
+	@include m.transition;
+	display: inline-block;
+	position: relative;
+	border-radius: 12px;
+	block-size: 12px;
+	inline-size: 42px;
+	flex-shrink: 0;
+	background-color: var(--color_grey_light, #c8ceca);
+
+	&::after {
+		@include m.transition;
+		content: "";
+		position: absolute;
+		inset-block-start: -6px;
+		inset-inline-start: 0;
+		border-radius: var(--circle_radius, 50%);
+		box-shadow: v.$shadow-toggle;
+		block-size: 24px;
+		inline-size: 24px;
+		background-color: var(--color_white, #fff);
+	}
+}
+
+.wrapper-input__toggle-label input:checked + .wrapper-input__toggle-switch {
+	background-color: var(--color_green, #367a4d);
+
+	&::after {
+		transform: translateX(75%);
+	}
+}
+
+.wrapper-input__toggle-text {
+	@include m.transition;
+	font-size: 14px;
+	color: var(--main_color, #1d2019);
+}
+
+.wrapper-input--toggle:hover .wrapper-input__toggle-text {
+	color: var(--color_green, #367a4d);
+
+	@include m.respond-to(650) {
+		color: var(--main_color, rgb(61 61 61));
+	}
+}
+
+.checkout {
+	@include m.respond-to(650) {
+		.wrapper-input--toggle,
+		.wrapper-input--toggle .wrapper-input__toggle-label {
+			inline-size: 100%;
+			justify-content: space-between;
+		}
+	}
+}

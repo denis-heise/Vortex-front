@@ -1,0 +1,82 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="catalog" data-block="products-list">
+		<h1>Избранное</h1>
+
+		<div class="section-header section-header--simple">
+			<div class="tabs" role="tablist" aria-label="Тип товаров">
+				<button class="button button--light-green is-active" type="button" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Микролоты</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count" data-element="tabs-count">4</span>
+					</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1" data-tab-products="2">
+					<span class="tabs__text">Экзотика</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count" data-element="tabs-count">1</span>
+					</span>
+				</button>
+			</div>
+		</div>
+
+		<div class="tabs-list-products" data-list-products="1">
+			<div class="products-table products-table--catalog" role="table" aria-label="Товары в избранном" data-table-products>
+				<div class="products-table__header" role="row">
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Сорт</div>
+					<div class="products-table__simple-text" role="columnheader">Наличие</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+					<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+					<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+				</div>
+
+				<div class="products-table__body">
+					@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '1', 'favorite': 'favorite'})
+					@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '2', 'favorite': 'favorite'})
+					@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '3', 'favorite': 'favorite'})
+					@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '4', 'favorite': 'favorite'})
+				</div>
+			</div>
+
+			<div class="current-block-empty">
+				<h3>Пока нет товаров</h3>
+				<a class="button" href='#'>
+					<span>Перейти в каталог</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="tabs-list-products is-hidden" data-list-products="2">
+			<div class="products-table products-table--catalog" role="table" aria-label="Товары в избранном" data-table-products>
+				<div class="products-table__header" role="row">
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Сорт</div>
+					<div class="products-table__simple-text" role="columnheader">Наличие</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+					<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+					<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+				</div>
+
+				<div class="products-table__body">
+					@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '5', 'favorite': 'favorite'})
+				</div>
+			</div>
+
+			<div class="current-block-empty">
+				<h3>Пока нет товаров</h3>
+				<a class="button" href='#'>
+					<span>Перейти в каталог</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+@@include('../html/footer.html')

@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as m;
+
+.reserve {
+	margin-block-end: 120px;
+}
+
+// Основная таблица резервов и table-container — в components/_table.scss
+// и components/_table-container.scss. Здесь — только страничная специфика.
+.popup-form-footer {
+	@include m.display-row(8);
+	margin-block-end: 2px;
+	justify-content: center;
+	font-size: 14px;
+
+	.is-status & {
+		display: none;
+	}
+
+	span,
+	button {
+		margin: auto 0;
+		block-size: fit-content;
+		font-size: 14px;
+	}
+}

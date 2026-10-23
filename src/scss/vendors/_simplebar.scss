@@ -1,0 +1,42 @@
+@use "../abstracts/mixins" as m;
+
+[data-scrollable-block] {
+	overflow-block: auto !important;
+}
+
+.simplebar-track.simplebar-vertical {
+	visibility: hidden;
+	inline-size: 2px !important;
+	background-color: var(--color_grey_light, #c8ceca);
+}
+
+.simplebar-scrollable-y .simplebar-track.simplebar-vertical {
+	visibility: visible;
+}
+
+.simplebar-scrollbar::before {
+	opacity: 1 !important;
+	inset-block: 0 !important;
+	inset-inline: 0 !important;
+	border-radius: 2px;
+	inline-size: 100% !important;
+	background-color: var(--color_green, #367a4d) !important;
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+	opacity: 1 !important;
+}
+
+.simplebar-track.simplebar-horizontal {
+	block-size: 2px !important;
+	inline-size: 100%;
+	background-color: transparent;
+}
+
+.simplebar-scrollable-y .simplebar-track.simplebar-horizontal {
+	display: none;
+}
+
+.simplebar-scrollable-y .simplebar-content {
+	padding-inline-end: 15px !important;
+}

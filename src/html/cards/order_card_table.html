@@ -1,0 +1,60 @@
+		<article class="orders__item" data-block="parent">
+			<div class="orders__cell" data-cell="1">
+				<span class="orders__cell-label">Номер заказа</span>
+				<a class="orders__link-number" href="order-card.html">A567</a>
+			</div>
+
+			<div class="orders__cell" data-cell="2">
+				<span class="orders__cell-label">Дата заказа</span>
+				<time datetime="2025-11-17">17.11.2025</time>
+			</div>
+
+			<div class="orders__cell" data-cell="3">
+				<span class="orders__cell-label">Дата отгрузки</span>
+				<time datetime="2025-11-17">17.11.2025</time>
+			</div>
+
+			<div class="orders__cell" data-cell="4">
+				<span class="orders__cell-label">Юр.лицо</span>
+				<span>Trum.comp</span>
+			</div>
+
+			<div class="orders__cell" data-cell="5">
+				<span class="orders__cell-label">Сумма заказа</span>
+				<span>@@price</span>
+			</div>
+
+			<div class="orders__cell orders__cell--mobile" data-cell="6">
+				<span class="orders__cell-label">Статус</span>
+				<div class="orders__status">
+					<span>Новый</span>
+				</div>
+			</div>
+
+			<div class="orders__cell orders__cell--tablet orders__cell orders__cell--big" data-cell="7">
+				<p class="orders__notice">Оплатите счет до 11.05.<span class="orders__notice-full-year">20</span>25</p>
+				<div class="orders__download-group">
+					<a class="orders__action-link" href="#" download>
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#simple_blank"></use>
+						</svg>
+						<span>Скачать счет</span>
+					</a>
+					<button class="orders__action-btn" type="button" aria-label="Показать QR-код" data-button-open="qr-code">QR-code</button>
+				</div>
+			</div>
+
+			<div class="orders__cell orders__cell--tablet" data-cell="8">
+				<button class="button orders__cancel-btn" type="button" data-button="cancel-order">
+					<span>Отменить</span>
+				</button>
+			</div>
+
+			<div class="orders__cell orders__cell--toggle">
+				<button class="button button--transparent button--square orders__btn-mobile" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+					<svg width="20" height="20" aria-hidden="true" focusable="false">
+						<use href="images/sprite.svg#arrow_down"></use>
+					</svg>
+				</button>
+			</div>
+		</article>

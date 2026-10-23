@@ -1,0 +1,38 @@
+		<article class="warehouse-card@@class" data-list-products="@@id">
+			<header class="warehouse-card__header">
+				<h3 class="h2">Склад поставщика@@if(id !== '1'){ @@id}</h3>
+			</header>
+
+			<div class="warehouse-card__body">
+				<address class="warehouse-card__address">
+					109443, Россия, Москва, <br> пр-т Волгоградский, 106 корп. 1
+				</address>
+
+				<div class="warehouse-card__schedule schedule">
+					<h4 class="schedule__title">Часы работы:</h4>
+					<ul class="schedule__list">
+						<li class="schedule__item">
+							<span class="schedule__days">Пн–Чт</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Пт–Сб</span>
+							<time class="schedule__time" datetime="10:00-20:00">с 10:00 до 20:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Вс</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer class="warehouse-card__footer">
+				<div class="warehouse-card__delivery">
+					Доставка – <time datetime="2025-03-21">21 Марта 2025</time>
+				</div>
+				<div class="warehouse-card__price u-color-green">
+					Бесплатно
+				</div>
+			</footer>
+		</article>

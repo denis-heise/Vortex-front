@@ -1,0 +1,312 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.table-container {
+	position: relative;
+	max-inline-size: 100%;
+	max-block-size: none;
+
+	&[data-scrollable-block] {
+		overflow-block: visible !important;
+	}
+
+	&.is-hidden {
+		pointer-events: none;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		max-block-size: 0;
+		max-inline-size: 0;
+	}
+
+	.products-table {
+		display: table;
+		inline-size: 100%;
+		table-layout: fixed;
+		border-collapse: collapse;
+		white-space: nowrap;
+		font-size: 14px;
+
+		.table-total {
+			font-size: 16px;
+			font-weight: 700;
+
+			td:first-child::before {
+				background: var(--color_white, #fff);
+			}
+		}
+
+		&__name-link {
+			@include m.respond-to(650) {
+				white-space: wrap;
+				font-size: 15px;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+			font-family: var(--main_font_family, "Nunito");
+			font-size: 16px;
+			color: var(--main_color, #1d2019);
+		}
+
+		thead {
+			display: table-header-group;
+		}
+
+		tbody {
+			display: table-row-group;
+		}
+
+		tfoot {
+			display: table-footer-group;
+		}
+
+		tr {
+			display: table-row;
+		}
+
+		tbody tr {
+			border-block-end: 1px solid var(--color_grey_light, #c8ceca);
+		}
+
+		th,
+		td {
+			display: table-cell;
+			box-sizing: border-box;
+			padding: 24px;
+		}
+
+		th:not(:first-child),
+		td:not(:first-child) {
+			inline-size: 110px;
+			min-inline-size: 110px;
+			max-inline-size: 110px;
+			text-align: center;
+		}
+
+		th {
+			padding: 0 0 16px;
+			font-weight: 400;
+
+			&:first-child {
+				position: sticky;
+				inset-inline-start: 0;
+				z-index: f.z("sticky");
+				inline-size: 264px;
+				min-inline-size: 264px;
+				max-inline-size: 264px;
+				padding-inline-start: 16px;
+				text-align: start;
+				font-size: 16px;
+				font-weight: 600;
+				background-color: transparent !important;
+
+				&::before {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					inset-block: 0;
+					inset-inline: 0;
+					background-color: var(--color_white, #fff);
+				}
+			}
+		}
+
+		td:first-child {
+			position: sticky;
+			inset-inline-start: 0;
+			z-index: f.z("sticky");
+			inline-size: 264px;
+			min-inline-size: 264px;
+			max-inline-size: 264px;
+			line-height: 21px;
+			text-align: start;
+			font-size: 16px;
+			font-weight: 600;
+			background-color: transparent !important;
+
+			&::before {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				inset-block: 0;
+				inset-inline: 0;
+				background: linear-gradient(var(--color_green_6, #bae8ca80), var(--color_green_6, #bae8ca80)), #fff;
+			}
+		}
+
+		tbody td {
+			block-size: 90px;
+
+			&:not(:first-child):nth-child(odd) {
+				background-color: var(--color_green_6, #bae8ca80);
+			}
+
+			&:not(:first-child):nth-child(even) {
+				background-color: var(--color_grey_green, #bae8ca0a);
+			}
+
+			@include m.respond-to(1200) {
+				block-size: 82px;
+				padding: 20px;
+			}
+
+			@include m.respond-to(992) {
+				block-size: 74px;
+				padding: 16px;
+			}
+
+			@include m.respond-to(650) {
+				block-size: 70px;
+				padding: 16px 12px;
+
+				br {
+					display: none;
+				}
+			}
+		}
+
+		thead th {
+			font-size: 12px;
+			color: var(--color_grey, #69756d);
+
+			&:first-child {
+				z-index: f.z("table-sticky");
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+
+		tfoot td {
+			padding: 8px;
+
+			&:first-child {
+				font-weight: 700;
+			}
+		}
+	}
+
+	.simplebar-track.simplebar-horizontal {
+		inset-block-end: 35px;
+		inset-inline: auto 0;
+		inline-size: calc(100% - 264px);
+		block-size: 10px !important;
+		background-color: var(--color_green_6, #bae8ca80);
+	}
+
+	.simplebar-scrollbar::before {
+		cursor: pointer !important;
+		pointer-events: auto !important;
+	}
+
+	@include m.respond-to(1875) {
+		.products-table th:not(:first-child),
+		.products-table td:not(:first-child) {
+			inline-size: 90px;
+			min-inline-size: 90px;
+			max-inline-size: 90px;
+		}
+	}
+
+	@include m.respond-to(1570) {
+		.products-table th:not(:first-child),
+		.products-table td:not(:first-child) {
+			inline-size: 70px;
+			min-inline-size: 70px;
+			max-inline-size: 70px;
+		}
+	}
+
+	@include m.respond-to(1450) {
+		&[data-scrollable-block] {
+			overflow-block: auto !important;
+		}
+
+		.products-table th:first-child,
+		.products-table td:first-child {
+			min-inline-size: 264px;
+			max-inline-size: 264px;
+		}
+
+		.products-table th:not(:first-child),
+		.products-table td:not(:first-child) {
+			inline-size: 120px;
+			min-inline-size: 120px;
+			max-inline-size: 120px;
+		}
+
+		.simplebar-mask {
+			cursor: ew-resize;
+		}
+	}
+
+	@include m.respond-to(1200) {
+		.products-table th:first-child,
+		.products-table td:first-child {
+			min-inline-size: 236px;
+			max-inline-size: 236px;
+		}
+
+		.simplebar-track.simplebar-horizontal {
+			inline-size: calc(100% - 236px);
+		}
+	}
+
+	@include m.respond-to(992) {
+		.products-table th:not(:first-child),
+		.products-table td:not(:first-child) {
+			min-inline-size: 74px;
+			max-inline-size: 74px;
+			aspect-ratio: 1 / 1;
+		}
+
+		.products-table th:first-child,
+		.products-table td:first-child {
+			min-inline-size: 200px;
+			max-inline-size: 200px;
+		}
+
+		.simplebar-track.simplebar-horizontal {
+			inline-size: calc(100% - 200px);
+		}
+
+		.simplebar-mask {
+			cursor: auto;
+		}
+	}
+
+	@include m.respond-to(650) {
+		.products-table th:not(:first-child),
+		.products-table td:not(:first-child) {
+			inline-size: 70px;
+			min-inline-size: 70px;
+			max-inline-size: 70px;
+			aspect-ratio: 1 / 1;
+		}
+
+		.products-table th:first-child,
+		.products-table td:first-child {
+			inline-size: 125px;
+			min-inline-size: 125px;
+			max-inline-size: 125px;
+		}
+
+		.simplebar-track.simplebar-horizontal {
+			inline-size: calc(100% - 125px);
+		}
+	}
+
+	@include m.respond-to(360) {
+		.products-table th:first-child,
+		.products-table td:first-child {
+			inline-size: 100px;
+			min-inline-size: 100px;
+			max-inline-size: 100px;
+		}
+
+		.simplebar-track.simplebar-horizontal {
+			inline-size: calc(100% - 100px);
+		}
+	}
+}

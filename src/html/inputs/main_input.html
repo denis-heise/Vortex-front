@@ -1,0 +1,22 @@
+						<div class="wrapper-input" data-wrapper-input>
+							<label class="wrapper-input__label" for="@@id">@@title @@if(context.required){<span class="u-color-green">*</span>}</label>
+							<input
+								type="@@type"
+								id="@@id"
+								name="@@name"
+								placeholder=""
+								@@if(context.required){data-required="true"}
+								@@if(context.value){value="@@value"}
+								@@if(context.data_type){data-type="@@data_type"}
+								@@if(context.validate){data-validate="@@validate"}
+								@@if(context.type === 'email'){data-input="email"}
+								@@if(context.type === 'email'){data-input="password"}
+								>
+
+								@@if(context.placeholder){
+								<span class="wrapper-input__placeholder@@if(context.placeholder_mobile){ wrapper-input__placeholder--desktop }">@@placeholder</span>
+								}
+								@@if(context.placeholder_mobile){
+								<span class="wrapper-input__placeholder wrapper-input__placeholder--mobile">@@placeholder_mobile</span>
+								}
+						</div>

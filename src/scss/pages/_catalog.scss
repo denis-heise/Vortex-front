@@ -1,0 +1,129 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.catalog-hero {
+	@include m.display-col(0);
+	position: relative;
+	margin-block-start: 24px;
+	border-radius: var(--main_radius, 6px);
+	box-sizing: border-box;
+	block-size: 220px;
+	padding: 24px;
+	overflow: hidden;
+	background-color: var(--color_green, #367a4d);
+
+	&__title {
+		position: relative;
+		z-index: f.z("base");
+		margin-block: 0 8px;
+		color: var(--color_white, #fff);
+	}
+
+	&__description {
+		position: relative;
+		z-index: f.z("base");
+		line-height: 120%;
+		font-size: 14px;
+		color: var(--color_white_light, rgb(255 255 255 / 70%));
+	}
+
+	&__link {
+		@include m.display-row(8);
+		position: relative;
+		z-index: f.z("base");
+		margin-block-start: auto;
+		color: var(--color_white, #fff);
+	}
+
+	&__bg-img {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline: auto 305px;
+		z-index: 0;
+		margin: auto;
+		block-size: 100%;
+		inline-size: auto;
+
+		@include m.respond-to(1450) {
+			inset-inline-end: 195px;
+		}
+
+		@include m.respond-to(1100) {
+			inset-inline-end: 40px;
+		}
+
+		@include m.respond-to(1050) {
+			inset-inline-end: 0;
+			inset-block-end: 0;
+		}
+
+		@include m.respond-to(992) {
+			inset-inline-end: 0;
+			inset-block-end: 0;
+		}
+
+		@include m.respond-to(650) {
+			inset-inline-end: -21%;
+			inset-block-end: -43%;
+			transform: scale(0.6);
+		}
+
+		@include m.respond-to(480) {
+			inset-inline-end: -130px;
+			inset-block-end: -103px;
+			transform: scale(0.55);
+		}
+	}
+}
+
+.link-download {
+	&__icon {
+		inline-size: 16px;
+		block-size: 16px;
+	}
+
+	&__text {
+		text-decoration: underline;
+	}
+}
+
+.section-header--catalog {
+	.wrapper-input {
+		max-inline-size: 685px;
+
+		input {
+			border: 1px solid var(--color_grey_light, #c8ceca);
+
+			&::placeholder {
+				color: var(--color_grey, #69756d);
+			}
+
+			@include m.respond-to(650) {
+				padding-inline-end: 35px;
+			}
+		}
+	}
+
+	.wrapper-input__icon {
+		inline-size: 14px;
+		block-size: 14px;
+		color: var(--color_grey, #69756d);
+	}
+}
+
+.catalog {
+	.products-table__card .select-wrapper {
+		display: flex;
+
+		.select__title {
+			line-height: 120%;
+			font-size: 14px;
+			font-weight: 400;
+		}
+
+		.select-block__arrow {
+			block-size: 12px;
+			inline-size: 12px;
+		}
+	}
+}

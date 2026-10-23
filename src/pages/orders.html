@@ -1,0 +1,89 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="main-orders" data-block="products-list">
+		<h1>Мои заказы</h1>
+
+		<div class="section-header">
+			<div class="tabs" role="tablist" aria-label="Тип заказа">
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-1" tabindex="-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Все</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">10</span>
+					</span>
+				</button>
+				<button class="button button--light-green" type="button" role="tab" aria-selected="true" id="tab-2" aria-controls="panel-2" data-tab-products="2">
+					<span class="tabs__text">Активные</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">3</span>
+					</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3" tabindex="-1" data-tab-products="3">
+					<span class="tabs__text">Завершенные</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">7</span>
+					</span>
+				</button>
+			</div>
+		</div>
+
+		<button class="button button--filter" type="button" data-button-open="filters">
+			<svg width="16" height="16" aria-hidden="true" focusable="false">
+				<use href="@img/sprite.svg#filter"></use>
+			</svg>
+			<span>Все фильтры</span>
+		</button>
+
+		<div class="main-orders-table" role="table" aria-label="Список заказов">
+			<div class="main-orders-table__head" role="row">
+				<div class="main-orders-table__th" role="columnheader">Номер <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Дата заказа <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Документы <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Юр.лицо <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Статус заказа <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Сумма <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">К оплате <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Статус оплаты <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Дата оплаты <svg class="main-orders-table__sort-icon"><use href="@img/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">
+					<span class="main-orders-table__th-text main-orders-table__th-text--short">Отгр. дата</span>
+					<span class="main-orders-table__th-text main-orders-table__th-text--full">Дата отгрузки</span>
+					<svg class="main-orders-table__sort-icon">
+						<use href="@img/sprite.svg#sort"></use>
+					</svg>
+				</div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Тип доставки </div>
+			</div>
+
+			<div class="main-orders-table__list is-hidden" data-list-products="1">
+				@@include('../html/orders/orders_card_1.html', {'status': 'не оплачен', 'link': 'order-card-not-paid.html'})
+				@@include('../html/orders/orders_card_1.html', {'status': 'частично', 'link': 'order-card-partially-paid.html'})
+				@@include('../html/orders/orders_card_1.html', {'status': 'не оплачен', 'link': 'order-card-not-paid.html'})
+				@@include('../html/orders/orders_card_1.html', {'status': 'оплачен', 'link': 'order-card.html'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Самовывоз <br class="main-orders-table__value--tablet"> со склада', 'number_doc': '25-11735'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'ПЭК (ПВЗ)', 'number_doc': '25-11734'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Доставка по городу', 'number_doc': '25-11733'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Деловые Линии (ПВЗ)', 'number_doc': '25-11732'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Самовывоз <br class="main-orders-table__value--tablet"> со склада', 'number_doc': '25-11731'})
+			</div>
+
+			<div class="main-orders-table__list" data-list-products="2">
+				@@include('../html/orders/orders_card_1.html', {'status': 'не оплачен', 'link': 'order-card-not-paid.html'})
+				@@include('../html/orders/orders_card_1.html', {'status': 'частично', 'link': 'order-card-partially-paid.html'})
+				@@include('../html/orders/orders_card_1.html', {'status': 'не оплачен', 'link': 'order-card-not-paid.html'})
+				@@include('../html/orders/orders_card_1.html', {'status': 'оплачен', 'link': 'order-card.html'})
+			</div>
+
+			<div class="main-orders-table__list is-hidden" data-list-products="3">
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Самовывоз <br class="main-orders-table__value--tablet"> со склада', 'number_doc': '25-11735'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'ПЭК (ПВЗ)', 'number_doc': '25-11734'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Доставка по городу', 'number_doc': '25-11733'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Деловые Линии (ПВЗ)', 'number_doc': '25-11732'})
+				@@include('../html/orders/orders_card_2.html', {'link': 'order-card-done.html','type_deliver': 'Самовывоз <br class="main-orders-table__value--tablet"> со склада', 'number_doc': '25-11731'})
+			</div>
+		</div>
+
+	</div>
+</main>
+
+@@include('../html/footer.html')

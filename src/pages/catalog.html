@@ -1,0 +1,296 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="catalog" data-block="products-list">
+		@@include('../html/location.html')
+
+		<section class="catalog-hero">
+			<h1 class="catalog-hero__title">Каталог</h1>
+			<p class="catalog-hero__description">Широкий ассортимент зелёного кофе <br> и какао. Найдите свой идеальный сорт.</p>
+
+			<a class="catalog-hero__link link-download" href="#" download>
+				<svg class="link-download__icon" width="16" height="16" aria-hidden="true">
+					<use href="@img/sprite.svg#simple_blank"></use>
+				</svg>
+				<span class="link-download__text">Договор оферты</span>
+			</a>
+
+			<picture class="catalog-hero__bg-img">
+				<source
+					media="(max-width: 768px)"
+					srcset="@img/1.png"
+				>
+				<img
+					src="@img/2.png"
+					alt=""
+					aria-hidden="true"
+				>
+			</picture>
+		</section>
+
+		<div class="section-header section-header--catalog">
+			<div class="tabs" role="tablist" aria-label="Тип товаров">
+				<button class="button button--light-green" type="button" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Зеленый кофе</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">421</span>
+					</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1" data-tab-products="2">
+					<span class="tabs__text">Какао</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">208</span>
+					</span>
+				</button>
+			</div>
+
+			<div class="wrapper-input">
+				<input type="text" placeholder="Введите название сорта, вкус или артомат">
+				<svg class="wrapper-input__icon" width="16" height="16" aria-hidden="true">
+					<use href="@img/sprite.svg#search"></use>
+				</svg>
+			</div>
+
+			<button class="button button--filter" type="button" data-button-open="filters">
+				<svg width="16" height="16" aria-hidden="true" focusable="false">
+					<use href="@img/sprite.svg#filter"></use>
+				</svg>
+				<span>Все фильтры</span>
+			</button>
+		</div>
+
+		<div class="catalog__products-list" data-list-products="1">
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Микролоты',
+					'count': '4',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио', 'ip_product': '1'})
+						@@include('../html/catalog/catalog_card_2.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '2'})
+						@@include('../html/catalog/catalog_card_2.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '3'})
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '4'})
+					</div>
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Экзотика',
+					'count': '1',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '5'})
+					</div>
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Арабика',
+					'count': '1',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '6'})
+					</div>
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Робуста',
+					'count': '1',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '7'})
+					</div>
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Микролоты',
+					'count': '1',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '8'})
+					</div>
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Смеси',
+					'count': '0',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '9', 'disabled': 'true'})
+					</div>
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Мелкая фасовка',
+					'count': '1',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '10'})
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="catalog__products-list is-hidden" data-list-products="2">
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Арабика',
+					'count': '1',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '11'})
+					</div>
+				</div>
+			</div>
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Смеси',
+					'count': '0',
+					'class': ' count-heading--catalog'
+				})
+
+				<div class="products-table products-table--catalog" role="table" aria-label="Товары в каталоге" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/catalog/catalog_card_1.html', {'title': 'Гондурас Финка Рио Фрио хани', 'ip_product': '12', 'disabled': 'true'})
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+@@include('../html/footer.html')

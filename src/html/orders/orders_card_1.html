@@ -1,0 +1,68 @@
+			<div class="main-orders-table__row" role="row"  data-block="parent">
+				<a class="product-link" href="@@link"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink"  href="#" download>
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--@@if(context.status === 'не оплачен'){red}@@if(context.status === 'оплачен'){green}@@if(context.status === 'частично'){yellow}">@@if(context.status === 'не оплачен'){Не }@@if(context.status === 'частично'){частично }оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>

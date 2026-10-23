@@ -1,0 +1,71 @@
+// Точка входа. Порядок @use критичен для каскада.
+// 1) abstracts — не генерирует CSS
+// 2) vendors — перебиваемые стили библиотек
+// 3) base — reset, root, типографика
+// 4) layout — каркас
+// 5) components — UI-элементы
+// 6) pages — специфика экранов
+// 7) utilities — утилиты (последними, чтобы перебивали)
+
+// --- abstracts (только миксины/переменные/функции, CSS не генерируется) ---
+@use "abstracts/variables";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/placeholders";
+
+// --- vendors ---
+@use "vendors/simplebar";
+@use "vendors/air-datepicker";
+@use "vendors/swiper";
+
+// --- base ---
+@use "base/fonts";
+@use "base/root";
+@use "base/reset";
+@use "base/typography";
+
+// --- layout ---
+@use "layout/grid";
+@use "layout/header";
+@use "layout/sidebar";
+@use "layout/footer";
+
+// --- components ---
+@use "components/button";
+@use "components/input";
+@use "components/checkbox";
+@use "components/radio";
+@use "components/toggle";
+@use "components/file-upload";
+@use "components/select";
+@use "components/tooltip";
+@use "components/counter";
+@use "components/badge";
+@use "components/total-form";
+@use "components/modal";
+@use "components/button-up";
+@use "components/pagination";
+@use "components/tabs";
+@use "components/table";
+@use "components/order-summary";
+@use "components/table-container";
+@use "components/table-cells";
+@use "components/reviews";
+
+// --- pages ---
+@use "pages/home";
+@use "pages/basket";
+@use "pages/checkout";
+@use "pages/orders";
+@use "pages/order-card";
+@use "pages/reserve";
+@use "pages/profile";
+@use "pages/organization";
+@use "pages/contacts";
+@use "pages/education";
+@use "pages/news";
+@use "pages/news-detail";
+@use "pages/catalog";
+
+// --- utilities (последними, чтобы перебивали) ---
+@use "utilities/u";

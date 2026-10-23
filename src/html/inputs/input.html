@@ -1,0 +1,4 @@
+<div class="wrapper-input@@if (context.agreement) { wrapper-input--agreement }" data-wrapper-input>
+	<input class="is-hidden" id="@@id" type="@@type" name="@@name" @@if(context.required){data-required="true"}@@if (context.agreement) { data-input="agreement" }>
+	<label class="wrapper-input__label wrapper-input__label--checkbox@@if(context.class){ wrapper-input__label--@@class }" for="@@id">@@inputPlaceholder</label>
+</div>

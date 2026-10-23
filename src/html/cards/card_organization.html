@@ -1,0 +1,53 @@
+<article class="organization-card">
+    <header class="organization-card__header">
+        <h3 class="organization-card__title h2" data-element="organization-title">@@title</h3>
+        <p class="organization-card__subtitle" data-element="organization-subtitle">@@subtitle</p>
+
+		<a class="organization-card__edit" href="@@link">
+			<svg width="10" height="10" aria-hidden="true">
+				<use href="@img/sprite.svg#edit"></use>
+			</svg>
+		</a>
+    </header>
+
+@@if (status === 'confirmed') {
+    <div class="organization-card__status organization-card__status--confirmed">
+        <span>Подтвержден</span>
+    </div>
+}
+@@if (status === 'under-review') {
+    <div class="organization-card__status organization-card__status--under-review">
+        <span>На проверке</span>
+    </div>
+}
+
+    <dl class="organization-card__details">
+        <div class="organization-card__row">
+            <dt class="organization-card__label">ИНН</dt>
+            <dd class="organization-card__value">0000000000 / 000000000000</dd>
+        </div>
+        <div class="organization-card__row">
+            <dt class="organization-card__label">КПП</dt>
+            <dd class="organization-card__value">0000000000</dd>
+        </div>
+    </dl>
+
+	@@if (count === '—') {
+		<footer class="organization-card__footer organization-card__footer--empty">
+	}
+	@@if (count !== '—') {
+		<footer class="organization-card__footer">
+	}
+        <dl class="organization-card__stats">
+            <div class="organization-card__stats-item">
+                <dt class="organization-card__label">Заказы</dt>
+                <dd class="organization-card__value-stats u-color-green">@@count</dd>
+            </div>
+            <div class="organization-card__stats-item">
+                <dt class="organization-card__label">К оплате</dt>
+                <dd class="organization-card__value-stats u-color-green">@@price</dd>
+            </div>
+        </dl>
+    </footer>
+</article>
+

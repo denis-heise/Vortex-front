@@ -1,0 +1,78 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.info-note {
+	@include m.display-row(8);
+	opacity: 0.7;
+
+	&--tooltip {
+		cursor: pointer;
+		opacity: 1;
+		position: relative;
+		inline-size: fit-content;
+	}
+
+	&__text {
+		line-height: 110%;
+		font-size: 12px;
+		font-weight: 400;
+	}
+
+	&__icon {
+		inline-size: 12px;
+		block-size: 12px;
+		flex-shrink: 0;
+		color: var(--main_color, #1d2019);
+	}
+
+	&__tooltip {
+		@include m.state-hidden;
+		@include m.transition;
+		cursor: auto;
+		position: absolute;
+		inset-block-start: -18px;
+		inset-inline-start: calc(100% + 16px);
+		border-radius: var(--larger_big_radius, 10px);
+		box-sizing: border-box;
+		box-shadow: v.$shadow-tooltip;
+		inline-size: 210px;
+		padding: 16px;
+		background-color: var(--color_white, #fff);
+	}
+
+	&__list {
+		@include m.display-col(6);
+		margin: 0;
+	}
+
+	&__row {
+		@include m.flex-between(5);
+	}
+
+	&__key {
+		line-height: 120%;
+		font-size: 12px;
+		color: var(--color_black, #000);
+	}
+
+	&__value {
+		margin: 0;
+		line-height: 120%;
+		font-size: 12px;
+		color: var(--color_grey, #69756d);
+	}
+}
+
+.products-table__simple-text--tooltip:hover .info-note__tooltip {
+	@include m.state-visible;
+}
+
+.products-table__wrapper-cards--disabled .info-note--tooltip {
+	pointer-events: none;
+}
+
+.total-info__fields .info-note__icon {
+	margin: auto 0;
+	block-size: 9px;
+	inline-size: 9px;
+}

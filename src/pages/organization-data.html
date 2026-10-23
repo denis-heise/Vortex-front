@@ -1,0 +1,306 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<a class="back-link u-link" href="index.html" data-element="back-link">
+		<div class="button u-square">
+			<svg width="20" height="20" aria-hidden="true" focusable="false">
+				<use href="images/sprite.svg#arrow_left"></use>
+			</svg>
+		</div>
+		<span>Назад</span>
+	</a>
+	<h1>Данные организации</h1>
+	<h2>АО Trum.corp</h2>
+
+	<form class="total-form total-form--organization-data" action="#" method="POST">
+		<div class="total-form__narrow">
+			<span class="total-form__subtitle">Реквизиты</span>
+			@@include('../html/inputs/main_input.html', {
+				'title': 'Страна',
+				'placeholder': 'Например: Россия',
+				'type': 'text',
+				'name': 'country',
+				'id': 'country',
+				'required': 'true'
+			})
+
+			<div class="total-form__row">
+				@@include('../html/inputs/main_input.html', {
+					'title': 'ИНН',
+					'placeholder': '0000000000 / 000000000000',
+					'type': 'text',
+					'name': 'inn',
+					'id': 'inn',
+					'required': 'true',
+					'validate': 'inn'
+				})
+				<button class="button total-form__btn-autofill" type="button">
+					<span>Заполнить по ИНН</span>
+				</button>
+			</div>
+
+			@@include('../html/inputs/main_input.html', {
+				'title': 'КПП',
+				'placeholder': '000000000',
+				'type': 'text',
+				'name': 'kpp',
+				'id': 'kpp',
+				'required': 'true',
+				'validate': 'kpp'
+			})
+
+			@@include('../html/inputs/main_input.html', {
+				'title': 'Полное наименование организации',
+				'placeholder': 'Пример: Акционерное общество «Trum.corp»',
+				'type': 'text',
+				'name': 'company_full_name',
+				'id': 'company_full_name',
+				'required': 'true',
+				'value': 'Акционерное общество «Trum.corp»'
+			})
+		</div>
+
+		<hr class="split-line">
+
+		<div class="total-form__narrow">
+			<span class="total-form__subtitle">Банковские реквизиты</span>
+
+			<div class="total-form__row">
+				@@include('../html/inputs/main_input.html', {
+					'title': 'БИК банка',
+					'placeholder': '_ _ _ _ _ _ _ _ _',
+					'type': 'text',
+					'name': 'bik',
+					'id': 'bik',
+					'required': 'true',
+					'validate': 'bik'
+				})
+
+				@@include('../html/inputs/main_input.html', {
+					'title': 'Название банка',
+					'placeholder': 'Пример: СберБанк',
+					'type': 'text',
+					'name': 'bank_name',
+					'id': 'bank_name',
+					'required': 'true'
+				})
+			</div>
+
+			@@include('../html/inputs/main_input.html', {
+				'title': 'Расчетный счет',
+				'placeholder': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _',
+				'type': 'text',
+				'name': 'checking_account',
+				'id': 'checking_account',
+				'required': 'true',
+				'validate': 'checking_account'
+			})
+		</div>
+
+		<hr class="split-line">
+
+		<div class="total-form__narrow">
+			<div class="total-form__wrapper-data" data-block="legal-address">
+				<span class="total-form__subtitle">Юридический адрес</span>
+
+				<div class="total-form__row">
+					@@include('../html/inputs/main_input.html', {
+						'title': 'Индекс',
+						'placeholder': '_ _ _ _ _ _',
+						'type': 'text',
+						'name': 'postal_code',
+						'id': 'postal_code',
+						'required': 'true',
+						'validate': 'postal_code',
+						'value': '192129',
+						'data_type': 'index'
+					})
+
+					@@include('../html/select_block.html', {
+						'id': 'city',
+						'title': 'Город',
+						'placeholder': 'Москва',
+						'required': 'true',
+						'theme': 'dark',
+						'data_type': 'city',
+						'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+					})
+				</div>
+
+				@@include('../html/inputs/main_input.html', {
+					'title': 'Адрес',
+					'placeholder': 'Пример: Тверская улица, 6',
+					'type': 'text',
+					'name': 'address',
+					'id': 'address',
+					'required': 'true',
+					'value': 'Тверская улица, 6',
+					'data_type': 'address'
+				})
+
+				<div class="total-form__row">
+					@@include('../html/inputs/main_input.html', {
+						'title': 'Телефон',
+						'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _',
+						'type': 'text',
+						'name': 'tel',
+						'id': 'company_phone',
+						'required': 'true',
+						'value': '8 (800) 000-00-00',
+						'data_type': 'phone'
+					})
+
+					@@include('../html/inputs/main_input.html', {
+						'title': 'Email',
+						'placeholder': 'example@mail.ru',
+						'type': 'email',
+						'name': 'email',
+						'id': 'company_email',
+						'required': 'true',
+						'value': 'emai@coffee.com',
+						'data_type': 'email'
+					})
+				</div>
+			</div>
+
+			<div class="total-form__wrapper-data" data-block="actual-address">
+				<span class="total-form__subtitle">Фактический адрес</span>
+
+				<div class="address-toggle-block" data-block="toggle-parent">
+					<div class="wrapper-input">
+						<input class="is-hidden" id="address_match" type="checkbox" name="address_match" data-element="legal-address">
+						<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match">Совпадает с юридическим</label>
+					</div>
+
+						<div class="total-form__row">
+							@@include('../html/inputs/main_input.html', {
+								'title': 'Индекс',
+								'placeholder': '_ _ _ _ _ _',
+								'type': 'text',
+								'name': 'postal_code',
+								'id': 'postal_code',
+								'required': 'true',
+								'validate': 'postal_code',
+								'value': '192129',
+								'data_type': 'index'
+							})
+
+							@@include('../html/select_block.html', {
+								'id': 'city',
+								'title': 'Город',
+								'placeholder': 'Москва',
+								'required': 'true',
+								'theme': 'dark',
+								'data_type': 'city',
+								'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+							})
+						</div>
+
+						@@include('../html/inputs/main_input.html', {
+							'title': 'Адрес',
+							'placeholder': 'Пример: Тверская улица, 6',
+							'type': 'text',
+							'name': 'address',
+							'id': 'address',
+							'required': 'true',
+							'value': 'Тверская улица, 6/1',
+							'data_type': 'address'
+						})
+				</div>
+			</div>
+
+			<span class="total-form__subtitle">Адрес для отправки оригиналов документов</span>
+
+			<div class="address-toggle-block" data-block="toggle-parent">
+				<div class="total-form__choice-group">
+					<div class="wrapper-input">
+						<input class="is-hidden" id="address_match_legal" type="checkbox" name="address_match_legal" data-element="legal-address">
+						<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match_legal">Совпадает с юридическим</label>
+					</div>
+
+					<div class="wrapper-input">
+						<input class="is-hidden" id="address_match_actual" type="checkbox" name="address_match_actual" data-element="actual-address">
+						<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match_actual">Совпадает с фактическим</label>
+					</div>
+				</div>
+
+				<div class="total-form__row">
+					@@include('../html/inputs/main_input.html', {
+						'title': 'Индекс',
+						'placeholder': '_ _ _ _ _ _',
+						'type': 'text',
+						'name': 'postal_code',
+						'id': 'postal_code',
+						'required': 'true',
+						'validate': 'postal_code',
+						'data_type': 'index'
+					})
+
+					@@include('../html/select_block.html', {
+						'id': 'city',
+						'title': 'Город',
+						'placeholder': 'Москва',
+						'required': 'true',
+						'theme': 'dark',
+						'data_type': 'city',
+						'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+					})
+				</div>
+
+				@@include('../html/inputs/main_input.html', {
+					'title': 'Адрес',
+					'placeholder': 'Пример: Тверская улица, 6',
+					'type': 'text',
+					'name': 'address',
+					'id': 'address',
+					'required': 'true',
+					'data_type': 'address'
+				})
+
+				@@include('../html/inputs/main_input.html', {
+					'title': 'Телефон',
+					'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _',
+					'type': 'text',
+					'name': 'tel',
+					'id': 'company_phone',
+					'required': 'true',
+					'data_type': 'phone'
+				})
+			</div>
+		</div>
+
+		<hr class="split-line">
+
+		<div class="total-form__narrow">
+			<span class="total-form__subtitle">Контакты</span>
+
+			<div data-block="parent">
+				<div class="clone-block" data-block="copy-data">
+						@@include('../html/inputs/main_input.html', {'title': 'ФИО', 'placeholder': 'Пример: Константинов Константин Константинович', 'type': 'text', 'name': 'full_name', 'id': 'full_name', 'required': 'true', 'validate': 'full-name',
+						'placeholder_mobile': 'Пр: Константинов Константин Константинович'
+						})
+
+					<div class="total-form__row">
+						@@include('../html/inputs/main_input.html', {'title': 'Email', 'placeholder': 'example@mail.ru', 'type': 'email', 'name': 'email', 'id': 'email', 'required': 'true'})
+						@@include('../html/inputs/main_input.html', {'title': 'Телефон', 'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _', 'type': 'text', 'name': 'tel', 'id': 'phone', 'required': 'true'})
+					</div>
+				</div>
+
+				<button class="button button--transparent-green total-form__add-recipient" type="button" data-button="add-recipient">
+					<svg width="10" height="10" aria-hidden="true">
+						<use href="@img/sprite.svg#plus"></use>
+					</svg>
+					<span>Добавить контакт</span>
+				</button>
+			</div>
+		</div>
+
+		<hr class="split-line">
+
+		<button class="button total-form__save" type="submit" disabled>
+			<span>Сохранить</span>
+		</button>
+	</form>
+</main>
+
+@@include('../html/footer.html')

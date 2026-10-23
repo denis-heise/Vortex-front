@@ -1,0 +1,222 @@
+@use "../abstracts/mixins" as m;
+
+.tabs {
+	@include m.display-row(6);
+	inline-size: fit-content;
+
+	&-list-products.is-hidden {
+		display: none;
+	}
+
+	&--big {
+		inline-size: 100%;
+		gap: 16px;
+
+		.warehouse-card {
+			display: none;
+		}
+
+		button {
+			@include m.display-col(8);
+			box-sizing: border-box;
+			block-size: 140px;
+			inline-size: 100%;
+			padding: 24px;
+			text-align: start;
+
+			span {
+				margin: 0;
+			}
+		}
+
+		@include m.respond-to(1200) {
+			gap: 10px;
+		}
+
+		@include m.respond-to(992) {
+			@include m.display-grid(16, 2);
+		}
+
+		@include m.respond-to(650) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 16px;
+		}
+	}
+}
+
+.warehouse-card {
+	@include m.display-col(16);
+	box-sizing: border-box;
+	padding: 16px 24px;
+
+	&.is-hidden {
+		display: none;
+	}
+
+	&__button-edit,
+	&button.warehouse-card__button-edit {
+		@include m.display-row(8);
+		block-size: 32px;
+		inline-size: 117px;
+		padding: 0;
+		gap: 8px;
+		justify-content: center;
+
+		span,
+		svg {
+			margin: auto 0;
+		}
+	}
+
+	&__header {
+		@include m.display-col(10);
+
+		.h2 {
+			font-weight: 400;
+		}
+	}
+
+	&__title {
+		font-family: var(--second_font_family, "Rubik");
+		font-size: 24px;
+	}
+
+	&__body {
+		@include m.display-col(8);
+		line-height: normal;
+	}
+
+	&__icon {
+		inline-size: 16px;
+		block-size: 16px;
+		flex-shrink: 0;
+	}
+
+	&__address {
+		font-size: 14px;
+	}
+
+	&__schedule {
+		@include m.display-col(6);
+	}
+
+	&__footer {
+		@include m.display-col(8);
+		line-height: normal;
+	}
+
+	&__delivery {
+		font-size: 14px;
+	}
+
+	&__price {
+		font-weight: 600;
+	}
+
+	&__row {
+		@include m.display-row(24);
+
+		.delivery-choice {
+			inline-size: 100%;
+			max-inline-size: 285px;
+		}
+	}
+
+	&__col {
+		@include m.display-col(16);
+	}
+
+	@include m.respond-to(650) {
+		display: none;
+	}
+}
+
+.tabs--big button.is-active + .warehouse-card {
+	@include m.respond-to(650) {
+		display: flex;
+	}
+}
+
+.popup--delivery .tabs--big {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 16px;
+
+	button.is-active + .warehouse-card {
+		display: flex;
+	}
+}
+
+.schedule {
+	&__title {
+		margin: 0;
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	&__list {
+		@include m.display-col(4);
+	}
+
+	&__item {
+		@include m.display-row(10);
+	}
+
+	&__days {
+		font-size: 14px;
+		color: var(--color_grey, #69756d);
+	}
+
+	&__time {
+		font-size: 14px;
+	}
+}
+
+.delivery-choice {
+	.h2 {
+		font-weight: 500;
+	}
+
+	&__group {
+		@include m.display-col(24);
+		margin-block-start: 24px;
+	}
+
+	&__item {
+		position: relative;
+		padding-inline-start: 32px;
+	}
+
+	&__input {
+		@include m.visually-hidden-input;
+	}
+
+	&__card {
+		@include m.display-col(9);
+	}
+
+	&__name {
+		font-size: 16px;
+	}
+
+	&__info {
+		@include m.display-row(6);
+	}
+
+	&__label {
+		opacity: 0.5;
+		font-size: 14px;
+		color: var(--main_color_light_3, #40433a);
+	}
+
+	&__price {
+		font-size: 14px;
+		font-weight: 500;
+	}
+}
+
+.tabs__desktop {
+	@include m.respond-to(650) {
+		display: none;
+	}
+}

@@ -1,0 +1,25 @@
+							<div class="filter-item@@class" data-block="filter-item">
+								<div class="filter-item__header" data-button="open-parent">
+									<span>@@main_title</span>
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="@img/sprite.svg#arrow_down"></use>
+									</svg>
+								</div>
+
+								<div class="filter-item__list">
+									<ul class="filter-item__list-inner">
+										<li class="filter-item__list-item">
+											@@include('inputs/input.html', {'inputPlaceholder': '@@title_1', 'type': 'checkbox', 'name': 'checkbox', 'id': 'filter_1', 'disabled': '@@disabled_1'})
+										</li>
+										<li class="filter-item__list-item">
+											@@include('inputs/input.html', {'inputPlaceholder': '@@title_2', 'type': 'checkbox', 'name': 'checkbox', 'id': 'filter_2', 'disabled': '@@disabled_2'})
+										</li>
+										<li class="filter-item__list-item">
+											@@include('inputs/input.html', {'inputPlaceholder': '@@title_3', 'type': 'checkbox', 'name': 'checkbox', 'id': 'filter_3', 'disabled': '@@disabled_3'})
+										</li>
+										<li class="filter-item__list-item">
+											@@include('inputs/input.html', {'inputPlaceholder': '@@title_4', 'type': 'checkbox', 'name': 'checkbox', 'id': 'filter_4', 'disabled': '@@disabled_4'})
+										</li>
+									</ul>
+								</div>
+							</div>

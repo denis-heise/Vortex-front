@@ -1,0 +1,507 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="checkout">
+		<a class="back-link u-link" href="index.html" data-element="back-link">
+			<div class="button u-square">
+				<svg width="20" height="20" aria-hidden="true" focusable="false">
+					<use href="images/sprite.svg#arrow_left"></use>
+				</svg>
+			</div>
+			<span>Назад</span>
+		</a>
+		<h1>Оформление заказа</h1>
+
+		<div class="order-summary checkout__section">
+			<h3 class="count-heading__title">Заказ № A567</h3>
+			<div class="order-summary__list">
+				<div class="products-wrapper" data-block="main-order">
+					<div class="product-group" data-block="section">
+						@@include('../html/heading/count_heading_dropdown.html', {
+							'title': 'Кофе',
+							'count': '3',
+							'price': '$7 200,00'
+						})
+
+						<div class="product-group__table-wrapper">
+							<div class="products-table products-table--basket" role="table" aria-label="Товары в корзине">
+								<div class="products-table__header" role="row">
+									<div class="products-table__simple-text" role="columnheader">Сорт</div>
+									<div class="products-table__simple-text" role="columnheader">Наличие</div>
+									<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+									<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+									<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+									<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+									<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+									<div class="products-table__simple-text" role="columnheader"></div>
+								</div>
+
+								<div class="products-table__body" data-table-products>
+									@@include('../html/basket/basket_card_1.html')
+									@@include('../html/basket/basket_card_1.html')
+									@@include('../html/basket/basket_card_1.html')
+									<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+										<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+										<div class="products-table__result-body" data-block="basket-result-body">
+											<div class="products-table__cell">
+												<span class="products-table__cell--result-desktop" role="cell">3 мешок-полипропилен, 99 кг</span>
+												<span class="products-table__cell--result-mobile" role="cell">3 мешка, 99 кг</span>
+											</div>
+											<span class="products-table__cell products-table__cell--result-price" role="cell" data-element="block-price">$2 400,00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="product-group" data-block="section">
+						@@include('../html/heading/count_heading_dropdown.html', {
+							'title': 'Какао',
+							'count': '1',
+							'price': '$100,00'
+						})
+
+						<div class="product-group__table-wrapper">
+							<div class="products-table products-table--simple products-table--basket" role="table" aria-label="Товары в корзине" data-block="simple-table">
+								<div class="products-table__header" role="row" data-block="wrapper-cells">
+									<div class="products-table__simple-text" role="columnheader">Сорт</div>
+									<div class="products-table__simple-text" role="columnheader">Наличие</div>
+									<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Разновидность</div>
+									<div class="products-table__simple-text" role="columnheader"></div>
+									<div class="products-table__simple-text" role="columnheader"></div>
+									<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+									<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+									<div class="products-table__simple-text" role="columnheader"></div>
+								</div>
+
+								<div class="products-table__body" data-table-products>
+									@@include('../html/basket/basket_card_2.html')
+									<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+										<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+										<div class="products-table__result-body" data-block="basket-result-body">
+											<div class="products-table__cell">
+												<span class="products-table__cell--result-desktop" role="cell">1 джутовый мешок, 30 кг</span>
+												<span class="products-table__cell--result-mobile" role="cell">1 мешок, 30 кг</span>
+											</div>
+											<span class="products-table__cell products-table__cell--result-price" role="cell" data-element="block-price">$2 400,00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="products-wrapper products-wrapper--samples" data-block="samples" data-block="section">
+					<div class="product-group" data-block="section">
+						@@include('../html/heading/count_heading_dropdown.html', {
+							'title': 'Образцы',
+							'count': '3',
+							'price': '—'
+						})
+						<div class="product-group__table-wrapper" data-block="parent">
+							<div class="products-table products-table--simple products-table--basket" role="table" aria-label="Товары в корзине" data-block="simple-table">
+								<div class="products-table__header" role="row" data-block="wrapper-cells">
+									<div class="products-table__simple-text" role="columnheader">Сорт</div>
+									<div class="products-table__simple-text" role="columnheader">Наличие</div>
+									<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader"></div>
+									<div class="products-table__simple-text" role="columnheader">Цена, кг/упаковку</div>
+									<div class="products-table__simple-text" role="columnheader"></div>
+								</div>
+
+								<div class="products-table__body" data-table-products>
+									@@include('../html/basket/basket_card_3.html', {'title': 'Гондурас Финка Рио Фрио хани'})
+									@@include('../html/basket/basket_card_3.html', {'title': 'Гондурас Финка Рио Фрио'})
+									@@include('../html/basket/basket_card_3.html', {'title': 'Коста-Рика Каскара'})
+									<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table" data-block="basket-result-body">
+										<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+										<span class="products-table__cell" role="cell">1 пакет, 100 г</span>
+										<span class="products-table__cell products-table__cell--tablet u-color-green" role="cell"></span>
+										<span class="products-table__cell u-color-green" role="cell">—</span>
+										<span class="products-table__cell"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="order-total" role="status" aria-live="polite">
+					<span class="order-total__label">Итого к оплате</span>
+					<div class="order-total__price-box">
+						<span class="order-total__price u-color-green" data-element="total-price">$7 300,00</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr class="split-line">
+
+		<div class="data-client checkout__section checkout__section--narrow">
+			<h2>Данные компании</h2>
+			<div class="data-client__content">
+				<div class="data-client__top" data-block="parent">
+					<div class="data-client__wrapper-selects">
+						@@include('../html/select_block.html', {
+							'id': 'legalentity',
+							'title': 'Юридическое лицо',
+							'placeholder': 'Выберите из списка доступных <span class="select-block__desktop">организаций</span><span class="select-block__mobile">орг-ций</span>',
+							'required': 'true',
+							'options': '<li><button class="select-block__item" type="button" data-select-item>Юридическое лицо 1</button></li><li><button class="select-block__item" type="button" data-select-item>Юридическое лицо 2</button></li><li><button class="select-block__item" type="button" data-select-item>Юридическое лицо 3</button></li><li><button class="select-block__item" type="button" data-select-item>Юридическое лицо 4</button></li>'
+						})
+					</div>
+
+					<button class="button" type="button" data-button="duplicate">
+						<span>Добавить юр.лицо</span>
+					</button>
+				</div>
+
+				@@include('../html/inputs/main_input.html', {'title': 'Контактное лицо', 'placeholder': 'Пример: Иванов Федор Константинович', 'type': 'text', 'name': 'full_name', 'id': 'full_name', 'required': 'true', 'validate': 'full-name',
+				'placeholder_mobile': 'Пр: Иванов Федор Константинович'
+				})
+
+				<div class="wrapper-input wrapper-input--calendar" data-wrapper-input>
+					<label class="wrapper-input__label" for="date">Планируемая дата отправки</label>
+					<input type="text" id="date" value="11.12.2025" placeholder="Выберите дату" data-required="true"  data-validate="date" data-calendar>
+					<svg class="wrapper-input__icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#calendar"></use>
+					</svg>
+				</div>
+			</div>
+		</div>
+
+		<hr class="split-line">
+
+		<div class="delivery checkout__section" data-sync-group="radio">
+			<h2>Способ доставки заказа</h2>
+			<div class="delivery__list" data-block="products-list">
+				<div class="delivery__col">
+					<div class="delivery__field wrapper-input" data-wrapper-input>
+						<label class="wrapper-input__label" for="delivery_city">Город доставки<span class="u-color-green" aria-hidden="true">*</span></label>
+						<input class="wrapper-input__input" type="text" id="delivery_city" value="Москва" required>
+					</div>
+					@@include('../html/info_note.html', {'title': 'Доступные варианты доставки меняются в зависимости от города'})
+				</div>
+
+				<div class="tabs tabs--big" role="tablist" aria-label="Тип заказа">
+					<button class="button button--light-green is-active"
+						type="button"
+						role="tab"
+						aria-selected="true"
+						id="tab-1"
+						aria-controls="panel-1"
+						data-tab-products="1"
+						data-tab-products="1">
+						<span class="tabs__text h2">Самовывоз со склада</span>
+						<span>Бесплатно</span>
+					</button>
+					@@include('../html/delivery/delivery_card.html', {'id': '1', 'class': ''})
+
+					<button class="button button--transparent"
+						type="button"
+						role="tab"
+						aria-selected="false"
+						id="tab-2"
+						aria-controls="panel-2"
+						tabindex="-1"
+						data-tab-products="2"
+						data-tab-products="2">
+						<div class="delivery__col">
+							<span class="tabs__text h2">ПЭК</span>
+							<span>До адреса / до терминала</span>
+						</div>
+
+						<span>От 300₽</span>
+					</button>
+					<article class="warehouse-card is-hidden" data-list-products="2">
+						<div class="warehouse-card__row" data-block="parent">
+							<fieldset class="delivery-choice">
+								<legend class="h2">Куда доставить</legend>
+
+								<div class="delivery-choice__group">
+									<div class="wrapper-input wrapper-input--radio">
+										<input type="radio"
+											name="delivery_type_mobile"
+											id="delivery_pvz_mobile"
+											value="pvz"
+											checked="true"
+											data-sync-radio>
+
+										<label for="delivery_pvz_mobile">
+											<span class="delivery-choice__card"><span class="delivery-choice__name">Доставка до терминала</span>
+										</label>
+
+										<div class="warehouse-card__col">
+											<div class="warehouse-card__col">
+												<address class="warehouse-card__address">
+													109443, Россия, Москва, <br> пр-т Волгоградский, 106 корп. 1
+												</address>
+
+												<div class="warehouse-card__schedule schedule">
+													<h4 class="schedule__title">Часы работы:</h4>
+													<ul class="schedule__list">
+														<li class="schedule__item">
+															<span class="schedule__days">Пн–Сб</span>
+															<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+														</li>
+													</ul>
+												</div>
+											</div>
+
+											<div class="warehouse-card__delivery">Стоимость доставки: <span class="u-color-green">387,00 ₽</span></div>
+											<button class="button button--transparent-green warehouse-card__button-edit" type="button" data-button-open="edit-address">
+												<svg class="warehouse-card__icon" width="12" height="12" aria-hidden="true">
+													<use href="@img/sprite.svg#edit_address"></use>
+												</svg>
+												<span>Изменить</span>
+											</button>
+										</div>
+									</div>
+
+									<div class="wrapper-input wrapper-input--radio">
+										<input type="radio"
+											name="delivery_type_mobile"
+											id="delivery_address_mobile"
+											value="address"
+											data-sync-radio>
+
+										<label for="delivery_address_mobile">
+											<span class="delivery-choice__card">
+												<span class="delivery-choice__name">Доставка до адреса</span>
+												<span class="delivery-choice__info">
+													<span class="delivery-choice__label">Стоимость доставки</span>
+													<span class="delivery-choice__price">от 900 ₽</span>
+												</span>
+											</span>
+										</label>
+
+										<div class="warehouse-card__col">
+											<button class="button button--transparent-green warehouse-card__button-edit" type="button" data-button-open="edit-address">
+												<svg class="warehouse-card__icon" width="12" height="12" aria-hidden="true">
+													<use href="@img/sprite.svg#edit_address"></use>
+												</svg>
+												<span>Изменить</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</article>
+
+					<button class="button button--transparent"
+						type="button"
+						role="tab"
+						aria-selected="false"
+						id="tab-3"
+						aria-controls="panel-3"
+						tabindex="-1"
+						data-tab-products="3"
+						data-tab-products="3">
+						<div class="delivery__col">
+							<span class="tabs__text h2">Деловые Линии</span>
+							<span>До адреса / до терминала</span>
+						</div>
+
+						<span>От 300₽</span>
+					</button>
+					@@include('../html/delivery/delivery_card.html', {'id': '3', 'class': ' is-hidden'})
+
+					<button class="button button--transparent"
+						type="button"
+						role="tab"
+						aria-selected="false"
+						id="tab-4"
+						aria-controls="panel-4"
+						tabindex="-1"
+						data-tab-products="4"
+						data-tab-products="4">
+						<span class="tabs__text h2">Доставка по городу</span>
+						<span>По договоренности</span>
+					</button>
+					@@include('../html/delivery/delivery_card.html', {'id': '4', 'class': ' is-hidden'})
+				</div>
+
+				@@include('../html/delivery/delivery_card.html', {'id': '1', 'class': ''})
+
+				<article class="warehouse-card is-hidden" data-list-products="2">
+					<div class="warehouse-card__row" data-block="parent">
+						<fieldset class="delivery-choice">
+							<legend class="h2">Куда доставить</legend>
+
+							<div class="delivery-choice__group">
+								@@include('../html/inputs/input_radio.html', {
+									'name': 'delivery_type',
+									'id': 'delivery_pvz',
+									'value': 'pvz',
+									'checked': true,
+									'text': '<span class="delivery-choice__card"><span class="delivery-choice__name">Доставка до терминала</span>'
+								})
+
+								@@include('../html/inputs/input_radio.html', {
+									'name': 'delivery_type',
+									'id': 'delivery_address',
+									'value': 'address',
+									'text': '<span class="delivery-choice__card"><span class="delivery-choice__name">Доставка до адреса</span><span class="delivery-choice__info"><span class="delivery-choice__label">Стоимость доставки</span><span class="delivery-choice__price">от 900 ₽</span></span></span>'
+								})
+							</div>
+
+						</fieldset>
+
+
+						<div class="warehouse-card__col">
+							<div class="warehouse-card__col">
+								<address class="warehouse-card__address">
+									109443, Россия, Москва, <br> пр-т Волгоградский, 106 корп. 1
+								</address>
+
+								<div class="warehouse-card__schedule schedule">
+									<h4 class="schedule__title">Часы работы:</h4>
+									<ul class="schedule__list">
+										<li class="schedule__item">
+											<span class="schedule__days">Пн–Сб</span>
+											<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="warehouse-card__delivery">Стоимость доставки: <span class="u-color-green">387,00 ₽</span></div>
+							<button class="button button--transparent-green warehouse-card__button-edit" type="button" data-button-open="edit-address">
+								<svg class="warehouse-card__icon" width="12" height="12" aria-hidden="true">
+									<use href="@img/sprite.svg#edit_address"></use>
+								</svg>
+								<span>Изменить</span>
+							</button>
+						</div>
+					</div>
+				</article>
+
+				@@include('../html/delivery/delivery_card.html', {'id': '3', 'class': ' is-hidden'})
+				@@include('../html/delivery/delivery_card.html', {'id': '4', 'class': ' is-hidden'})
+			</div>
+		</div>
+
+		<hr class="split-line">
+
+		<div class="samples-checkout checkout__section--narrow" data-block="parent">
+			<div class="samples-checkout__header">
+				<h2>Оформление <br class="samples-checkout__mobile"> доставки образцов</h2>
+				@@include('../html/inputs/input_toggle.html', {'title': 'Образцы вместе с заказом'})
+			</div>
+
+			<div class="samples-checkout__wrapper-info">
+				<div class="samples-checkout__info">
+					@@include('../html/select_block.html', {
+						'id': 'organization',
+						'title': 'Организация',
+						'placeholder': 'Выберите из списка доступных организаций',
+						'required': 'true',
+						'options': '<li><button class="select-block__item" type="button" data-select-item>Организация 1</button></li><li><button class="select-block__item" type="button" data-select-item>Организация 2</button></li><li><button class="select-block__item" type="button" data-select-item>Организация 3</button></li>'
+					})
+
+					@@include('../html/inputs/main_input.html', {'title': 'Контактное лицо', 'placeholder': 'Пример: Иванов Федор Константинович', 'type': 'text', 'name': 'full_name', 'id': 'full_name', 'required': 'true', 'validate': 'full-name',
+					'placeholder_mobile': 'Пр: Иванов Федор Константинович'
+					})
+
+					<div class="samples-checkout__row">
+						@@include('../html/inputs/main_input.html', {'title': 'Email', 'placeholder': 'example@mail.ru', 'type': 'email', 'name': 'email', 'id': 'email', 'required': 'true'})
+						@@include('../html/inputs/main_input.html', {'title': 'Телефон', 'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _', 'type': 'text', 'name': 'phone', 'id': 'phone', 'required': 'true'})
+					</div>
+
+					<span class="samples-checkout__subtitle">Адрес доставки</span>
+
+					<div class="samples-checkout__row">
+						@@include('../html/select_block.html', {
+							'id': 'country',
+							'title': 'Страна',
+							'placeholder': 'Пример: Россия',
+							'required': 'true',
+							'options': '<li><button class="select-block__item" type="button" data-select-item>Россия</button></li><li><button class="select-block__item" type="button" data-select-item>Беларусь</button></li><li><button class="select-block__item" type="button" data-select-item>Казахстан</button></li>'
+						})
+
+						@@include('../html/select_block.html', {
+							'id': 'city',
+							'title': 'Город',
+							'placeholder': 'Москва',
+							'required': 'true',
+							'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+						})
+					</div>
+
+					@@include('../html/inputs/main_input.html', {'title': 'Адрес', 'placeholder': 'Пример: проспект Обуховской Обороны 118, корп. 2, стр. 1, литера А', 'type': 'text', 'name': 'organization', 'id': 'organization', 'required': 'true'})
+
+					<div class="samples-checkout__row">
+						@@include('../html/inputs/main_input.html', {'title': 'Офис/Квартира', 'placeholder': 'Введите номер', 'type': 'text', 'name': 'popup_apartment', 'id': 'popup_apartment', 'required': 'true', 'validate': 'apartment'})
+
+						<div class="wrapper-input" data-wrapper-input>
+							<label class="wrapper-input__label" for="organization">Название адреса</label>
+							<input type="text" id="organization" placeholder="Пример: Работа">
+							@@include('../html/info_note.html', {'title': 'Придумайте название адреса — и вы сможете выбрать его при следующем заказе в поле «Адрес доставки»'})
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr class="split-line">
+
+		<div class="checkout__section checkout__section--narrow">
+			<h2>Комментарий к заказу</h2>
+			<div class="wrapper-input" data-wrapper-input>
+				<label class="wrapper-input__label" for="comment">Комментарий к заказу</label>
+				<textarea type="text" id="comment" placeholder="Напишите Ваше сообщение" data-required="true"></textarea>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer class="order-summary-bar" data-block="summary-bar">
+	<div class="wrapper">
+		<div class="order-summary-bar__content">
+			<dl class="order-summary-bar__totals">
+				<div class="order-summary-bar__item">
+					<dt class="order-summary-bar__label">
+						<span class="order-summary-bar__desktop">Основной</span>
+						<span class="order-summary-bar__mobile">Осн.</span>
+						<span>заказ</span>
+					</dt>
+					<dd class="order-summary-bar__value" data-element="main-value">4 позиции</dd>
+				</div>
+
+				<hr class="order-summary-bar__line">
+
+				<div class="order-summary-bar__item">
+					<dt class="order-summary-bar__label">Образцы</dt>
+					<dd class="order-summary-bar__value" data-element="samples-value">3 позиции</dd>
+				</div>
+
+				<hr class="order-summary-bar__line">
+
+				<div class="order-summary-bar__item">
+					<dt class="order-summary-bar__label">Итого <span class="order-summary-bar__desktop">к оплате</span>:</dt>
+					<dd class="order-summary-bar__value order-summary-bar__value--price u-color-green">
+						<span data-element="total-price">$7 300,00</span>
+					</dd>
+				</div>
+			</dl>
+
+			<div class="order-summary-bar__actions">
+				<button class="button button--transparent-green" type="button" data-button-open="help">
+					<span>Помощь</span>
+				</button>
+				<a class="button" href="404.html">
+					<span>Оформить заказ</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+@@include('../html/footer.html')
+
+<script>
+	document.body.style.backgroundColor = '#FAFAFA';
+
+	document.querySelector('[data-button="up"]')?.style.setProperty('bottom', window.innerWidth <= 992 ? '155px' : '95px');
+</script>

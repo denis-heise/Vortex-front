@@ -1,0 +1,194 @@
+@@include('../html/header.html', { "isCartPage": true })
+
+<main class="wrapper" data-block="basket">
+	<section class="basket">
+		<a class="back-link u-link" href="index.html" data-element="back-link">
+			<div class="button u-square">
+				<svg width="20" height="20" aria-hidden="true" focusable="false">
+					<use href="images/sprite.svg#arrow_left"></use>
+				</svg>
+			</div>
+			<span>Назад</span>
+		</a>
+
+		<div class="products-wrapper" data-block="main-order">
+			<h1>Корзина</h1>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Кофе',
+					'count': '3'
+				})
+
+
+				<div class="products-table products-table--basket" role="table" aria-label="Товары в корзине" data-table-products>
+					<div class="products-table__header" role="row">
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Скрин</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Оценка</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Обработка</div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+						<div class="products-table__simple-text" role="columnheader"></div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/basket/basket_card_1.html')
+						@@include('../html/basket/basket_card_1.html')
+						@@include('../html/basket/basket_card_1.html')
+						<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+							<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+							<div class="products-table__result-body" data-block="basket-result-body">
+								<div class="products-table__cell">
+									<span class="products-table__cell--result-desktop" role="cell">3 мешок-полипропилен, 99 кг</span>
+									<span class="products-table__cell--result-mobile" role="cell">3 мешка, 99 кг</span>
+								</div>
+								<span class="products-table__cell products-table__cell--result-price" role="cell" data-element="block-price">$7 200,00</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Какао',
+					'count': '1'
+				})
+
+				<div class="products-table products-table--basket products-table--simple" role="table" aria-label="Товары в корзине" data-block="simple-table" data-table-products>
+					<div class="products-table__header" role="row" data-block="wrapper-cells">
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Разновидность</div>
+						<div class="products-table__simple-text" role="columnheader"></div>
+						<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+						<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+						<div class="products-table__simple-text" role="columnheader"></div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/basket/basket_card_2.html')
+						<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+							<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+							<div class="products-table__result-body" data-block="basket-result-body">
+								<div class="products-table__cell">
+									<span class="products-table__cell--result-desktop" role="cell">1 джутовый мешок, 30 кг</span>
+									<span class="products-table__cell--result-mobile" role="cell">1 мешок, 30 кг</span>
+								</div>
+								<span class="products-table__cell products-table__cell--result-price" role="cell" data-element="block-price">$2 400,00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="products-wrapper products-wrapper--samples" data-block="samples">
+			<h2>Образцы</h2>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Кофе',
+					'count': '2'
+				})
+
+				<div class="products-table products-table--simple products-table--basket" role="table" aria-label="Товары в корзине" data-block="simple-table" data-table-products>
+					<div class="products-table__header" role="row" data-block="wrapper-cells">
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/basket/basket_card_3.html', {'title': 'Гондурас Финка Рио Фрио хани'})
+						@@include('../html/basket/basket_card_3.html', {'title': 'Гондурас Финка Рио Фрио'})
+						<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+							<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+							<span class="products-table__cell" role="cell">2 пакета, 200 г</span>
+							<span class="products-table__cell u-color-green" role="cell">—</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="product-group" data-block="section">
+				@@include('../html/heading/count_heading.html', {
+					'title': 'Какао',
+					'count': '1'
+				})
+
+				<div class="products-table products-table--simple simple products-table--basket" role="table" aria-label="Товары в корзине" data-block="simple-table" data-table-products>
+					<div class="products-table__header" role="row" data-block="wrapper-cells">
+						<div class="products-table__simple-text" role="columnheader">Сорт</div>
+						<div class="products-table__simple-text" role="columnheader">Наличие</div>
+						<div class="products-table__simple-text" role="columnheader">Цена, кг/упаковку</div>
+					</div>
+
+					<div class="products-table__body">
+						@@include('../html/basket/basket_card_3.html', {'title': 'Коста-Рика Каскара'})
+						<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+							<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+							<span class="products-table__cell" role="cell">1 пакет, 100 г</span>
+							<span class="products-table__cell u-color-green" role="cell">—</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="order-summary-bar" data-block="summary-bar">
+	<div class="wrapper">
+		<div class="order-summary-bar__content">
+			<dl class="order-summary-bar__totals">
+				<div class="order-summary-bar__item">
+					<dt class="order-summary-bar__label">
+						<span class="order-summary-bar__desktop">Основной</span>
+						<span class="order-summary-bar__mobile">Осн.</span>
+						<span>заказ</span>
+					</dt>
+					<dd class="order-summary-bar__value" data-element="main-value">4 позиции</dd>
+				</div>
+
+				<hr class="order-summary-bar__line">
+
+				<div class="order-summary-bar__item">
+					<dt class="order-summary-bar__label">Образцы</dt>
+					<dd class="order-summary-bar__value" data-element="samples-value">3 позиции</dd>
+				</div>
+
+				<hr class="order-summary-bar__line">
+
+				<div class="order-summary-bar__item">
+					<dt class="order-summary-bar__label">Итого <span class="order-summary-bar__desktop">к оплате</span>:</dt>
+					<dd class="order-summary-bar__value order-summary-bar__value--price u-color-green">
+						<span data-element="total-price">$7 300,00</span>
+					</dd>
+				</div>
+			</dl>
+
+			<div class="order-summary-bar__actions">
+				<button class="button button--transparent-green" type="button" data-button-open="help">
+					<span>Помощь</span>
+				</button>
+				<a class="button" href="checkout.html">
+					<span>Оформить заказ</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+@@include('../html/footer.html')
+
+<script>
+	document.body.style.backgroundColor = '#FAFAFA';
+
+	document.querySelector('[data-button="up"]')?.style.setProperty('bottom', window.innerWidth <= 992 ? '155px' : '95px');
+</script>

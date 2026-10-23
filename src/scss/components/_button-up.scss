@@ -1,0 +1,35 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.button-up {
+	@include m.transition;
+	cursor: pointer;
+	display: flex;
+	position: fixed;
+	inset-block-end: 64px;
+	inset-inline-end: 90px;
+	z-index: f.z("button-up");
+	border-radius: var(--circle_radius, 50%);
+	box-shadow: 0 6px 44px 0 var(--main_color_light_2, rgb(29 32 25 / 35%));
+	block-size: 60px;
+	inline-size: 60px;
+	background-color: var(--color_green, #367a4d);
+
+	&:hover {
+		background-color: var(--color_green_dark, #3eab63);
+	}
+
+	&.hidden {
+		pointer-events: none;
+		opacity: 0;
+		z-index: f.z("below");
+	}
+
+	svg {
+		margin: auto;
+	}
+
+	@include m.respond-to(768) {
+		display: none;
+	}
+}

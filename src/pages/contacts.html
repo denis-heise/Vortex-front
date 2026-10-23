@@ -1,0 +1,88 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="contacts">
+		<div class="map">
+			<div class="map__container" role="application" aria-label="Интерактивная карта" data-map-contacts></div>
+
+			<div class="map__controls">
+				<button class="button button--square button--white" type="button" data-button="zoom-in" aria-label="Приблизить карту">
+					<svg width="16" height="16" aria-hidden="true" focusable="false">
+						<use href="@img/sprite.svg#plus"></use>
+					</svg>
+				</button>
+				<button class="button button--square button--white" type="button" data-button="zoom-out" aria-label="Отдалить карту">
+					<svg width="16" height="16" aria-hidden="true" focusable="false">
+						<use href="@img/sprite.svg#minus"></use>
+					</svg>
+				</button>
+				<button class="button button--square button--white map__button-center" type="button" data-button="map-center" aria-label="Центрировать карту по всем точкам">
+					<svg width="16" height="16" aria-hidden="true" focusable="false">
+						<use href="@img/sprite.svg#target_map"></use>
+					</svg>
+				</button>
+			</div>
+
+			<a class="map__link" href="https://yandex.ru..." target="_blank" rel="noopener">
+				<span>Открыть в Яндекс Картах</span>
+				<svg width="12" height="12" aria-hidden="true" focusable="false">
+					<use href="@img/sprite.svg#arrow_up_diagonal"></use>
+				</svg>
+			</a>
+		</div>
+
+		<div class="contacts-list">
+				@@include('../html/cards/card_contacts_item.html', {
+					'title': 'Главный офис',
+					'description': 'г. Москва, ул. Центральная, д. 10',
+					'phone': '88000000000',
+					'phone_title': '8 (800) 000-00-00',
+					'index': '1'
+				})
+
+				@@include('../html/cards/card_contacts_item.html', {
+					'title': 'Склад какао Москва',
+					'description': 'ООО «Логистика», Московская обл., г. Одинцово, ул. Промышленная, д. 5, стр. 2',
+					'phone': '88000000000',
+					'phone_title': '8 (800) 000-00-00',
+					'index': '2'
+				})
+
+				@@include('../html/cards/card_contacts_item.html', {
+					'title': 'Склад кофе Москва',
+					'description': 'ООО «Логистика», Московская обл., г. Подольск, ул. Складская, д. 12',
+					'phone': '88000000000',
+					'phone_title': '8 (800) 000-00-00',
+					'index': '3'
+				})
+
+				@@include('../html/cards/card_contacts_item.html', {
+					'title': 'Склад Санкт-Петербург',
+					'description': 'ООО «Балтика-Логистик», г. Санкт-Петербург, Пулковское шоссе, д. 20, корпус 3',
+					'phone': '88000000000',
+					'phone_title': '8 (800) 000-00-00',
+					'index': '4'
+				})
+
+				@@include('../html/cards/card_contacts_item.html', {
+					'title': 'Служба доставки',
+					'description': 'г. Москва, ул. Транспортная, д. 8, стр. 1',
+					'phone': '88000000000',
+					'phone_title': '8 (800) 000-00-00',
+					'index': '5'
+				})
+
+				@@include('../html/cards/card_contacts_item.html', {
+					'title': 'Тренинг-центр',
+					'description': 'г. Москва, ул. Академика Королева, д. 15, пом. 3Н',
+					'phone': '88000000000',
+					'phone_title': '8 (800) 000-00-00',
+					'index': '6'
+				})
+		</div>
+
+	</div>
+</main>
+
+
+@@include('../html/footer.html')

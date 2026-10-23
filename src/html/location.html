@@ -1,0 +1,39 @@
+		<div class="select-wrapper select-wrapper--city" data-select-wrapper="city">
+			<span class="select-label" id="warehouse-select-label">Выберите склад</span>
+
+			<div class="select-block" data-block="select">
+				<button class="select-block__button"
+						type="button"
+						aria-expanded="false"
+						aria-haspopup="listbox"
+						aria-labelledby="warehouse-select-label warehouse-title-text"
+						data-element="select-button">
+					<div class="select-block__wrapper-text">
+						<svg width="12" height="12" aria-hidden="true">
+							<use href="@img/sprite.svg#buildings"></use>
+						</svg>
+						<span class="select__title" id="warehouse-title-text" data-element="select-title">Москва</span>
+					</div>
+					<svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#arrow_down"></use>
+					</svg>
+				</button>
+
+				<ul class="select-block__list" role="listbox" aria-labelledby="warehouse-select-label" data-block="select-list">
+					<li class="select-block__header" aria-hidden="true">
+						<span class="select-label">Выберите склад</span>
+					</li>
+
+					<li class="select-block__item is-selected" role="option" aria-selected="true" data-select-item tabindex="-1">
+						Москва
+					</li>
+					<li class="select-block__item" role="option" aria-selected="false" data-select-item tabindex="-1">
+						Санкт-Петербург
+					</li>
+
+					<li class="select-block__note-wrapper" aria-hidden="true">
+						@@include('../html/info_note.html', {'title': 'Наличие товара зависит от выбранного склада и обновится автоматически'})
+					</li>
+				</ul>
+			</div>
+		</div>

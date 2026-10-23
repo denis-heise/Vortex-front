@@ -1,0 +1,136 @@
+@use "../abstracts/mixins" as m;
+
+.total-form {
+	&--organization-data {
+		margin-block: 32px 80px;
+		border-block-start: 1px solid var(--color_grey_light, #c8ceca);
+		padding-block-start: 48px;
+
+		@include m.respond-to(650) {
+			padding-block-start: 32px;
+		}
+	}
+
+	&__row {
+		@include m.display-row(16);
+
+		.wrapper-input {
+			margin-block-start: 0;
+		}
+
+		&--big {
+			gap: 32px;
+		}
+
+		& + & {
+			margin-block-start: 24px;
+		}
+
+		@include m.respond-to(650) {
+			flex-direction: column;
+		}
+	}
+
+	&__row--big {
+		@include m.respond-to(650) {
+			gap: 16px;
+		}
+	}
+
+	&__wrapper-data {
+		margin-block-end: 40px;
+
+		@include m.respond-to(650) {
+			margin-block-end: 48px;
+		}
+	}
+
+	&__narrow {
+		inline-size: 100%;
+		max-inline-size: 685px;
+	}
+
+	&__choice-group {
+		@include m.display-row(32);
+		margin-block-end: 24px;
+		justify-content: space-between;
+
+		@include m.respond-to(650) {
+			gap: 16px;
+			flex-direction: column;
+		}
+	}
+
+	&__add-recipient {
+		margin-block-start: 24px;
+		block-size: 36px;
+		max-inline-size: 177px;
+
+		&.is-hidden {
+			display: none;
+		}
+	}
+
+	&__save {
+		margin-block-start: 40px;
+		inline-size: 100%;
+		max-inline-size: 140px;
+
+		@include m.respond-to(650) {
+			max-inline-size: 100%;
+		}
+	}
+
+	&__subtitle {
+		display: block;
+		margin-block-end: 24px;
+		line-height: 21px;
+		font-size: 24px;
+		font-weight: 600;
+
+		+ .total-form__add-recipient {
+			margin-block-start: 0;
+		}
+	}
+
+	&__btn-autofill {
+		margin-block-start: auto;
+		block-size: 48px;
+		inline-size: 100%;
+		max-inline-size: 160px;
+		font-size: 14px;
+
+		@include m.respond-to(650) {
+			max-inline-size: 100%;
+		}
+	}
+}
+
+.wrapper-input + .total-form__subtitle,
+.total-form__row + .total-form__subtitle,
+.address-toggle-block + .total-form__subtitle {
+	margin-block-start: 40px;
+}
+
+.clone-block + .clone-block {
+	margin-block-start: 32px;
+}
+
+.split-line + .total-form__save {
+	@include m.respond-to(650) {
+		margin-block-start: 0;
+	}
+}
+
+.popup--add-organization .total-form__row {
+	gap: 12px;
+
+	span {
+		font-size: 12px;
+	}
+
+	@include m.respond-to(650) {
+		gap: 16px;
+		flex-direction: column;
+	}
+}

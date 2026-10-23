@@ -1,0 +1,80 @@
+					<div class="products-table__card" role="row" data-element="item" data-block="section">
+						<div class="products-table__cell" role="cell">
+							@@include('../button_favorite.html')
+						</div>
+
+						<div class="products-table__cell products-table__cell--not-underline" role="cell">
+							<span class="u-link products-table__name-link" data-button-open="detail-product" data-element="title-product">@@title</span>
+						</div>
+
+						<div class="products-table__cell" role="cell">
+							<span class="products-table__cell-caption">Вес упаковки (кг)</span>
+							<span>@@weight</span>
+						</div>
+
+						<div class="products-table__cell" role="cell">
+							<span class="products-table__cell-caption">Тип упаковки</span>
+							<span>@@type</span>
+						</div>
+
+						<div class="products-table__cell" role="cell">
+							<span class="products-table__cell-caption">Кол-во</span>
+							<span>@@quantity</span>
+						</div>
+
+						<div class="products-table__cell" role="cell">
+							<span class="products-table__cell-caption">Статус</span>
+							<div class="badge-block">
+								<div class="badge-block__wrapper-text@@if(status === 'true'){ badge-block__wrapper-text--green}@@if(status === 'false'){ badge-block__wrapper-text--orange}@@if(status === 'true'){ u-color-green}@@if(status === 'false'){ u-color-orange}">
+									<svg width="16" height="16" aria-hidden="true" focusable="false">
+										@@if(status === 'true'){
+											<use href="images/sprite.svg#box"></use>
+										}
+										@@if(status === 'false'){
+											<use href="images/sprite.svg#hourglass"></use>
+										}
+									</svg>
+									<span class="badge-block__text">
+										@@if(status === 'false'){ Ожидается }
+										@@if(status !== 'false'){ На складе }
+									</span>
+								</div>
+								<span class="badge-block__value">@@status_text</span>
+							</div>
+						</div>
+
+						<div class="products-table__cell" role="cell">
+							<span class="products-table__cell-caption">Отгрузка до даты</span>
+							<span>@@shipping_to</span>
+						</div>
+
+						<div class="products-table__cell products-table__cell--mobile products-table__cell--prices" role="cell">
+							<span class="products-table__cell-caption">Цена, кг/уп.</span>
+							<div class="products-table__cell-row">
+								<div class="products-table__price-item">
+									<svg class="products-table__price-icon" width="7" height="7" aria-hidden="true" focusable="false">
+										<use href="images/sprite.svg#weight"></use>
+									</svg>
+									<span>$18</span>
+								</div>
+
+								<div class="products-table__price-item">
+									<svg class="products-table__price-icon" width="7" height="7" aria-hidden="true" focusable="false">
+										<use href="images/sprite.svg#box"></use>
+									</svg>
+									<span data-element="base-unit-price" data-base-price="2400">$2 400,00</span>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="products-table__cell products-table__cell--toggle">
+							<span class="products-table__cell-caption--mobile products-table__cell-caption--show">Подробная информация</span>
+							<span class="products-table__cell-caption--mobile products-table__cell-caption--hide">Свернуть информацию</span>
+							<button class="button button--transparent-green button--square" type="button"  aria-label="Показать детали товара" data-button="open-parent"@@if(context.disabled){ disabled="true" }>
+								<svg width="20" height="20" aria-hidden="true" focusable="false">
+									<use href="images/sprite.svg#arrow_down"></use>
+								</svg>
+							</button>
+						</div>
+					</div>

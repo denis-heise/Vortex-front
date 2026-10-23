@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "variables" as v;
+
+@function z($layer) {
+	@if not map.has-key(v.$z-layers, $layer) {
+		@error "z(): неизвестный слой `#{$layer}`. Доступные: #{map.keys(v.$z-layers)}";
+	}
+
+	@return map.get(v.$z-layers, $layer);
+}
+
+@function bp($name) {
+	@if not map.has-key(v.$breakpoints, $name) {
+		@error "bp(): неизвестный брейкпоинт `#{$name}`.";
+	}
+
+	@return map.get(v.$breakpoints, $name);
+}

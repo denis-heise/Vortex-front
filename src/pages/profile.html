@@ -1,0 +1,265 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="profile" data-block="products-list">
+		<h1>Мой профиль</h1>
+
+		<div class="section-header section-header--profile">
+			<div class="tabs" role="tablist" aria-label="Тип данных">
+				<button class="button button--light-green" type="button" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Мой профиль</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1" data-tab-products="2">
+					<span class="tabs__text">Мои организации</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">7</span>
+					</span>
+				</button>
+			</div>
+		</div>
+
+		<div class="profile__person" data-list-products="1">
+			<div class="finance-widget">
+				<h2 class="h2">Финансы</h2>
+
+				<ul class="account-info">
+					<li class="account-info__item">
+						<span class="account-info__label">Организаций</span>
+						<span class="account-info__value u-color-green">3</span>
+					</li>
+					<li class="account-info__item">
+						<span class="account-info__label">Условия оплаты</span>
+						<span class="account-info__value u-color-green">Аванс</span>
+					</li>
+					<li class="account-info__item">
+						<span class="account-info__label">Отсрочка дней</span>
+						<span class="account-info__value u-color-green">10</span>
+					</li>
+					<li class="account-info__item">
+						<span class="account-info__label">Кредитный лимит</span>
+						<span class="account-info__value u-color-green">800 000 ₽</span>
+					</li>
+					<li class="account-info__item">
+						<span class="account-info__label">Задолженность</span>
+						<span class="account-info__value u-color-green">292 622 ₽</span>
+					</li>
+					<li class="account-info__item">
+						<span class="account-info__label">Просроченная</span>
+						<span class="account-info__value u-color-red">92 622 ₽</span>
+					</li>
+				</ul>
+			</div>
+
+			<hr class="split-line">
+
+			<form class="total-info" data-form-info>
+				<div class="total-info__body">
+					<fieldset class="total-info__section">
+						<legend class="total-info__title h2">Общая информация</legend>
+						<div class="total-info__fields">
+							@@include('../html/inputs/main_input.html', {'title': 'ФИО', 'placeholder': 'Пример: Константинов Константин Константинович', 'type': 'text', 'name': 'full_name', 'id': 'full_name', 'required': 'true', 'validate': 'full-name',
+							'placeholder_mobile': 'Пр: Константинов Константин Константинович'
+						})
+							@@include('../html/inputs/main_input.html', {'title': 'Email', 'placeholder': 'example@mail.ru', 'type': 'email', 'name': 'email', 'id': 'email', 'required': 'true'})
+							@@include('../html/inputs/main_input.html', {'title': 'Телефон', 'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _', 'type': 'text', 'name': 'tel', 'id': 'phone', 'required': 'true'})
+						</div>
+					</fieldset>
+
+					<fieldset class="total-info__section">
+						<legend class="total-info__title h2">Пароль</legend>
+						<div class="total-info__fields">
+
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="current_password">Текущий пароль <span class="u-color-green">*</span></label>
+								<div class="wrapper-input__field-group">
+									<input class="wrapper-input__field" type="text" placeholder="Пароль" id="current_password" name="current_password" data-required="true" data-validate="password" data-input="password" data-element="current-password">
+									<button class="wrapper-input__icon-btn" type="button" data-button="toggle-password-visibility" aria-label="Показать/скрыть пароль">
+										<svg class="wrapper-input__icon" width="20" height="20" aria-hidden="true">
+											<use href="@img/sprite.svg#eye_close"></use>
+											<use href="@img/sprite.svg#eye"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="new_password">Новый пароль <span class="u-color-green">*</span></label>
+								<div class="wrapper-input__field-group">
+									<input class="wrapper-input__field" type="text" placeholder="Пароль" id="new_password" name="new_password" data-required="true" data-validate="password" data-input="password" data-element="new-password">
+									<button class="wrapper-input__icon-btn" type="button" data-button="toggle-password-visibility" aria-label="Показать/скрыть пароль">
+										<svg class="wrapper-input__icon" width="20" height="20" aria-hidden="true">
+											<use href="@img/sprite.svg#eye_close"></use>
+											<use href="@img/sprite.svg#eye"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<div class="total-info__requirements password-requirements">
+								@@include('../html/info_note.html', {'title': 'Требования для создания надёжного нового пароля:'})
+								<ul class="password-requirements__list">
+									<li class="password-requirements__item">
+										<div class="wrapper-input wrapper-input--grey">
+											<input class="is-hidden" id="req_letters" type="checkbox" name="req_letters" data-element="requirement-letters" disabled>
+											<label class="wrapper-input__label wrapper-input__label--checkbox" for="req_letters">Используйте заглавные и строчные буквы (A–Z, a–z);</label>
+										</div>
+									</li>
+									<li class="password-requirements__item">
+										<div class="wrapper-input wrapper-input--grey">
+											<input class="is-hidden" id="req_digits" type="checkbox" name="req_digits" data-element="requirement-digits" disabled>
+											<label class="wrapper-input__label wrapper-input__label--checkbox" for="req_digits">Добавьте цифры (0–9);</label>
+										</div>
+									</li>
+									<li class="password-requirements__item">
+										<div class="wrapper-input wrapper-input--grey">
+											<input class="is-hidden" id="req_specials" type="checkbox" name="req_specials" data-element="requirement-specials" disabled>
+											<label class="wrapper-input__label wrapper-input__label--checkbox" for="req_specials">Включите специальные символы (!, @, #, $, %, ^, &, * и др.)</label>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="confirm_password">Подтвердите новый пароль <span class="u-color-green">*</span></label>
+								<div class="wrapper-input__field-group">
+									<input class="wrapper-input__field" type="text" placeholder="Пароль" id="confirm_password" name="confirm_password" data-required="true" data-validate="password" data-input="password" data-element="confirm-password">
+									<button class="wrapper-input__icon-btn" type="button" data-button="toggle-password-visibility" aria-label="Показать/скрыть пароль">
+										<svg class="wrapper-input__icon" width="20" height="20" aria-hidden="true">
+											<use href="@img/sprite.svg#eye_close"></use>
+											<use href="@img/sprite.svg#eye"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+
+				<button class="button total-info__submit" type="submit" disabled>
+					<span>Сохранить изменения</span>
+				</button>
+			</form>
+
+			<hr class="split-line">
+
+			<form class="total-info" data-form-info>
+				<div class="total-info__body">
+
+					<fieldset class="total-info__section">
+						<legend class="total-info__title h2">Подписка</legend>
+						<div class="total-info__fields" data-block="parent">
+							<div class="clone-block" data-block="copy-data">
+								@@include('../html/inputs/main_input.html', {'title': 'Email', 'placeholder': 'example@mail.ru', 'type': 'email', 'name': 'email', 'id': 'notification_email', 'required': 'true'})
+							</div>
+
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Согласен получать рекламные материалы от VALTEX Trading', 'type': 'checkbox', 'name': 'notify_marketing', 'id': 'notify_marketing', 'class': 'agreement'})
+
+							<button class="button button--transparent-green total-info__add-recipient" type="button" data-button="add-recipient">
+								<svg width="10" height="10" aria-hidden="true">
+									<use href="@img/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить получателя</span>
+							</button>
+						</div>
+					</fieldset>
+
+					<fieldset class="total-info__section">
+						<legend class="total-info__title h2">Настройка уведомлений</legend>
+						<div class="total-info__checkbox-group">
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Обновление информации об аккаунте', 'type': 'checkbox', 'name': 'notify_account', 'id': 'notify_account', 'checked': 'true'})
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Обновление информации об отслеживаемых сортах', 'type': 'checkbox', 'name': 'notify_varieties', 'id': 'notify_varieties'})
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Обновление информации о статусе заказа', 'type': 'checkbox', 'name': 'notify_order_status', 'id': 'notify_order_status', 'checked': 'true'})
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Обновление информации о резервах', 'type': 'checkbox', 'name': 'notify_reserves', 'id': 'notify_reserves'})
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Уведомления о новых каппингах', 'type': 'checkbox', 'name': 'notify_cuppings', 'id': 'notify_cuppings'})
+							@@include('../html/inputs/input.html', {'inputPlaceholder': 'Обновление документов по заказам', 'type': 'checkbox', 'name': 'notify_documents', 'id': 'notify_documents'})
+						</div>
+					</fieldset>
+
+				</div>
+
+				<button class="button total-info__submit" type="submit" disabled>
+					<span>Сохранить изменения</span>
+				</button>
+			</form>
+		</div>
+
+		<div class="profile__organizations organizations is-hidden" data-list-products="2">
+			<div class="organizations__header">
+				<div class="wrapper-input">
+					<input type="text" placeholder="Введите название сорта, вкус или артомат">
+					<svg class="wrapper-input__icon" width="16" height="16" aria-hidden="true">
+						<use href="@img/sprite.svg#search"></use>
+					</svg>
+				</div>
+
+				<button class="button" type="button" data-button-open="add-organization">
+					<svg width="10" height="10" aria-hidden="true">
+						<use href="@img/sprite.svg#plus"></use>
+					</svg>
+					<span>Добавить организацию</span>
+				</button>
+			</div>
+			<div class="organizations__list" data-block="parent">
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'АО «Trum.corp»',
+					'subtitle': 'Акционерное общество «Trum.corp»',
+					'status': 'confirmed',
+					'count': '10',
+					'price': '$2 400,00',
+				})
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'АО «ТКК»',
+					'subtitle': 'Акционерное общество <br> «Технологический кофейный комплекс»',
+					'status': 'confirmed',
+					'count': '1',
+					'price': '$400,00',
+				})
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'ООО «Кофе дома»',
+					'subtitle': 'Общество с ограниченной <br> ответственностью «Кофе дома»',
+					'status': 'under-review',
+					'count': '—',
+					'price': '—',
+				})
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'АО «Кофе »',
+					'subtitle': 'Акционерное общество «Кофе»',
+					'status': 'under-review',
+					'count': '—',
+					'price': '—',
+				})
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'АО «Grum»',
+					'subtitle': 'Акционерное общество «Grum»',
+					'status': 'confirmed',
+					'count': '10',
+					'price': '$2 400,00',
+				})
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'АО «Senistra»',
+					'subtitle': 'Акционерное общество <br> «Технологический кофейный комплекс»',
+					'status': 'confirmed',
+					'count': '1',
+					'price': '$400,00',
+				})
+				@@include('../html/cards/card_organization.html', {
+					'link': 'organization-data.html',
+					'title': 'ООО «Кофе на дом»',
+					'subtitle': 'Общество с ограниченной <br> ответственностью «Кофе на дом»',
+					'status': 'under-review',
+					'count': '—',
+					'price': '—',
+				})
+			</div>
+		</div>
+	</div>
+</main>
+
+@@include('../html/footer.html')

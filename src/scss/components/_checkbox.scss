@@ -1,0 +1,86 @@
+@use "../abstracts/mixins" as m;
+
+// Скрываем нативный чекбокс
+.wrapper-input--checkbox input {
+	@include m.visually-hidden-input;
+}
+
+// Кастомный чекбокс в label
+.wrapper-input__label--checkbox {
+	@include m.checkbox-custom(16px, 2px);
+
+	.total-info__fields &:not(.wrapper-input__label--agreement) {
+		&::before {
+			border-radius: var(--larger_small_radius, 2px);
+			block-size: 9px;
+			inline-size: 9px;
+		}
+
+		&::after {
+			inset-block-start: 5px;
+			inset-inline-start: 2px;
+			inline-size: 5px;
+			block-size: 4px;
+		}
+	}
+
+	.popup--filters & {
+		&::before {
+			inset-block-start: 0;
+		}
+
+		&::after {
+			inset-block-start: 5px;
+		}
+	}
+
+	input:disabled + & {
+		cursor: auto;
+		opacity: 0.7;
+		color: var(--color_grey, #69756d);
+
+		&::before {
+			border-color: var(--color_grey, #69756d);
+		}
+	}
+}
+
+input:checked + .wrapper-input__label--checkbox {
+	&::before {
+		border: 1px solid var(--color_green_2, #357c4d);
+	}
+
+	&::after {
+		opacity: 1;
+	}
+}
+
+.popup--education {
+	.wrapper-input__label--checkbox {
+		font-size: 14px;
+
+		&::before {
+			inset-block-start: 0;
+		}
+
+		&::after {
+			inset-block-start: 5px;
+		}
+
+		a {
+			color: var(--main_color, #1d2019);
+		}
+	}
+}
+
+.address-toggle-block {
+	.wrapper-input__label--checkbox {
+		&::before {
+			inset-block-start: 0;
+		}
+
+		&::after {
+			inset-block-start: 5px;
+		}
+	}
+}

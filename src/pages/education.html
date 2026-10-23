@@ -1,0 +1,164 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="education" data-block="products-list">
+		<section class="catalog-hero catalog-hero--education">
+			<h1 class="catalog-hero__title">Обучение</h1>
+			<p class="catalog-hero__description catalog-hero__description--education">Курсы проводятся на базе нашего Тренинг-центра Валтекс <br> и Лаборатории Валтекс, сертифицированных в качестве <br> SCA Premier Training Campus.</p>
+
+			<a class="catalog-hero__link link-download" href="#" download>
+				<svg class="link-download__icon" width="16" height="16" aria-hidden="true">
+					<use href="@img/sprite.svg#simple_blank"></use>
+				</svg>
+				<span class="link-download__text">Договор оферты</span>
+			</a>
+
+			<img class="catalog-hero__bg-img catalog-hero__bg-img--education" src="@img/education.png" alt="" aria-hidden="true">
+		</section>
+
+		<div class="section-header section-header--education">
+			<div class="tabs" role="tablist" aria-label="Тип">
+				<button class="button button--light-green" type="button" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Курсы SCA <span class="tabs__desktop">Speciality Coffee Association</span></span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">41</span>
+					</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1" data-tab-products="2">
+					<span class="tabs__text">Курсы VALTEX Trading</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">28</span>
+					</span>
+				</button>
+			</div>
+
+			<article class="info-block u-panel tabs-list-products" data-list-products="1">
+				<header class="info-block__header">
+					<div class="info-block__wrapper-logo">
+						<img class="info-block__logo" src="@img/logo-courses.png" alt="Логотип">
+					</div>
+					<div class="info-block__meta">
+						<h2 class="info-block__title">Курсы SCA Speciality Coffee Association</h2>
+						<a class="info-block__link u-color-green" href="#" download>
+							<svg width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Договор оферты</span>
+						</a>
+					</div>
+				</header>
+				<div class="info-block__wrapper-text">
+					<h2 class="info-block__title info-block__title--mobile"  aria-hidden="true">Курсы SCA Speciality Coffee Association</h2>
+					<p class="info-block__description">Проводим обучение для начинающих и продвинутых специалистов кофейной индустрии в рамках модульной системы образования Coffee Skills Program (Specialty Coffee Association). Курсы проводятся на базе нашего <a href="#" target="_blank">Тренинг-центра</a> и <a href="#" target="_blank">Лаборатории</a>, сертифицированных в качестве SCA Premier Training Campus. Обучение обжарке проводится на ростерах <a href="#" target="_blank">BESCA</a>.</p>
+				</div>
+			</article>
+
+			<article class="info-block u-panel tabs-list-products is-hidden" data-list-products="2">
+				<header class="info-block__header">
+					<div class="info-block__wrapper-logo">
+						<img class="info-block__logo" src="@img/logo-courses.png" alt="Логотип">
+					</div>
+					<div class="info-block__meta">
+						<h2 class="info-block__title">Курсы VALTEX Trading</h2>
+						<a class="info-block__link u-color-green" href="#" download>
+							<svg width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Договор оферты</span>
+						</a>
+					</div>
+				</header>
+				<div class="info-block__wrapper-text">
+					<h2 class="info-block__title info-block__title--mobile"  aria-hidden="true">Курсы VALTEX Trading</h2>
+					<p class="info-block__description">Проводим обучение для начинающих и продвинутых специалистов кофейной индустрии в рамках модульной системы образования Coffee Skills Program (Specialty Coffee Association). Курсы проводятся на базе нашего <a href="#" target="_blank">Тренинг-центра</a> и <a href="#" target="_blank">Лаборатории</a>, сертифицированных в качестве SCA Premier Training Campus. Обучение обжарке проводится на ростерах <a href="#" target="_blank">BESCA</a>.</p>
+				</div>
+			</article>
+		</div>
+
+		<div class="educations-list tabs-list-products" data-list-products="1">
+			@@include('../html/education/education_card_1.html', {img: '1'})
+			@@include('../html/education/education_card_1.html', {img: '2'})
+			@@include('../html/education/education_card_1.html', {img: '3'})
+			@@include('../html/education/education_card_1.html', {img: '1'})
+			@@include('../html/education/education_card_1.html', {img: '2'})
+			@@include('../html/education/education_card_1.html', {img: '3'})
+			@@include('../html/education/education_card_1.html', {img: '1'})
+			@@include('../html/education/education_card_1.html', {img: '2'})
+		</div>
+
+		<div class="educations-list tabs-list-products is-hidden" data-list-products="2">
+			@@include('../html/education/education_card_2.html', {img: '1'})
+			@@include('../html/education/education_card_2.html', {img: '2'})
+			@@include('../html/education/education_card_2.html', {img: '3'})
+			@@include('../html/education/education_card_2.html', {img: '1'})
+			@@include('../html/education/education_card_2.html', {img: '2'})
+			@@include('../html/education/education_card_2.html', {img: '3'})
+			@@include('../html/education/education_card_2.html', {img: '1'})
+			@@include('../html/education/education_card_2.html', {img: '2'})
+		</div>
+
+		<button class="button button-more" type="button">
+			<svg width="16" height="16" aria-hidden="true" focusable="false">
+				<use href="images/sprite.svg#arrow_down_logn"></use>
+			</svg>
+			<span>Загрузить еще</span>
+		</button>
+
+		<hr class="split-line">
+
+		@@include('../html/pagination_2.html')
+
+		<section class="reviews" data-slider="reviews">
+			<header class="section-header">
+				<h2 class="reviews__title">Отзывы</h2>
+				<div class="swiper-navigation">
+					<button class="swiper-button-prev button" type="button">
+						<svg width="16" height="16" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_left"></use>
+						</svg>
+					</button>
+					<button class="swiper-button-next button" type="button">
+						<svg width="16" height="16" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_right"></use>
+						</svg>
+					</button>
+				</div>
+			</header>
+
+			<div class="reviews__slider swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						@@include('../html/cards/card_review.html')
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/cards/card_review.html')
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/cards/card_review.html')
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/cards/card_review.html')
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/cards/card_review.html')
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/cards/card_review.html')
+					</div>
+				</div>
+			</div>
+
+			<div class="swiper-pagination"></div>
+
+			<button class="reviews__btn-add button" type="button">
+				<svg width="16" height="16" aria-hidden="true" focusable="false">
+					<use href="images/sprite.svg#plus"></use>
+				</svg>
+				<span>Оставить отзыв</span>
+			</button>
+		</section>
+	</div>
+</main>
+
+
+@@include('../html/footer.html')

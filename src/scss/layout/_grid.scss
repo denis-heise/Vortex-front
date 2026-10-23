@@ -1,0 +1,71 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.wrapper {
+	@include m.display-col(0);
+	position: relative;
+	margin: 0 auto;
+	box-sizing: border-box;
+	inline-size: 100%;
+	max-inline-size: v.$container-max;
+
+	@include m.respond-to(1875) {
+		max-inline-size: 1450px;
+	}
+
+	@include m.respond-to(1670) {
+		max-inline-size: 1366px;
+	}
+
+	@include m.respond-to(1570) {
+		max-inline-size: 1221px;
+	}
+
+	@include m.respond-to(1450) {
+		inline-size: 100%;
+		max-inline-size: 1336px;
+		padding-inline-start: 115px;
+	}
+
+	@include m.respond-to(1365) {
+		padding-inline-end: 16px;
+	}
+
+	@include m.respond-to(1360) {
+		padding-inline-start: 131px;
+	}
+
+	@include m.respond-to(1050) {
+		padding: 0 16px 0 100px;
+	}
+
+	@include m.respond-to(992) {
+		padding-inline-start: 16px;
+	}
+}
+
+.section {
+	margin-block-start: 70px;
+}
+
+.main-grid {
+	@include m.display-grid(16, 4);
+	margin-block: 24px 48px;
+
+	&.is-hidden {
+		display: none;
+	}
+
+	.catalog-hero {
+		margin: 0;
+		grid-column: span 4;
+
+		a {
+			margin-block-start: 10px;
+		}
+	}
+
+	h2 {
+		margin: auto 0;
+	}
+}

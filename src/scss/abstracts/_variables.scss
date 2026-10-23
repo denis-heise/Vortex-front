@@ -1,0 +1,45 @@
+$header-height: 90px;
+$sidebar-width: 100px;
+$container-max: 1664px;
+$content-narrow: 685px;
+$control-height: 48px;
+$control-height-sm: 32px;
+$icon-xs: 9px;
+$icon-sm: 12px;
+$icon-md: 16px;
+$icon-lg: 24px;
+$duration-base: 0.3s;
+$easing-base: ease-out;
+$transition-base: all $duration-base $easing-base;
+$transition-opacity: opacity $duration-base ease;
+$shadow-md: 0 3px 20px 0 rgb(29 32 25 / 35%);
+$shadow-lg: 0 6px 44px 0 rgb(29 32 25 / 35%);
+$shadow-top: 0 -10px 36px 0 rgb(0 0 0 / 10%);
+$shadow-tooltip: 0 0 12px 0 rgb(0 0 0 / 12%);
+$shadow-map: 0 4px 20px 0 rgb(0 0 0 / 7%);
+$shadow-toggle: 0 1px 4px rgb(11 20 8 / 34%);
+$z-layers: (
+	"below": -10,
+	"bg": -1,
+	"base": 1,
+	"raised": 2,
+	"education": 9,
+	"sticky": 10,
+	"table-sticky": 20,
+	"button-up": 50,
+	"header": 99,
+	"overlay": 100,
+	"sidebar": 100,
+	"select": 100,
+	"animate": 100,
+	"popup": 110,
+	"popup-top": 111,
+);
+$breakpoints: (
+	"xxl": 1440px,
+	"xl": 1200px,
+	"lg": 992px,
+	"md": 768px,
+	"sm": 576px,
+	"xs": 480px,
+);

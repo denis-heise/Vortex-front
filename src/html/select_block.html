@@ -1,0 +1,24 @@
+<div class="select-wrapper select-wrapper--value @@if(context.theme === 'dark'){select-wrapper--dark}" data-select-wrapper>
+	<span class="select-label" id="@@id-select-label">@@title @@if(context.required === 'true'){<span class="u-color-green" aria-hidden="true">*</span>}</span>
+
+    <div class="select-block" data-block="select" data-element="duplicate">
+        <button class="select-block__button"
+                type="button"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="@@id-select-label @@id-title-text"
+                data-element="select-button"
+                @@if(context.required === 'true'){data-required="true"}>
+            <div class="select-block__wrapper-text">
+                <span class="select__title" id="@@id-title-text" data-element="select-title" @@if(context.data_type){data-type="@@data_type"} data-default-text='@@placeholder'>@@placeholder</span>
+            </div>
+            <svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+                <use href="@img/sprite.svg#arrow_down"></use>
+            </svg>
+        </button>
+
+        <ul class="select-block__list" aria-labelledby="@@id-select-label" data-block="select-list">
+            @@options
+        </ul>
+    </div>
+</div>

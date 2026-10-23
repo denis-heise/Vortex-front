@@ -1,0 +1,115 @@
+@use "../abstracts/mixins" as m;
+
+.pagination {
+	margin: 0 auto;
+	inline-size: fit-content;
+
+	&__list {
+		@include m.display-row(12);
+
+		.button {
+			inline-size: 100%;
+			padding: 0;
+		}
+
+		@include m.respond-to(650) {
+			gap: 10px;
+		}
+	}
+
+	&__item {
+		@include m.transition;
+		cursor: pointer;
+		display: flex;
+		border-radius: var(--main_radius, 6px);
+		aspect-ratio: 1 / 1;
+		inline-size: 40px;
+		overflow: hidden;
+		font-size: 14px;
+		color: var(--main_color, #1d2019);
+
+		&:not(.pagination__item--other):hover {
+			color: var(--color_white, #fff);
+			background-color: var(--color_green_2, #357c4d);
+
+			a,
+			svg {
+				color: var(--color_white, #fff);
+			}
+		}
+
+		&--prev {
+			transform: rotate(90deg);
+		}
+
+		&--next {
+			transform: rotate(-90deg);
+		}
+
+		&--other {
+			cursor: auto;
+			pointer-events: none;
+		}
+
+		&--desktop {
+			@include m.respond-to(650) {
+				display: none;
+			}
+		}
+
+		&--current {
+			cursor: auto;
+			pointer-events: none;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--color_green_2, #357c4d);
+
+			span {
+				color: var(--color_white, #fff);
+			}
+		}
+
+		a {
+			display: flex;
+			inline-size: 100%;
+			block-size: 100%;
+			justify-content: center;
+			align-items: center;
+			color: var(--main_color, #1d2019);
+		}
+
+		span {
+			margin: auto;
+			color: var(--main_color, #1d2019);
+		}
+
+		svg {
+			margin: auto;
+			block-size: 16px;
+			inline-size: 16px;
+		}
+	}
+}
+
+.news .pagination__list,
+.education .pagination__list {
+	@include m.respond-to(1450) {
+		> :not(.pagination__item--next) {
+			display: none;
+		}
+
+		> :nth-child(-n + 2) {
+			display: flex;
+		}
+	}
+
+	@include m.respond-to(1200) {
+		> :not(.pagination__item--next) {
+			display: none;
+		}
+
+		> :nth-child(-n + 2) {
+			display: flex;
+		}
+	}
+}

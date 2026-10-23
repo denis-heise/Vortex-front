@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as m;
+
+.counter {
+	&__controls {
+		@include m.display-row(12);
+		border: 1px solid var(--color_grey_light_5, #e8e8e8);
+		border-radius: 6px;
+		padding: 4px 6px;
+	}
+
+	&__label {
+		margin: auto 0;
+		block-size: fit-content;
+		line-height: 120%;
+		font-size: 12px;
+		font-weight: 400;
+		color: var(--color_grey_3, #8d928b);
+	}
+
+	&__btn {
+		cursor: pointer;
+		line-height: 120%;
+		font-size: 12px;
+		font-weight: 700;
+
+		&:hover svg {
+			color: var(--color_green_2, #357c4d);
+		}
+
+		svg {
+			@include m.transition;
+			color: var(--main_color, #1d2019);
+		}
+	}
+
+	&__input {
+		border: none;
+		block-size: auto;
+		min-inline-size: 8px;
+		padding: 0;
+		line-height: 120%;
+		font-size: 12px;
+		font-weight: 700;
+
+		&:hover,
+		&:focus {
+			outline: none;
+			border: none;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+@use "../abstracts/mixins" as m;
+
+h1,
+.h1 {
+	margin: 32px 0 0;
+	line-height: 38px;
+	font-family: var(--second_font_family, "Rubik");
+	font-size: 32px;
+	font-weight: 600;
+	color: var(--main_color, #1d2019);
+
+	@include m.respond-to(1200) {
+		font-size: 28px;
+	}
+}
+
+.back-link + h1,
+.back-link + .h1 {
+	margin: 0;
+}
+
+h2,
+.h2 {
+	margin: 0;
+	line-height: 110%;
+	font-family: var(--second_font_family, "Rubik");
+	font-size: 24px;
+	font-weight: 500;
+	color: var(--main_color, #1d2019);
+
+	@include m.respond-to(650) {
+		font-size: 22px;
+		font-weight: 600;
+	}
+}
+
+h1 + h2,
+h1 + .h2,
+.h1 + .h2,
+.h1 + h2 {
+	margin-block-start: 24px;
+}
+
+h3,
+.h3 {
+	margin: 0;
+	line-height: 21px;
+	font-family: var(--second_font_family, "Rubik");
+	font-size: 24px;
+	font-weight: 400;
+	color: var(--main_color, #1d2019);
+
+	@include m.respond-to(1050) {
+		font-size: 22px;
+	}
+}

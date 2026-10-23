@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as m;
+
+.wrapper-input--radio {
+	input {
+		@include m.visually-hidden-input;
+	}
+
+	label {
+		@include m.radio-custom(20px, 10px, 6px);
+		position: relative;
+		padding-inline-start: 32px;
+	}
+
+	input:checked + label {
+		&::before {
+			opacity: 1;
+			border: 1px solid var(--color_green_2, #357c4d);
+			background-color: var(--color_green_2, #357c4d);
+		}
+
+		&::after {
+			background-color: var(--color_white, #fff);
+		}
+	}
+}

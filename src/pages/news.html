@@ -1,0 +1,77 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="news">
+		<section class="news-hero u-panel">
+			<div class="news-hero__img-wrapper">
+				<img class="news-hero__img" src="@img/news/main.png" alt="Финал чемпионата России по обжарке кофе 2025">
+			</div>
+
+			<div class="news-hero__content">
+				<div class="badge">
+					<span>События Валтекс Трейдинг</span>
+				</div>
+
+				<div class="news-hero__text-container">
+					<time class="news-hero__date" datetime="2025-12-12">12.12.2025</time>
+
+					<h2 class="news-hero__title">Пост-релиз: финал чемпионата России по обжарке кофе 2025</h2>
+
+					<p class="news-hero__description">Друзья, мы запускаем адресную доставку по Московской и Ленинградской области. До сегодняшнего дня доставка осуществлялась только через транспортные компании.</p>
+				</div>
+			</div>
+		</section>
+
+		<nav class="filters-tabs" data-block="parent">
+			<ul class="filters-tabs__list">
+				<li class="filters-tabs__item">
+					<button class="filters-tabs__btn button is-active" type="button" data-button="select">
+						<span>Все новости</span>
+					</button>
+				</li>
+				<li class="filters-tabs__item">
+					<button class="filters-tabs__btn button button--transparent-green" type="button" data-button="select">
+						<span>События Валтекс Трейдинг</span>
+					</button>
+				</li>
+				<li class="filters-tabs__item">
+					<button class="filters-tabs__btn button button--transparent-green" type="button" data-button="select">
+						<span>Инициативы Валтекс</span>
+					</button>
+				</li>
+				<li class="filters-tabs__item">
+					<button class="filters-tabs__btn button button--transparent-green" type="button" data-button="select">
+						<span>Важное</span>
+					</button>
+				</li>
+			</ul>
+		</nav>
+
+		<hr class="split-line">
+
+		<div class="news-list" data-block="parent">
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail.html', 'badge': 'События Валтекс Трейдинг', 'date': '12.12.2025', 'title': 'Важные обновления по условиям отгрузки для всех авансовых клиентов', 'description': 'Важные обновления по условиям отгрузки для всех авансовых клиентов: мы теперь предлагаем адресную доставку по Московской и Ленинградской области. Ранее доставка осуществлялась только через транспортные компании.', 'img': '1' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail-nophoto.html', 'badge': 'Важное', 'date': '15.12.2025', 'title': 'Обновления по тарифам на услуги для новых клиентов', 'description': 'Уважаемые клиенты, с 1 января 2026 года вступят в силу новые тарифы на все наши услуги.', 'img': '2' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail.html', 'badge': 'Важное', 'date': '20.12.2025', 'title': 'Запуск нового интерфейса личного кабинета', 'description': 'Мы рады сообщить, что с конца этого месяца будет доступен обновлённый интерфейс вашего личного кабинета.', 'img': '3' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail-nophoto.html', 'badge': 'События Валтекс Трейдинг', 'date': '25.12.2025', 'title': 'Плановое повышение квалификации сотрудников', 'description': 'В следующем месяце наши сотрудники пройдут обучение для улучшения качества обслуживания клиентов.', 'img': '4' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail-nophoto.html', 'badge': 'Важное', 'date': '01.01.2026', 'title': 'Изменение в условиях сотрудничества', 'description': 'С нового года мы обновляем условия партнерства. Просим всех партнеров ознакомиться с изменениями.', 'img': '5' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail.html', 'badge': 'Инициативы Валтекс', 'date': '05.01.2026', 'title': 'Анонс вебинара по новым продуктам', 'description': 'Приглашаем всех интересующихся на вебинар, где мы расскажем о наших новых продуктах и возможностях.', 'img': '6' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail.html', 'badge': 'События Валтекс Трейдинг', 'date': '10.01.2026', 'title': 'Обновление системы безопасности', 'description': 'Мы внедрили новые меры безопасности для защиты данных клиентов. Подробности будут опубликованы на нашем сайте.', 'img': '7' })
+			@@include('../html/news/news_card_1.html', { 'link': 'news-detail-nophoto.html', 'badge': 'Инициативы Валтекс', 'date': '15.01.2026', 'title': 'Запуск программы лояльности', 'description': 'С радостью сообщаем о старте программы лояльности для наших клиентов с множеством привилегий и бонусов.', 'img': '8' })
+		</div>
+
+		<button class="button button-more" type="button">
+			<svg width="16" height="16" aria-hidden="true" focusable="false">
+				<use href="images/sprite.svg#arrow_down_logn"></use>
+			</svg>
+			<span>Загрузить еще</span>
+		</button>
+
+		<hr class="split-line">
+
+		@@include('../html/pagination_2.html')
+	</div>
+</main>
+
+
+@@include('../html/footer.html')

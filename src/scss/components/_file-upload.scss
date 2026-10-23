@@ -1,0 +1,89 @@
+@use "../abstracts/mixins" as m;
+
+.wrapper-input-file {
+	margin: auto 0;
+	block-size: fit-content;
+	font-size: 12px;
+	font-weight: 400;
+	color: var(--color_green, #367a4d);
+
+	&__file-info {
+		display: flex;
+		margin-block-start: 5px;
+		gap: 5px;
+		flex-direction: row;
+
+		&.is-hidden {
+			display: none;
+		}
+
+		button {
+			cursor: pointer;
+			margin: auto 0;
+			block-size: fit-content;
+			inline-size: fit-content;
+
+			&:hover svg path {
+				stroke: var(--color_green, #367a4d);
+			}
+
+			svg {
+				inline-size: 13px;
+				block-size: 13px;
+
+				path {
+					@include m.transition;
+				}
+			}
+		}
+	}
+
+	input {
+		@include m.visually-hidden-input;
+	}
+
+	label {
+		cursor: pointer;
+		display: flex;
+		border: 1px solid var(--color_green, #367a4d);
+		box-sizing: border-box;
+		block-size: 36px;
+		inline-size: 166px;
+		padding: 10px;
+		gap: 4px;
+		flex-direction: row;
+		justify-content: center;
+		white-space: nowrap;
+		color: var(--color_green, #367a4d);
+
+		&:hover {
+			border-color: var(--color_green_dark, #3eab63);
+			color: var(--color_white, #fff);
+			background-color: var(--color_green_dark, #3eab63);
+		}
+
+		&:active {
+			border-color: var(--color_green_dark_2, #275236);
+			color: var(--color_white, #fff);
+			background-color: var(--color_green_dark_2, #275236);
+		}
+
+		&.is-hidden {
+			display: none;
+		}
+
+		span {
+			@include m.transition;
+			margin: auto 0;
+			block-size: fit-content;
+		}
+	}
+
+	svg {
+		margin: auto 0;
+		box-sizing: border-box;
+		block-size: 16px;
+		inline-size: 16px;
+		padding: 3px;
+	}
+}

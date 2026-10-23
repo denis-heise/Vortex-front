@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('head.html')
+<body>
+	<header class="header">
+		<div class="wrapper header__wrapper">
+			@@include('location.html')
+
+			<div class="header__info">
+				<div class="header__rate">
+				<span class="header__rate-date">
+					Курс
+					<span class="header__rate-separator">:</span>
+					<span class="header__rate-text">на <span data-element="rate-date">04.12.2025</span></span>
+				</span>
+					<span class="header__rate-value">1$ = <span data-element="rate-value">77,9556</span> ₽</span>
+				</div>
+
+				<a class="header__price-link" href="#" download="">
+					<div class="header__price-btn">
+						<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+							<use href="@img/sprite.svg#blank"></use>
+						</svg>
+					</div>
+					<span class="header__price-text">Скачать <br> прайс-лист</span>
+				</a>
+
+				<div class="header__contacts">
+					<a class="header__phone" href="tel:88000000000">
+						<span>8 (800) 000-00-00</span>
+						<svg class="header__control-icon header__control-icon--mobile" width="12" height="12" aria-hidden="true">
+							<use href="@img/sprite.svg#phone"></use>
+						</svg>
+					</a>
+					<span class="header__worktime"><span class="header__worktime-prefix">Работаем с</span> 9:00 до 18:00 по мск</span>
+				</div>
+			</div>
+
+			<button class="header__price-btn header__control-btn--burger" type="button" data-button="open">
+				<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+					<use href="@img/sprite.svg#burger"></use>
+					<use href="@img/sprite.svg#close"></use>
+				</svg>
+			</button>
+
+			<nav class="sidebar__nav sidebar__nav--mobile" aria-label="Мобильное меню">
+				<ul class="sidebar__menu">
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="index.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_home"></use>
+							</svg>
+							<span class="sidebar__text">Главная</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="catalog.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_catalog"></use>
+							</svg>
+							<span class="sidebar__text">Каталог</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="orders.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_orders"></use>
+							</svg>
+							<span class="sidebar__text">Мои заказы</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="reserves.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#aside_lock"></use>
+							</svg>
+							<span class="sidebar__text">Резервы</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="favorites.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#star"></use>
+							</svg>
+							<span class="sidebar__text">Избранное</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="contacts.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#phone"></use>
+							</svg>
+							<span class="sidebar__text">Контакты</span>
+						</a>
+					</li>
+					<li class="sidebar__item is-hidden" data-need-auth>
+						<a class="sidebar__link" href="profile.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#profile"></use>
+							</svg>
+							<span class="sidebar__text">Профиль</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<button class="sidebar__link" type="button" data-button-open="feedback">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#question"></use>
+							</svg>
+							<span class="sidebar__text">Задать вопрос</span>
+						</button>
+					</li>
+					<li class="sidebar__item sidebar__item--mobile">
+						<button class="sidebar__link" type="button" data-element="login">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#profile"></use>
+							</svg>
+							<span class="sidebar__text">Войти</span>
+						</button>
+						<button class="sidebar__link is-hidden" type="button" data-element="exit" data-need-auth>
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="@img/sprite.svg#exit"></use>
+							</svg>
+							<span class="sidebar__text">Выйти</span>
+						</button>
+					</li>
+				</ul>
+				<ul class="sidebar__footer">
+					<li>
+						<a href="404.html">Обучение</a>
+					</li>
+					<li>
+						<a href="404.html">Услуги</a>
+					</li>
+					<li>
+						<a href="404.html">Новости</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header__controls">
+				<button class="header__control-btn header__control-btn--notification is-active" type="button" aria-label="Уведомления" data-button-open="notification">
+					<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#notification"></use>
+					</svg>
+				</button>
+
+				<div class="header__basket" data-button-open="basket">
+					<a class="header__control-btn header__control-btn--basket is-active" href="basket.html" aria-label="Перейти в корзину">
+						<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+							<use href="@img/sprite.svg#basket"></use>
+						</svg>
+					</a>
+
+					<div class="header__basket-info">
+						<div class="header__basket-item">
+							<span>Товары</span>
+							<span class="header__basket-count">1</span>
+						</div>
+						<hr>
+						<div class="header__basket-item">
+							<span>Образцы</span>
+							<span class="header__basket-count">1</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="popup popup--notification is-hidden" data-popup="notification" aria-labelledby="notification-title">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="notification-title">Уведомления</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block>
+					<div class="popup__body">
+						<div class="popup__section" data-block="parent">
+							<ul class="popup__list">
+								<li class="popup__item popup__item--notification" data-element="item">
+									<div class="popup__item-info">
+										<div class="popup__item-meta">
+											<time class="popup__item-date" datetime="2025-12-14">14.12.2025</time>
+											<time class="popup__item-time" datetime="12:25">12:25</time>
+										</div>
+										<span class="popup__item-message">Добро пожаловать в личный кабинет VALTEX Trading</span>
+									</div>
+								</li>
+								<li class="popup__item popup__item--notification" data-element="item">
+									<div class="popup__item-info">
+										<div class="popup__item-meta">
+											<time class="popup__item-date" datetime="2025-12-14">14.12.2025</time>
+											<time class="popup__item-time" datetime="12:25">12:24</time>
+										</div>
+										<span class="popup__item-message">Учетная карточка для Tnum («TEST») активирована</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			@@if (typeof isCartPage === 'undefined' || isCartPage === false) {
+			<section class="popup popup--basket is-hidden" data-popup="basket" aria-labelledby="basket-title" data-block="basket">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="basket-title">Корзина</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block>
+					<div class="popup__body">
+						<div class="popup__section popup__section--white" data-block="parent" data-block="main">
+							<header class="popup__section-header">
+								<h3 class="popup__section-title">Основной заказ</h3>
+								<span class="popup__section-badge" data-element="badge">4</span>
+							</header>
+
+							<ul class="popup__list">
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<span class="popup__item-price" data-element="item-price" data-base-price="1200">$2 400,00</span>
+									</div>
+									<div class="popup__item-controls">
+										<div class="popup__item-quantity counter">
+											<label class="counter__label" for="quantity-item-1">Количество:</label>
+											<div class="counter__controls" data-block="quantity">
+												<button class="counter__btn" type="button" aria-label="Уменьшить количество на 1" data-counter="minus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="@img/sprite.svg#minus"></use>
+													</svg>
+												</button>
+												<input class="counter__input" type="text" id="quantity-item-1" value="2" data-quantity-input>
+												<button class="counter__btn" type="button" aria-label="Увеличить количество на 1" data-counter="plus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="@img/sprite.svg#plus"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="@img/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<span class="popup__item-price" data-element="item-price" data-base-price="1200">$2 400,00</span>
+									</div>
+									<div class="popup__item-controls">
+										<div class="popup__item-quantity counter">
+											<label class="counter__label" for="quantity-item-2">Количество:</label>
+											<div class="counter__controls" data-block="quantity">
+												<button class="counter__btn" type="button" aria-label="Уменьшить количество на 1" data-counter="minus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="@img/sprite.svg#minus"></use>
+													</svg>
+												</button>
+												<input class="counter__input" type="text" id="quantity-item-2" value="2" data-quantity-input>
+												<button class="counter__btn" type="button" aria-label="Увеличить количество на 1" data-counter="plus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="@img/sprite.svg#plus"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="@img/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="popup__section" data-block="parent">
+							<header class="popup__section-header">
+								<h3 class="popup__section-title">Образцы</h3>
+								<span class="popup__section-badge" data-element="badge">2</span>
+							</header>
+
+							<ul class="popup__list">
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="@img/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="@img/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="popup__footer basket-checkout">
+						<div class="basket-checkout__note">
+							<svg class="basket-checkout__note-icon" width="12" height="12" aria-hidden="true">
+								<use href="@img/sprite.svg#tooltip"></use>
+							</svg>
+							<span class="basket-checkout__note-text">Курс на 04.12.2025: 1$ = 77,9556 ₽</span>
+						</div>
+
+						<div class="basket-checkout__total">
+							<span class="basket-checkout__total-label">Итого:</span>
+							<strong class="basket-checkout__total-sum" data-element="total-price">$ 4 800,00</strong>
+						</div>
+
+						<a class="button basket-checkout__action-btn" href="basket.html">
+							<span>Перейти к оплате</span>
+						</a>
+
+						<p class="basket-checkout__note">
+							<svg class="basket-checkout__note-icon" width="12" height="12" aria-hidden="true">
+								<use href="@img/sprite.svg#tooltip"></use>
+							</svg>
+							<span class="basket-checkout__note-text">Нажимая на кнопку "Перейти к оплате", вы предоставляете Компании свое согласие на обработку ваших персональных данных.</span>
+						</p>
+					</div>
+				</div>
+			</section>
+			}
+
+			<section class="popup popup--feedback is-hidden" data-popup="feedback" aria-labelledby="feedback-title">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="notification-title">Связаться</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block data-wrapper-form>
+					<form class="form-feedback" action="#" method="post" data-form-feedback>
+						<div class="form-feedback__wrapper-inputs">
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="popup-theme">Тема</label>
+								<input type="text" id="popup-theme" placeholder="Укажите тему" data-required="true" data-validate="theme">
+							</div>
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="popup-message">Текст вопроса</label>
+								<textarea id="popup-message" placeholder="Напишите Ваше сообщение" data-required="true" data-validate="message"></textarea>
+							</div>
+						</div>
+
+						<div class="wrapper-input-file" data-wrapper-input-file>
+							<div class="wrapper-input-file__file-info is-hidden" data-file-info data-element="item">
+								<span class="wrapper-input-file__file-name" data-file-name></span>
+								<button type="button" data-button="remove-file">
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="@img/sprite.svg#close"></use>
+									</svg>
+								</button>
+							</div>
+
+							<input type="file" name="file" id="file" accept=".doc,.docx,.pdf" multiple data-input-file>
+							<label class="button button--transparent" for="file">
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="@img/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить файл</span>
+							</label>
+						</div>
+
+						<div class="wrapper-input wrapper-input--agreement" data-wrapper-input>
+							<input class="is-hidden" type="checkbox" id="agreement" placeholder="Согласие" data-required="true">
+							<label class="wrapper-input__label wrapper-input__label--checkbox" for="agreement">Нажимая кнопку “Отправить”, вы соглашаетесь <br> с <a href="404.html">политикой конфиденциальности</a></label>
+							<span class="error-message">Необходимо согласие</span>
+						</div>
+
+						<button class="button form-feedback__submit" type="submit">
+							<span>Отправить</span>
+						</button>
+					</form>
+					<div class="finish-form is-hidden" data-finish-form>
+						<h2>Заявка отправлена</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="popup popup--help is-hidden" data-popup="help" aria-labelledby="help-title">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="notification-title">Помощь специалиста</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block data-wrapper-form>
+					<form class="form-feedback" action="#" method="post" data-form-feedback>
+						<div class="form-feedback__wrapper-inputs">
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="popup-theme">Тема</label>
+								<input type="text" id="popup-theme" placeholder="Укажите тему" data-required="true" data-validate="theme">
+							</div>
+							<div class="wrapper-input" data-wrapper-input>
+								<label class="wrapper-input__label" for="popup-message">Текст вопроса</label>
+								<textarea id="popup-message" placeholder="Напишите Ваше сообщение" data-required="true" data-validate="message"></textarea>
+							</div>
+						</div>
+
+						<div class="wrapper-input-file" data-wrapper-input-file>
+							<div class="wrapper-input-file__file-info is-hidden" data-file-info data-element="item">
+								<span class="wrapper-input-file__file-name" data-file-name></span>
+								<button type="button" data-button="remove-file">
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="@img/sprite.svg#close"></use>
+									</svg>
+								</button>
+							</div>
+
+							<input type="file" name="file" id="file" accept=".doc,.docx,.pdf" multiple data-input-file>
+							<label class="button button--transparent" for="file">
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="@img/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить документы</span>
+							</label>
+						</div>
+
+						<div class="wrapper-input wrapper-input--agreement" data-wrapper-input>
+							<input class="is-hidden" type="checkbox" id="agreement" placeholder="Согласие" data-required="true">
+							<label class="wrapper-input__label wrapper-input__label--checkbox" for="agreement">Нажимая кнопку “Отправить”, вы соглашаетесь <br> с <a href="404.html">политикой конфиденциальности</a></label>
+							<span class="error-message">Необходимо согласие</span>
+						</div>
+
+						<button class="button form-feedback__submit" type="submit" disabled>
+							<span>Отправить</span>
+						</button>
+					</form>
+					<div class="finish-form is-hidden" data-finish-form>
+						<h2>Заявка отправлена</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="popup is-hidden" data-popup="qr-code" aria-labelledby="qr-code">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="qr-code-title">QR-code</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block>
+					<div class="popup__body">
+						<h2>qr-code</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="popup popup--filters is-hidden" data-popup="filters" aria-labelledby="filters">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="filters-title">Фильтры</h2>
+					<button class="popup__reset" type="button" data-button="reset-popup">
+						<svg width="12" height="12" aria-hidden="true">
+							<use href="@img/sprite.svg#close"></use>
+						</svg>
+						<span>Сбросить </span>
+					</button>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<form class="popup__body">
+					<div class="popup__wrapper-content" data-scrollable-block>
+						@@include('select_filter.html', {
+							'class': ' is-open',
+							'main_title': 'Группы',
+							'title_1': 'Арабика',
+							'title_2': 'Микролоты',
+							'title_3': 'Робусты',
+							'title_4': 'Смеси',
+							'disabled_1': '',
+							'disabled_2': '',
+							'disabled_3': '',
+							'disabled_4': ''
+						})
+
+						@@include('select_filter.html', {
+							'class': ' is-open',
+							'main_title': 'Наличие',
+							'title_1': 'Все',
+							'title_2': 'В наличии',
+							'title_3': 'Ожидаются',
+							'title_4': 'Нет в наличии',
+							'disabled_1': '',
+							'disabled_2': '',
+							'disabled_3': '',
+							'disabled_4': ''
+						})
+
+						@@include('select_filter.html', {
+							'class': ' is-open',
+							'main_title': 'География',
+							'title_1': 'Азия',
+							'title_2': 'Африка',
+							'title_3': 'Центральная Америка',
+							'title_4': 'Южная Америка',
+							'disabled_1': 'disabled',
+							'disabled_2': 'disabled',
+							'disabled_3': '',
+							'disabled_4': ''
+						})
+
+						<div class="filter-item is-open" data-block="parent">
+							<div class="filter-item__header" data-button="open-parent">
+								<span>Способ обработки</span>
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="@img/sprite.svg#arrow_down"></use>
+								</svg>
+							</div>
+
+							<div class="filter-item__list">
+								<div class="filter-item__list-inner">
+									@@include('inputs/input.html', {'inputPlaceholder': 'Гилинг-басас', 'type': 'checkbox', 'name': 'processing', 'id': 'proc_1', 'disabled': 'disabled'})
+									@@include('inputs/input.html', {'inputPlaceholder': 'Мытый', 'type': 'checkbox', 'name': 'processing', 'id': 'proc_2', 'disabled': 'disabled'})
+									@@include('inputs/input.html', {'inputPlaceholder': 'Сухой', 'type': 'checkbox', 'name': 'processing', 'id': 'proc_3', 'disabled': ''})
+									@@include('inputs/input.html', {'inputPlaceholder': 'УМ 48ч сухой', 'type': 'checkbox', 'name': 'processing', 'id': 'proc_4', 'disabled': ''})
+									@@include('inputs/input.html', {'inputPlaceholder': 'Хани', 'type': 'checkbox', 'name': 'processing', 'id': 'proc_5', 'disabled': ''})
+								</div>
+							</div>
+						</div>
+
+
+						<div class="filter-item  is-open" data-block="parent">
+							<div class="filter-item__header" data-button="open-parent">
+								<span>Упаковка</span>
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="@img/sprite.svg#arrow_down"></use>
+								</svg>
+							</div>
+
+							<div class="filter-item__list">
+								<div class="filter-item__list-inner">
+									@@include('inputs/input.html', {'inputPlaceholder': 'Грейн про', 'type': 'checkbox', 'name': 'package', 'id': 'pkg_1', 'disabled': ''})
+									@@include('inputs/input.html', {'inputPlaceholder': 'Джутовый мешок', 'type': 'checkbox', 'name': 'package', 'id': 'pkg_2', 'disabled': 'disabled'})
+									@@include('inputs/input.html', {'inputPlaceholder': 'Мешок-полипропилен', 'type': 'checkbox', 'name': 'package', 'id': 'pkg_3', 'disabled': ''})
+								</div>
+							</div>
+						</div>
+
+						@@include('select_filter.html', {
+							'class': '',
+							'main_title': 'Цена $/кг',
+							'title_1': 'До $10',
+							'title_2': '$10 – $20',
+							'title_3': '$20 – $30',
+							'title_4': 'Более $30',
+							'disabled_1': '',
+							'disabled_2': '',
+							'disabled_3': '',
+							'disabled_4': ''
+						})
+
+						@@include('select_filter.html', {
+							'class': '',
+							'main_title': 'Цена $/кг со скидкой',
+							'title_1': 'До $5',
+							'title_2': '$5 – $15',
+							'title_3': '$15 – $25',
+							'title_4': 'Более $25',
+							'disabled_1': '',
+							'disabled_2': '',
+							'disabled_3': '',
+							'disabled_4': ''
+						})
+					</div>
+					<button class="button" type="submit">
+						<span>Применить</span>
+					</button>
+				</form>
+			</section>
+
+
+			<section class="popup popup--add-organization is-hidden" data-popup="add-organization" aria-labelledby="add-organization">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="add-organization-title">Добавить организацию</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block>
+					<form class="popup__body total-form">
+						<span class="total-form__subtitle">Организация</span>
+						@@include('inputs/main_input.html', {
+							'title': 'Страна',
+							'placeholder': 'Например: Россия',
+							'type': 'text',
+							'name': 'country',
+							'id': 'country',
+							'required': 'true'
+						})
+
+						<div class="total-form__row">
+							@@include('inputs/main_input.html', {
+								'title': 'ИНН',
+								'placeholder': '0000000000 / 000000000000',
+								'type': 'text',
+								'name': 'inn',
+								'id': 'inn',
+								'required': 'true',
+								'validate': 'inn'
+							})
+							<button class="button total-form__btn-autofill" type="button">
+								<span>Заполнить по ИНН</span>
+							</button>
+						</div>
+
+						@@include('inputs/main_input.html', {
+							'title': 'КПП',
+							'placeholder': '000000000',
+							'type': 'text',
+							'name': 'kpp',
+							'id': 'kpp',
+							'required': 'true',
+							'validate': 'kpp'
+						})
+
+						@@include('inputs/main_input.html', {
+							'title': 'Полное наименование организации',
+							'placeholder': 'Пример: Акционерное общество «Trum.corp»',
+							'type': 'text',
+							'name': 'company_full_name',
+							'id': 'company_full_name',
+							'required': 'true'
+						})
+
+						@@include('inputs/main_input.html', {
+							'title': 'Краткое наименование организации',
+							'placeholder': 'Пример: Trum.corp',
+							'type': 'text',
+							'name': 'company_short_name',
+							'id': 'company_short_name',
+							'required': 'true'
+						})
+
+						<hr class="split-line">
+
+						<div class="total-form__wrapper-data" data-block="legal-address">
+							<span class="total-form__subtitle">Юридический адрес</span>
+
+							<div class="total-form__row">
+								@@include('inputs/main_input.html', {
+									'title': 'Индекс',
+									'placeholder': '_ _ _ _ _ _',
+									'type': 'text',
+									'name': 'postal_code',
+									'id': 'postal_code',
+									'required': 'true',
+									'validate': 'postal_code',
+									'data_type': 'index'
+								})
+
+								@@include('select_block.html', {
+									'id': 'city',
+									'title': 'Город',
+									'placeholder': 'Москва',
+									'required': 'true',
+									'theme': 'dark',
+									'data_type': 'city',
+									'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+								})
+							</div>
+
+							@@include('inputs/main_input.html', {
+								'title': 'Адрес',
+								'placeholder': 'Пример: Тверская улица, 6',
+								'type': 'text',
+								'name': 'address',
+								'id': 'address',
+								'required': 'true',
+								'data_type': 'address'
+
+							})
+
+							<div class="total-form__row">
+								@@include('inputs/main_input.html', {
+									'title': 'Телефон',
+									'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _',
+									'type': 'text',
+									'name': 'tel',
+									'id': 'company_phone',
+									'required': 'true',
+									'data_type': 'phone'
+								})
+
+								@@include('inputs/main_input.html', {
+									'title': 'Email',
+									'placeholder': 'example@mail.ru',
+									'type': 'email',
+									'name': 'email',
+									'id': 'company_email',
+									'required': 'true',
+									'data_type': 'email'
+								})
+							</div>
+						</div>
+
+						<div class="total-form__wrapper-data" data-block="actual-address">
+							<span class="total-form__subtitle">Фактический адрес</span>
+
+							<div class="address-toggle-block" data-block="toggle-parent">
+								<div class="wrapper-input">
+									<input class="is-hidden" id="address_match" type="checkbox" name="address_match" data-element="legal-address">
+									<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match">Совпадает с юридическим</label>
+								</div>
+
+								<div class="total-form__row">
+									@@include('inputs/main_input.html', {
+										'title': 'Индекс',
+										'placeholder': '_ _ _ _ _ _',
+										'type': 'text',
+										'name': 'postal_code',
+										'id': 'postal_code',
+										'required': 'true',
+										'validate': 'postal_code',
+										'data_type': 'index'
+									})
+
+									@@include('select_block.html', {
+										'id': 'city',
+										'title': 'Город',
+										'placeholder': 'Москва',
+										'required': 'true',
+										'theme': 'dark',
+										'data_type': 'city',
+										'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+									})
+								</div>
+
+								@@include('inputs/main_input.html', {
+									'title': 'Адрес',
+									'placeholder': 'Пример: Тверская улица, 6',
+									'type': 'text',
+									'name': 'address',
+									'id': 'address',
+									'required': 'true',
+									'data_type': 'address'
+								})
+							</div>
+						</div>
+
+						<span class="total-form__subtitle">Адрес для отправки оригиналов документов</span>
+
+						<div class="address-toggle-block" data-block="toggle-parent">
+							<div class="total-form__choice-group">
+								<div class="wrapper-input">
+									<input class="is-hidden" id="address_match_legal_2" type="checkbox" name="address_match_legal_2" data-element="legal-address">
+									<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match_legal_2">Совпадает с юридическим</label>
+								</div>
+
+								<div class="wrapper-input">
+									<input class="is-hidden" id="address_match_actual_2" type="checkbox" name="address_match_actual_2" data-element="actual-address">
+									<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match_actual_2">Совпадает с фактическим</label>
+								</div>
+							</div>
+
+							<div class="total-form__row">
+								@@include('inputs/main_input.html', {
+									'title': 'Индекс',
+									'placeholder': '_ _ _ _ _ _',
+									'type': 'text',
+									'name': 'postal_code',
+									'id': 'postal_code',
+									'required': 'true',
+									'validate': 'postal_code',
+									'data_type': 'index'
+								})
+
+								@@include('select_block.html', {
+									'id': 'city',
+									'title': 'Город',
+									'placeholder': 'Москва',
+									'required': 'true',
+									'theme': 'dark',
+									'data_type': 'city',
+									'options': '<li><button class="select-block__item" type="button" data-select-item>Москва</button></li><li><button class="select-block__item" type="button" data-select-item>Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item>Минск</button></li><li><button class="select-block__item" type="button" data-select-item>Нур-Султан</button></li>'
+								})
+							</div>
+
+							@@include('inputs/main_input.html', {
+								'title': 'Адрес',
+								'placeholder': 'Пример: Тверская улица, 6',
+								'type': 'text',
+								'name': 'address',
+								'id': 'address',
+								'required': 'true',
+								'data_type': 'address'
+							})
+
+							@@include('inputs/main_input.html', {
+								'title': 'Телефон',
+								'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _',
+								'type': 'text',
+								'name': 'tel',
+								'id': 'company_phone',
+								'required': 'true',
+								'data_type': 'phone'
+							})
+						</div>
+
+						<hr class="split-line">
+
+						<span class="total-form__subtitle">Банковские реквизиты</span>
+
+						<div class="total-form__row">
+							@@include('inputs/main_input.html', {
+								'title': 'БИК банка',
+								'placeholder': '_ _ _ _ _ _ _ _ _',
+								'type': 'text',
+								'name': 'bik',
+								'id': 'bik',
+								'required': 'true',
+								'validate': 'bik'
+							})
+
+							@@include('inputs/main_input.html', {
+								'title': 'Название банка',
+								'placeholder': 'Пример: СберБанк',
+								'type': 'text',
+								'name': 'bank_name',
+								'id': 'bank_name',
+								'required': 'true'
+							})
+						</div>
+
+						@@include('inputs/main_input.html', {
+							'title': 'Расчетный счет',
+							'placeholder': '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _',
+							'type': 'text',
+							'name': 'checking_account',
+							'id': 'checking_account',
+							'required': 'true',
+							'validate': 'checking_account'
+						})
+
+						<hr class="split-line">
+
+						<span class="total-form__subtitle">Контакты</span>
+
+						<div data-block="parent">
+							<div class="clone-block" data-block="copy-data">
+								@@include('inputs/main_input.html', {'title': 'ФИО', 'placeholder': 'Пример: Константинов Константин Константинович', 'type': 'text', 'name': 'full_name', 'id': 'full_name', 'required': 'true', 'validate': 'full-name',
+								'placeholder_mobile': 'Пр: Константинов Константин Константинович'
+								})
+								@@include('inputs/main_input.html', {'title': 'Email', 'placeholder': 'example@mail.ru', 'type': 'email', 'name': 'email', 'id': 'email', 'required': 'true'})
+								@@include('inputs/main_input.html', {'title': 'Телефон', 'placeholder': '+7 (_ _ _) _ _ _ — _ _ — –_ _', 'type': 'text', 'name': 'tel', 'id': 'phone', 'required': 'true'})
+
+								@@include('inputs/input.html', {'inputPlaceholder': 'Обновление информации об аккаунте', 'type': 'checkbox', 'name': 'notify_account', 'id': 'notify_account'})
+								@@include('inputs/input.html', {'inputPlaceholder': 'Обновление информации о резервах', 'type': 'checkbox', 'name': 'notify_reserves', 'id': 'notify_reserves'})
+							</div>
+
+							<button class="button button--transparent-green total-form__add-recipient" type="button" data-button="add-recipient">
+								<svg width="10" height="10" aria-hidden="true">
+									<use href="@img/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить получателя</span>
+							</button>
+						</div>
+
+						<hr class="split-line">
+
+						<span class="total-form__subtitle">Уставные документы</span>
+
+						<div data-block="parent">
+							<button class="button button--transparent-green total-form__add-recipient" type="button" data-button="add-recipient">
+								<svg width="10" height="10" aria-hidden="true">
+									<use href="@img/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить получателя</span>
+							</button>
+						</div>
+
+						<button class="button total-form__save" type="submit" disabled>
+							<span>Сохранить</span>
+						</button>
+					</form>
+				</div>
+			</section>
+
+			<section class="popup popup--education is-hidden" data-popup="education" aria-labelledby="education">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="education-title">Записаться на курс</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<header class="popup__course-header">
+					<div class="popup__logo-education">
+						<img src="@img/education-logo-2.png" alt="Логотип курса SCA">
+					</div>
+					<h3 class="popup__course-title">SCA Coffee Roasting Foundation</h3>
+				</header>
+
+				<div class="u-bg-panel" data-element="scrollable"></div>
+
+				<div class="popup__wrapper-content" data-scrollable-block>
+					<div class="popup__body">
+						<div class="popup__course-info">
+							<div class="popup__meta">
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">
+										<span class="popup__meta-mobile">Продолж-ть:</span>
+										<span class="popup__meta-desktop">Продолжительность:</span>
+									</span>
+									<span class="popup__meta-value u-color-green">1 день</span>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Группа: </span>
+									<span class="popup__meta-value u-color-green">до 12 человек</span>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Дата:</span>
+									<span class="popup__meta-value u-color-green">20 февраля</span>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Место проведения:</span>
+									<a class="popup__meta-value u-link" href="404.html" target="_blank">Тренинг-центр</a>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Курс проводит:</span>
+									<span class="popup__meta-value u-color-green">Иван Иванов</span>
+								</div>
+							</div>
+
+							<div class="popup__price-info">
+								<span class="popup__price-label">Цена:</span>
+								<strong class="popup__price-value u-color-green h1">30 000 ₽</strong>
+								<span class="popup__price-notice">В стоимость не входит сертификация SCA</span>
+							</div>
+						</div>
+
+						<div class="popup__form-fields">
+							<h3 class="popup__form-title">Данные участника</h3>
+
+							<form action="#" method="post" data-form-education>
+								@@include('../html/inputs/main_input.html', {'title': 'Имя', 'placeholder': 'Как Вас зовут?', 'type': 'text', 'name': 'name', 'id': 'name', 'required': 'true'})
+
+								@@include('../html/inputs/main_input.html', {'title': 'Телефон', 'placeholder': '+7 (_ _ _) _ _ _ — _ _ — _ _', 'type': 'text', 'name': 'phone', 'id': 'phone', 'required': 'true'})
+
+								@@include('../html/inputs/main_input.html', {'title': 'Email', 'placeholder': 'example@mail.ru', 'type': 'email', 'name': 'email', 'id': 'email'})
+
+								@@include('../html/select_block.html', {
+									'id': 'organization',
+									'title': 'Организация',
+									'placeholder': 'Выберите из списка доступных организаций',
+									'required': 'true',
+									'options': '<li><button class="select-block__item" type="button" data-select-item>Организация 1</button></li><li><button class="select-block__item" type="button" data-select-item>Организация 2</button></li><li><button class="select-block__item" type="button" data-select-item>Организация 3</button></li>'
+								})
+
+								@@include('../html/select_block.html', {
+									'id': 'options',
+									'title': 'Дополнительные опции',
+									'placeholder': 'С выдачей сертификата <span>+ 15 000 ₽</span>',
+									'options': '<li><button class="select-block__item" type="button" data-select-item>С выдачей сертификата SCA</button></li><li><button class="select-block__item" type="button" data-select-item>Без сертификата SCA</button></li>'
+								})
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="popup__footer" data-block="popup-footer">
+					<div class="popup__total">
+						<span class="popup__total-label">Итого:</span>
+						<strong class="popup__total-value u-color-green">45 000 ₽</strong>
+					</div>
+
+					@@include('inputs/input.html', {'inputPlaceholder': 'Даю согласие на обработку своих персональных данных', 'type': 'checkbox', 'name': 'agreement_data', 'id': 'agreement-data'})
+					@@include('inputs/input.html', {'inputPlaceholder': 'Я ознакомлен и согласен с <a class="u-link" href=\'#\'>Политикой обработки персональных данных</a>', 'type': 'checkbox', 'name': 'agreement_policy', 'id': 'agreement-policy'})
+
+					<button class="popup__submit button" type="submit">
+						<span>Записаться</span>
+					</button>
+				</div>
+			</section>
+
+			<section class="popup is-hidden popup--detail-product" data-popup="detail-product" aria-labelledby="detail-product">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="detail-product-title">Бразилия АМА гейша УМ 48ч сухой</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="@img/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block>
+					<div class="popup__body detail-product">
+						<section class="detail-product__section">
+							<h3 class="detail-product__title">Галерея</h3>
+
+							<div class="product-gallery detail-product__gallery swiper" data-slider="product-gallery">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="@img/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="@img/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="@img/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="@img/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="@img/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="@img/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+										</div>
+									</div>
+								</div>
+
+								<div class="product-gallery__navigation swiper-navigation">
+									<button class="product-gallery__btn product-gallery__btn--prev swiper-button-prev button button--white" type="button" aria-label="Предыдущий слайд">
+										<svg width="16" height="16" aria-hidden="true" focusable="false">
+											<use href="images/sprite.svg#arrow_left"></use>
+										</svg>
+									</button>
+									<button class="product-gallery__btn product-gallery__btn--next swiper-button-next button button--white" type="button" aria-label="Следующий слайд">
+										<svg width="16" height="16" aria-hidden="true" focusable="false">
+											<use href="images/sprite.svg#arrow_right"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</section>
+
+						<section class="detail-product__section u-panel">
+							<dl class="detail-product__specs-list">
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Производитель</dt>
+									<dd class="detail-product__specs-value">Луис Пауло Диас Перейра</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Регион</dt>
+									<dd class="detail-product__specs-value">Минас-Жерайс, Кармо-ди-Минас</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Ферма</dt>
+									<dd class="detail-product__specs-value">Ама</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Площадь фермы</dt>
+									<dd class="detail-product__specs-value">100 га</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Площадь посадок деревьев</dt>
+									<dd class="detail-product__specs-value">70 га</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Высота:</dt>
+									<dd class="detail-product__specs-value">1100–1300 м</dd>
+								</div>
+							</dl>
+						</section>
+
+						<section class="detail-product__section detail-product__section--files u-panel">
+							<h3 class="detail-product__title">Файлы</h3>
+
+							<div class="detail-product__files-links">
+								<a class="detail-product__file-link u-color-green" href="#" download>
+									<svg width="16" height="16" aria-hidden="true">
+										<use href="@img/sprite.svg#simple_blank"></use>
+									</svg>
+									<span>Договор оферты</span>
+								</a>
+								<a class="detail-product__file-link u-color-green" href="#" download>
+									<svg width="16" height="16" aria-hidden="true">
+										<use href="@img/sprite.svg#simple_blank"></use>
+									</svg>
+									<span>Описание товара</span>
+								</a>
+							</div>
+
+							<button class="detail-product__btn-ask button" type="button" data-button-open="feedback">
+								<span>Задать вопрос</span>
+							</button>
+						</section>
+
+						<section class="detail-product__section detail-product__section--info">
+							<h3 class="detail-product__title">Описание</h3>
+
+							<div class="detail-product__intro">
+								<p class="detail-product__lead-text">Ама — это необычная ферма, где на площади 100 га <br> выращивают кофейную разновидность гейша (геша).</p>
+
+								<div class="detail-product__rating">
+									<span class="detail-product__rating-label">Оценка:</span>
+									<div class="detail-product__rating-badge u-color-green">
+										<span>85.2</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="split-line"></div>
+
+							<ul class="detail-product__text-content">
+								<li>Назвав ферму Ама, производители вдохновлялись японскими ныряльщицами за жемчугом. Подобно тому, как ама ищут драгоценности, семья Перейра привозит редкие и особенные кофейные зерна. О своей любви производитель пишет так: «Это уникальный результат преданных и непоколебимых рук. Кофе, который нигде в мире нельзя назвать обыкновенным».</li>
+								<li>*Издавна в Японии словом ама называли японских ныряльщиц, которые добывали в море ежей, ракообразных и т. д., но самой драгоценной добычей был жемчуг из редких моллюсков. Первые добытчицы жемчуга появились несколько тысяч лет назад (по разным источникам профессии ама от 2-х до 3-х тысяч лет), каждая из ныральщиц — хорошо подготовленная и обладающая твердым характером.</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		@@include('aside_header.html')
+	</header>

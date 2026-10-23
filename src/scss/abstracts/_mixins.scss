@@ -1,0 +1,194 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+@use "variables" as v;
+
+@mixin display-row($gap: 0) {
+	display: flex;
+	flex-direction: row;
+
+	@if $gap > 0 {
+		gap: $gap + px;
+	}
+}
+
+@mixin display-col($gap: 0) {
+	display: flex;
+	flex-direction: column;
+
+	@if $gap > 0 {
+		gap: $gap + px;
+	}
+}
+
+@mixin display-grid($gap: 0, $count: 1) {
+	display: grid;
+	grid-template-columns: repeat($count, 1fr);
+
+	@if $gap > 0 {
+		gap: $gap + px;
+	}
+}
+
+@mixin transition($prop: all) {
+	transition: $prop v.$duration-base v.$easing-base;
+}
+
+@mixin absolute-fill {
+	position: absolute;
+	inset-block: 0;
+	inset-inline: 0;
+	inline-size: 100%;
+	block-size: 100%;
+}
+
+@mixin visually-hidden-input {
+	position: absolute;
+	margin: -1px;
+	border: 0;
+	block-size: 1px;
+	inline-size: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
+
+@mixin state-hidden {
+	pointer-events: none;
+	opacity: 0;
+	visibility: hidden;
+}
+
+@mixin state-visible {
+	pointer-events: all;
+	opacity: 1;
+	visibility: visible;
+}
+
+@mixin collapse-grid {
+	@include transition;
+	display: grid;
+	overflow: hidden;
+	grid-template-rows: 0fr;
+}
+
+@mixin dot($size: 6px, $color: var(--color_green, #367a4d)) {
+	content: "";
+	border-radius: var(--circle_radius, 50%);
+	block-size: $size;
+	inline-size: $size;
+	background-color: $color;
+}
+
+@mixin bg-fill($color) {
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		inset-block: 0;
+		inset-inline: 0;
+		inline-size: 100%;
+		block-size: 100%;
+		background-color: $color;
+	}
+}
+
+@mixin checkbox-custom(
+	$size: 16px,
+	$top: 2px,
+	$radius: var(--small_radius, 4px),
+	$check-w: 10px,
+	$check-h: 8px,
+	$check-top: 7px,
+	$check-left: 4px,
+	$check-stroke: "%23357C4D"
+) {
+	&::before {
+		content: "";
+		position: absolute;
+		inset-block-start: $top;
+		inset-inline-start: 0;
+		margin: auto;
+		border: 1px solid var(--main_color, #1d2019);
+		border-radius: $radius;
+		box-sizing: border-box;
+		block-size: $size;
+		inline-size: $size;
+		flex-shrink: 0;
+	}
+
+	&::after {
+		@include transition;
+		content: "";
+		opacity: 0;
+		position: absolute;
+		inset-block-start: $check-top;
+		inset-inline-start: $check-left;
+		margin: auto;
+		block-size: $check-h;
+		inline-size: $check-w;
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M0.351562 1.85352L2.85156 4.35352L6.85156 0.353516" stroke="#{$check-stroke}"/></svg>');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+@mixin radio-custom($size: 20px, $inner-size: 10px, $inner-offset: 6px) {
+	&::before {
+		@include transition;
+		content: "";
+		opacity: 0.3;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		border: 1px solid var(--main_color_light_3, #40433a);
+		border-radius: var(--circle_radius, 50%);
+		block-size: $size;
+		inline-size: $size;
+		flex-shrink: 0;
+		background-color: transparent;
+	}
+
+	&::after {
+		@include transition;
+		content: "";
+		position: absolute;
+		inset-block-start: $inner-offset;
+		inset-inline-start: $inner-offset;
+		border-radius: var(--circle_radius, 50%);
+		block-size: $inner-size;
+		inline-size: $inner-size;
+		flex-shrink: 0;
+		background-color: transparent;
+	}
+}
+
+@mixin respond-to($bp) {
+	$value: null;
+
+	@if meta.type-of($bp) == "number" {
+		@if math.is-unitless($bp) {
+			$value: $bp * 1px;
+		} @else {
+			$value: $bp;
+		}
+	} @else if meta.type-of($bp) == "string" {
+		@if map.has-key(v.$breakpoints, $bp) {
+			$value: map.get(v.$breakpoints, $bp);
+		} @else {
+			@error "respond-to(): неизвестный брейкпоинт `#{$bp}`.";
+		}
+	} @else {
+		@error "respond-to(): ожидается ключ (строка) или число (px).";
+	}
+
+	@media (max-width: $value) {
+		@content;
+	}
+}
+
+@mixin flex-between($gap: 16) {
+	@include display-row($gap);
+	justify-content: space-between;
+}

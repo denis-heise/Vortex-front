@@ -1,0 +1,53 @@
+@use "../abstracts/mixins" as m;
+
+.basket {
+	margin-block-end: 90px;
+
+	.products-table {
+		@include m.respond-to(992) {
+			overflow: visible;
+		}
+	}
+}
+
+.back-link {
+	@include m.display-row(8);
+	margin-block: 15px 24px;
+	block-size: fit-content;
+	inline-size: fit-content;
+	font-family: var(--second_font_family, "Rubik");
+	color: var(--color_green, #367a4d);
+
+	.button {
+		inline-size: 24px;
+		block-size: 24px;
+		aspect-ratio: 1 / 1;
+	}
+
+	span {
+		margin: auto 0;
+		block-size: fit-content;
+	}
+
+	svg {
+		inline-size: 11px;
+		block-size: 11px;
+	}
+}
+
+.product-group {
+	@include m.display-col(0);
+	margin-block-start: 40px;
+
+	.order-summary & {
+		margin-block-start: 0;
+	}
+
+	&.is-hidden {
+		display: none;
+	}
+}
+
+.order-summary .products-wrapper + .products-wrapper {
+	margin-block-start: 0;
+}

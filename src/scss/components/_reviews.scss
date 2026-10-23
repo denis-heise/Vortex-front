@@ -1,0 +1,127 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/placeholders" as *;
+
+.reviews {
+	position: relative;
+
+	.section-header {
+		@include m.flex-between(16);
+		margin-block-start: 72px;
+		border: none;
+		block-size: 40px;
+		padding-block-end: 0;
+	}
+
+	.swiper-navigation,
+	div.swiper-pagination-bullets.swiper-pagination-horizontal {
+		display: none;
+	}
+
+	.swiper-navigation {
+		@include m.respond-to(1450) {
+			display: flex;
+			position: static;
+		}
+	}
+
+	div.swiper-pagination-bullets.swiper-pagination-horizontal {
+		@include m.respond-to(768) {
+			display: flex;
+			position: static;
+			margin-block-start: 24px;
+		}
+	}
+
+	&__title {
+		line-height: 38px;
+		font-family: var(--second_font_family, "Rubik");
+		font-size: 32px;
+		font-weight: 500;
+	}
+
+	&__slider {
+		&:not(.swiper-initialized) .swiper-wrapper {
+			@include m.display-grid(16, 3);
+
+			@include m.respond-to(1450) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@include m.respond-to(992) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+
+		.swiper-slide {
+			block-size: auto;
+		}
+	}
+
+	&__btn-add {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-end: 0;
+		inline-size: 135px;
+		block-size: 40px;
+		padding: 0 5px;
+
+		svg {
+			margin: auto 0;
+			block-size: 8px;
+			inline-size: 8px;
+		}
+
+		@include m.respond-to(1450) {
+			position: static;
+			margin-block-start: 24px;
+			inline-size: 158px;
+		}
+
+		@include m.respond-to(768) {
+			inline-size: 100%;
+			block-size: 48px;
+		}
+	}
+}
+
+.review-card {
+	border-radius: var(--big_radius, 8px);
+
+	&__header {
+		@include m.display-col(12);
+	}
+
+	&__user-info {
+		@include m.flex-between(16);
+	}
+
+	&__author {
+		line-height: 21px;
+		font-family: var(--second_font_family, "Rubik");
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	&__date,
+	&__company {
+		@extend %text-muted;
+	}
+
+	&__content {
+		@include m.display-col(12);
+		line-height: normal;
+
+		li {
+			position: relative;
+			padding-inline-start: 24px;
+
+			&::before {
+				@include m.dot(6px, var(--main_color, #1d2019));
+				content: "";
+				position: absolute;
+				inset-block-start: 7px;
+				inset-inline-start: 0;
+			}
+		}
+	}
+}

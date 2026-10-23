@@ -1,0 +1,135 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="news-detail">
+		<a class="back-link u-link" href="index.html" data-element="back-link">
+			<div class="button u-square">
+				<svg width="20" height="20" aria-hidden="true" focusable="false">
+					<use href="images/sprite.svg#arrow_left"></use>
+				</svg>
+			</div>
+			<span>Назад</span>
+		</a>
+
+		<article class="news-detail-info" data-block="news-detail-info">
+			<div class="news-detail-info__img-wrapper">
+				<img class="news-detail-info__img" src="@img/news/1.png" alt="Важные обновления по условиям отгрузки для всех авансовых клиентов">
+			</div>
+
+			<div class="news-detail-info__content">
+				<div class="news-detail-info__wrapper-text">
+					<time class="news-detail-info__date" datetime="2025-12-12">12.12.2025</time>
+					<h1 class="news-detail-info__title">Важные обновления по условиям отгрузки для всех авансовых клиентов</h1>
+					<div class="news-detail-info__text-content">
+						<p>Друзья,</p>
+						<p>Важные обновления по условиям отгрузки для всех авансовых клиентов. Начиная с 12 ноября 2025 г. мы закрываем возможность отгрузки по платёжным поручениям. Теперь отгрузка будет возможна строго по получению нами средств на расчётный счёт. Проверка зачисления средств будет проводиться только утром (по результатам платежей вчерашнего дня) и после обеда в 15:00 (время по МСК).</p>
+						<p>Поясняем: мы всегда старались идти навстречу нашим клиентам и предоставлять возможности для максимально оперативных отгрузок. Авторизация отгрузок в отдельных случаях происходила по факту предоставления клиентом платёжного поручения с отметками банка, что позволяло забрать товар раньше, чем средства были зачислены нам на расчётный счёт. К сожалению, в последнее время мы столкнулись с увеличением случаев недобросовестного использования данного механизма для получения товара со значительными задержками платежей, а в отдельных случаях и без оплаты вовсе.</p>
+						<p>Понимая, что подавляющее большинство наших клиентов пользовались этим вариантом отгрузки абсолютно добросовестно, мы оставляем возможность забрать заказ в день оплаты. Однако вынуждены ограничить окно для подобных отгрузок второй половиной дня, а именно — после проверки зачислений в банковских выписках от 15:00 (время по МСК). Для клиентов, заблаговременно оплачивающих свои заказы, ничего не поменялось, мы также получаем и обрабатываем ваши платежи (утром следующего дня после оплаты). Надеемся, что вы отнесётесь с пониманием к этим изменениям.</p>
+					</div>
+				</div>
+
+				<section class="news-detail__section">
+					<h3>Галерея</h3>
+					<div class="product-gallery news-detail__gallery swiper" data-slider="product-gallery">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="product-gallery__slide">
+									<img class="product-gallery__img" src="@img/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="product-gallery__slide">
+									<img class="product-gallery__img" src="@img/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="product-gallery__slide">
+									<img class="product-gallery__img" src="@img/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="product-gallery__slide">
+									<img class="product-gallery__img" src="@img/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="product-gallery__slide">
+									<img class="product-gallery__img" src="@img/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="product-gallery__slide">
+									<img class="product-gallery__img" src="@img/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+								</div>
+							</div>
+						</div>
+						<div class="product-gallery__navigation swiper-navigation">
+							<button class="product-gallery__btn product-gallery__btn--prev swiper-button-prev button button--white" type="button" aria-label="Предыдущий слайд">
+								<svg width="16" height="16" aria-hidden="true" focusable="false">
+									<use href="images/sprite.svg#arrow_left"></use>
+								</svg>
+							</button>
+							<button class="product-gallery__btn product-gallery__btn--next swiper-button-next button button--white" type="button" aria-label="Следующий слайд">
+								<svg width="16" height="16" aria-hidden="true" focusable="false">
+									<use href="images/sprite.svg#arrow_right"></use>
+								</svg>
+							</button>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</section>
+			</div>
+		</article>
+
+
+		<div class="similar-news" data-slider="news-list">
+			<div class="section-header section-header--similar-block">
+				<div class="section-header__row">
+					<h2>Похожие новости</h2>
+					<div class="swiper-navigation">
+						<button class="swiper-button-prev button" type="button" aria-label="Предыдущий слайд">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#arrow_left"></use>
+							</svg>
+						</button>
+						<button class="swiper-button-next button" type="button" aria-label="Следующий слайд">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#arrow_right"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="detail-product__slider swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'События Валтекс Трейдинг', 'date': '25.12.2025', 'title': 'Плановое повышение квалификации сотрудников', 'description': 'В следующем месяце наши сотрудники пройдут обучение для улучшения качества обслуживания клиентов.', 'img': '4' })
+					</div>
+						<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'Важное', 'date': '01.01.2026', 'title': 'Изменение в условиях сотрудничества', 'description': 'С нового года мы обновляем условия партнерства. Просим всех партнеров ознакомиться с изменениями.', 'img': '5' })
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'Инициативы Валтекс', 'date': '05.01.2026', 'title': 'Анонс вебинара по новым продуктам', 'description': 'Приглашаем всех интересующихся на вебинар, где мы расскажем о наших новых продуктах и возможностях.', 'img': '6' })
+					</div>
+						<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'События Валтекс Трейдинг', 'date': '10.01.2026', 'title': 'Обновление системы безопасности', 'description': 'Мы внедрили новые меры безопасности для защиты данных клиентов. Подробности будут опубликованы на нашем сайте.', 'img': '7' })
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'События Валтекс Трейдинг', 'date': '25.12.2025', 'title': 'Плановое повышение квалификации сотрудников', 'description': 'В следующем месяце наши сотрудники пройдут обучение для улучшения качества обслуживания клиентов.', 'img': '4' })
+					</div>
+						<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'Важное', 'date': '01.01.2026', 'title': 'Изменение в условиях сотрудничества', 'description': 'С нового года мы обновляем условия партнерства. Просим всех партнеров ознакомиться с изменениями.', 'img': '5' })
+					</div>
+					<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'Инициативы Валтекс', 'date': '05.01.2026', 'title': 'Анонс вебинара по новым продуктам', 'description': 'Приглашаем всех интересующихся на вебинар, где мы расскажем о наших новых продуктах и возможностях.', 'img': '6' })
+					</div>
+						<div class="swiper-slide">
+						@@include('../html/news/news_card_1.html', { 'badge': 'События Валтекс Трейдинг', 'date': '10.01.2026', 'title': 'Обновление системы безопасности', 'description': 'Мы внедрили новые меры безопасности для защиты данных клиентов. Подробности будут опубликованы на нашем сайте.', 'img': '7' })
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+@@include('../html/footer.html')

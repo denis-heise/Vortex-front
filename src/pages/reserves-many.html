@@ -1,0 +1,139 @@
+@@include('../html/header.html')
+
+<main class="wrapper">
+	<div class="catalog" data-block="products-list">
+		<h1>Мои резервы</h1>
+
+		<div class="section-header section-header--catalog section-header--reserve">
+			<div class="tabs" role="tablist" aria-label="Тип товаров">
+				<button class="button" type="button" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Кофе</span>
+					<span class="tabs__wrapper-count tabs__wrapper-count--light-green">
+						<span class="tabs__count">4</span>
+					</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1" data-tab-products="2">
+					<span class="tabs__text">Какао</span>
+					<span class="tabs__wrapper-count tabs__wrapper-count--light-green">
+						<span class="tabs__count">1</span>
+					</span>
+				</button>
+			</div>
+
+			<div class="wrapper-input">
+				<input type="text" placeholder="Введите название сорта, вкус или артомат">
+				<svg class="wrapper-input__icon" width="16" height="16" aria-hidden="true">
+					<use href="@img/sprite.svg#search"></use>
+				</svg>
+			</div>
+
+			<div class="section-header__row">
+				<button class="button button--filter" type="button" data-button-open="filters">
+					<svg width="16" height="16" aria-hidden="true" focusable="false">
+						<use href="@img/sprite.svg#filter"></use>
+					</svg>
+					<span>Все фильтры</span>
+				</button>
+
+				<a class="button button--transparent-green button-download" href="#" download>
+					<svg width="16" height="16" aria-hidden="true">
+						<use href="@img/sprite.svg#simple_blank"></use>
+					</svg>
+					<span>Скачать PDF</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="product-group">
+			@@include('../html/heading/count_heading.html', {
+				'title': 'Кофе',
+				'count': '324',
+				'class': ' count-heading--many'
+			})
+
+			<div class="products-table products-table--reserve" role="table" aria-label="Товары в каталоге" data-table-products>
+				<div class="products-table__header" role="row">
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Товар</div>
+					<div class="products-table__simple-text" role="columnheader">Вес упаковки (кг)</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Тип упаковки</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Кол-во</div>
+					<div class="products-table__simple-text products-table__simple-text--tablet" role="columnheader">Статус</div>
+					<div class="products-table__simple-text" role="columnheader">Отгрузка до даты</div>
+					<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена, кг/упаковку</div>
+				</div>
+
+				<div class="products-table__body">
+					@@include('../html/catalog/catalog_card_3.html', {
+						'title': 'Уганда арабика АБ Рувензори сухой',
+						'ip_product': '1',
+						'weight': '60 кг',
+						'type': 'джутовый мешок',
+						'quantity': '13',
+						'status': 'false',
+						'status_text': 'Январь 2026',
+						'shipping_to': '31.01.2026',
+					})
+
+					@@include('../html/catalog/catalog_card_3.html', {
+						'title': 'Китай арабика Симао Гр. 1 14+мытый',
+						'ip_product': '2',
+						'weight': '30 кг',
+						'type': 'грейн про',
+						'quantity': '20',
+						'status': 'true',
+						'status_text': 'Миралекс',
+						'shipping_to': '26.12.2026',
+					})
+
+					@@include('../html/catalog/catalog_card_3.html', {
+						'title': 'Бурунди Ндувайезу 15+мытый',
+						'ip_product': '3',
+						'weight': '30 кг',
+						'type': 'грейн про',
+						'quantity': '15',
+						'status': 'true',
+						'status_text': 'Санкт-Петербург',
+						'shipping_to': '25.11.2026',
+					})
+
+					@@include('../html/catalog/catalog_card_3.html', {
+						'title': 'Кения Спайкс АБ мытый',
+						'ip_product': '4',
+						'weight': '30 кг',
+						'type': 'грейн про',
+						'quantity': '20',
+						'status': 'true',
+						'status_text': 'Санкт-Петербург ',
+						'shipping_to': '25.11.2026',
+					})
+
+					@@include('../html/catalog/catalog_card_3.html', {
+						'title': 'Уганда арабика АБ Рувензори сухой',
+						'ip_product': '5',
+						'weight': '60 кг',
+						'type': 'джутовый мешок',
+						'quantity': '13',
+						'status': 'false',
+						'status_text': 'Январь 2026',
+						'shipping_to': '31.01.2026',
+					})
+				</div>
+			</div>
+		</div>
+
+		<button class="button button-more" type="button">
+			<svg width="16" height="16" aria-hidden="true" focusable="false">
+				<use href="images/sprite.svg#arrow_down_logn"></use>
+			</svg>
+			<span>Загрузить еще</span>
+		</button>
+
+		<hr class="split-line">
+
+		@@include('../html/pagination.html')
+
+	</div>
+</main>
+
+@@include('../html/footer.html')

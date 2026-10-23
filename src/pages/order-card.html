@@ -1,0 +1,324 @@
+@@include('../html/header.html', { "isCartPage": true })
+
+<main class="wrapper" data-block="order-card">
+	<section class="checkout">
+		<a class="back-link u-link" href="index.html" data-element="back-link">
+			<div class="button u-square">
+				<svg width="20" height="20" aria-hidden="true" focusable="false">
+					<use href="images/sprite.svg#arrow_left"></use>
+				</svg>
+			</div>
+			<span>Назад</span>
+		</a>
+
+		<div class="section-header section-header--order-card">
+			<div class="section-header__row">
+				<div class="section-header__col">
+					<h1 class="h2">Заказ А563</h1>
+					<span class="u-simple-text">от 17.11.2025</span>
+				</div>
+
+				<div class="badge-block">
+					<div class="badge-block__wrapper-text badge-block__wrapper-text--green u-color-green">
+						<span class="badge-block__text">В обработке</span>
+					</div>
+				</div>
+			</div>
+
+			<a class="button button--transparent-green" href="javascript:window.print();">
+				<svg width="16" height="16" aria-hidden="true" focusable="false">
+					<use href="images/sprite.svg#print"></use>
+				</svg>
+				<span>Распечатать</span>
+			</a>
+		</div>
+
+		<article class="order-card">
+			<div class="order-card__sidebar u-panel">
+				<header class="order-card__header">
+					<h2 class="order-card__subtitle">Ваш заказ</h2>
+					<span class="order-card__status u-color-green">Оплачен</span>
+				</header>
+
+				<dl class="data-order-list">
+					<div class="data-order-list__item">
+						<dt class="data-order-list__label">Юр. лицо</dt>
+						<dd class="data-order-list__value">Trump.com</dd>
+					</div>
+					<div class="data-order-list__item">
+						<dt class="data-order-list__label">Товары</dt>
+						<dd class="data-order-list__value">8 892 ₽</dd>
+					</div>
+					<div class="data-order-list__item data-order-list__item--total">
+						<dt class="data-order-list__label">Оплачено</dt>
+						<dd class="data-order-list__value u-color-green">8 892 ₽</dd>
+					</div>
+				</dl>
+
+				<footer class="order-card__actions">
+					<a class="order-card__btn u-link" href="#" download>
+						<svg width="16" height="16" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#simple_blank"></use>
+						</svg>
+						<span>Скачать документы</span>
+					</a>
+					<a class="order-card__btn button button--transparent-green" href="404.html">
+						<span>Повторить заказ</span>
+					</a>
+				</footer>
+			</div>
+			<button class="button" type="button">
+				<span>Отменить заказ</span>
+			</button>
+
+			<div class="order-card__content u-panel">
+				<div class="order-card__col">
+					<section class="order-card__wrapper-info">
+						<h2 class="order-card__subtitle">Параметры груза</h2>
+						<dl class="data-order-list">
+							<div class="data-order-list__item">
+								<dt class="data-order-list__label">Вес, кг</dt>
+								<dd class="data-order-list__value">1 965</dd>
+							</div>
+							<div class="data-order-list__item">
+								<dt class="data-order-list__label">Объем (м³)</dt>
+								<dd class="data-order-list__value">196</dd>
+							</div>
+						</dl>
+					</section>
+
+					<hr class="split-line">
+
+					<section class="order-card__wrapper-info">
+						<h2 class="order-card__subtitle">Контактные данные</h2>
+						<dl class="data-order-list">
+							<div class="data-order-list__item">
+								<dt class="data-order-list__label">Контактный телефон</dt>
+								<dd class="data-order-list__value">+79501614852</dd>
+							</div>
+							<div class="data-order-list__item">
+								<dt class="data-order-list__label">Контактное лицо</dt>
+								<dd class="data-order-list__value">Роман</dd>
+							</div>
+						</dl>
+					</section>
+				</div>
+
+				<section class="order-card__wrapper-info">
+					<h2 class="order-card__subtitle">Доставка</h2>
+					<dl class="data-order-list">
+						<div class="data-order-list__item">
+							<dt class="data-order-list__label">Способ доставки</dt>
+							<dd class="data-order-list__value">Самовывоз <br class="data-order-list__tablet"> со склада</dd>
+						</div>
+						<div class="data-order-list__item">
+							<dt class="data-order-list__label">Город</dt>
+							<dd class="data-order-list__value">Москва</dd>
+						</div>
+						<div class="data-order-list__item">
+							<dt class="data-order-list__label">Адрес</dt>
+							<dd class="data-order-list__value">
+								<address class="data-order-list__address">Варшавское шоссе, д. 125, <br class="data-order-list__mobile"> корп. 3, офис 216</address>
+							</dd>
+						</div>
+						<div class="data-order-list__item">
+							<dt class="data-order-list__label">Стоимость</dt>
+							<dd class="data-order-list__value">0 ₽</dd>
+						</div>
+						<div class="data-order-list__item">
+							<dt class="data-order-list__label">Планируемая дата доставки</dt>
+							<dd class="data-order-list__value">
+								<time datetime="2025-12-10" class="data-order-list__date">10.12.25</time>
+							</dd>
+						</div>
+					</dl>
+
+					<button class="button button--transparent-green" type="button" data-button-open="edit-delivery">
+						<span>Изменить способ доставки</span>
+					</button>
+				</section>
+			</div>
+		</article>
+
+		<div class="products-wrapper products-wrapper--order-card">
+			<h2>Товары</h2>
+
+			<div class="products-table products-table--order-card" role="table" aria-label="Товары в заказе" data-table-products>
+				<div class="products-table__header" role="row" data-block="wrapper-cells">
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Товар</div>
+					<div class="products-table__simple-text" role="columnheader">Вес упаковки (кг)</div>
+					<div class="products-table__simple-text" role="columnheader">Тип упаковки</div>
+					<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+					<div class="products-table__simple-text" role="columnheader">Лот</div>
+					<div class="products-table__simple-text" role="columnheader">Цена упаковки, $</div>
+					<div class="products-table__simple-text" role="columnheader">Вес нетто (кг)</div>
+					<div class="products-table__simple-text products-table__simple-text--mobile" role="columnheader">Цена/кг</div>
+					<div class="products-table__simple-text" role="columnheader">Сумма с НДС</div>
+					<div class="products-table__simple-text" role="columnheader"></div>
+				</div>
+
+				<div class="products-table__body">
+					@@include('../html/orders/orders_card_3.html', {
+						"title": "Кофе Гондурас Финка <br> Рио Фрио хани",
+						"weight": "30",
+						"type": "мешок-полипропилен",
+						"quantity": "13",
+						"lot": "25/66",
+						"weight_netto": "390,00",
+						"price_kg": "$2 400,00",
+						"price": "$600,00",
+						"summ_nds": "$7 800,00"
+					})
+					@@include('../html/orders/orders_card_3.html', {
+						"title": "Кофе Гондурас Финка <br> Рио Фрио хани",
+						"weight": "30",
+						"type": "мешок-полипропилен",
+						"quantity": "13",
+						"lot": "25/66",
+						"weight_netto": "390,00",
+						"price_kg": "$2 400,00",
+						"price": "$600,00",
+						"summ_nds": "$7 800,00"
+					})
+					@@include('../html/orders/orders_card_3.html', {
+						"title": "Кофе Гондурас Финка <br> Рио Фрио хани",
+						"weight": "30",
+						"type": "мешок-полипропилен",
+						"quantity": "13",
+						"lot": "25/66",
+						"weight_netto": "390,00",
+						"price_kg": "$2 400,00",
+						"price": "$600,00",
+						"summ_nds": "$7 800,00"
+					})
+
+					@@include('../html/orders/orders_card_3.html', {
+						"title": "Какао Коста-Рика <br> Каскара",
+						"weight": "30",
+						"type": "джутовый мешок",
+						"quantity": "10",
+						"lot": "криолло, тринитарио, форастеро",
+						"price": "$400,00",
+						"weight_netto": "300,00",
+						"price_kg": "$4 000,00",
+						"summ_nds": "$4 400,00"
+					})
+
+					<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+						<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--result-small">
+							<span class="products-table__cell-caption">Кол-во</span>
+							<span>49</span>
+						</span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--result-small" role="cell">
+							<span class="products-table__cell-caption">Вес нетто (кг)</span>
+							<span class="products-table__row">
+								<svg width="16" height="16" aria-hidden="true" focusable="false">
+									<use href="images/sprite.svg#weight"></use>
+								</svg>
+								<span>1 470,00</span>
+							</span>
+						</span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell u-color-green" role="cell">
+							<span class="products-table__cell-caption">Сумма с  НДС</span>
+							<span>$27 840,00</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="products-wrapper products-wrapper--order-card products-wrapper--samples">
+			<h2>Образцы</h2>
+			<div class="products-table products-table--simple products-table--order-card" role="table" aria-label="Товары в корзине" data-table-products>
+				<div class="products-table__header" role="row" data-block="wrapper-cells">
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Товар</div>
+					<div class="products-table__simple-text" role="columnheader">Вес упаковки (кг)</div>
+					<div class="products-table__simple-text" role="columnheader">Тип упаковки</div>
+					<div class="products-table__simple-text" role="columnheader">Кол-во</div>
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Вес нетто (кг)</div>
+					<div class="products-table__simple-text" role="columnheader"></div>
+					<div class="products-table__simple-text" role="columnheader">Доставка с заказом</div>
+					<div class="products-table__simple-text" role="columnheader"></div>
+				</div>
+
+				<div class="products-table__body">
+					@@include('../html/orders/orders_card_4.html', {
+						"title": "Кофе Гондурас Финка <br> Рио Фрио хани",
+						"weight": "0.1",
+						"type": "пакет",
+						"quantity": "1",
+						"lot": "",
+						"weight_netto": "0.1",
+						"price_kg": "—",
+						"price": "—",
+						"delivery": "Да"
+					})
+					@@include('../html/orders/orders_card_4.html', {
+						"title": "Кофе Гондурас Финка <br> Рио Фрио хани",
+						"weight": "0.1",
+						"type": "пакет",
+						"quantity": "1",
+						"lot": "",
+						"weight_netto": "0.1",
+						"price_kg": "—",
+						"price": "—",
+						"delivery": "Да"
+					})
+					@@include('../html/orders/orders_card_4.html', {
+						"title": "Кофе Гондурас Финка <br> Рио Фрио хани",
+						"weight": "0.1",
+						"type": "пакет",
+						"quantity": "1",
+						"lot": "",
+						"weight_netto": "0.1",
+						"price_kg": "—",
+						"price": "—",
+						"delivery": "Да"
+					})
+
+					<div class="products-table__result" role="row" data-block="wrapper-cells" data-element="result-table">
+						<span class="products-table__cell products-table__cell--result-title" role="cell">ВСЕГО</span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--result-small" products-table__cell--weight>
+							<span>100гр.</span>
+						</span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--result-small">
+							<span class="products-table__cell-caption">Кол-во</span>
+							<span>3</span>
+						</span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--empty"></span>
+						<span class="products-table__cell products-table__cell--result-small" role="cell">
+							<span class="products-table__cell-caption">Вес нетто (кг)</span>
+							<span class="products-table__row">
+								<svg width="16" height="16" aria-hidden="true" focusable="false">
+									<use href="images/sprite.svg#weight"></use>
+								</svg>
+								<span>300,00</span>
+							</span>
+						</span>
+						<span class="products-table__cell"></span>
+						<span class="products-table__cell u-color-green" role="cell">
+							<span class="products-table__desktop">Доставка вместе с заказом</span>
+							<span class="products-table__tablet">Доставка <br> с заказом</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+@@include('../html/footer.html')

@@ -1,0 +1,20 @@
+					<div class="products-table__favorite@@if(context.disabled){ products-table__favorite--disabled }@@if(context.select){ is-open }" data-block="favorite-wrapper" data-button="delete-item">
+						<input
+							type="checkbox"
+							id="fav-item-1"
+							class="products-table__favorite-checkbox u-visually-hidden"
+						>
+
+						<label
+							for="fav-item-1"
+							class="products-table__favorite-btn"
+							aria-label="Избранное"
+							data-button="toggle"
+							@@if(context.disabled){ disabled="true" }
+						>
+							<svg class="products-table__favorite-icon" width="14" height="14" aria-hidden="true" focusable="false">
+								<use class="products-table__star-empty" href="images/sprite.svg#star"></use>
+								<use class="products-table__star-full" href="images/sprite.svg#star_full"></use>
+							</svg>
+						</label>
+					</div>
