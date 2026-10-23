@@ -1,0 +1,3842 @@
+<!doctype html><html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css?_v=20261023194823">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css?_v=20261023194823">
+	<link rel="stylesheet" href="./css/simplebar.min.css?_v=20261023194823">
+	<link rel="stylesheet" href="css/vendor/air-datepicker.css?_v=20261023194823">
+	<script src="js/vendor/air-datepicker.js?_v=20261023194823"></script>
+    <script src="./js/swiper-bundle.min.js?_v=20261023194823"></script>
+	<script src="./js/simplebar.min.js?_v=20261023194823"></script>
+	<script src="./js/gsap.min.js?_v=20261023194823"></script>
+	<script src="./js/MotionPathPlugin.min.js?_v=20261023194823"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=0bd62fc2-5911-4156-8a3e-c62dd7644c2e&amp;lang=ru_RU&amp;load=package.full&_v=20261023194823" type="text/javascript"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="wrapper header__wrapper">
+					<div class="select-wrapper select-wrapper--city" data-select-wrapper="city">
+			<span class="select-label" id="warehouse-select-label">Выберите склад</span>
+
+			<div class="select-block" data-block="select">
+				<button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="warehouse-select-label warehouse-title-text" data-element="select-button">
+					<div class="select-block__wrapper-text">
+						<svg width="12" height="12" aria-hidden="true">
+							<use href="images/sprite.svg#buildings"></use>
+						</svg>
+						<span class="select__title" id="warehouse-title-text" data-element="select-title">Москва</span>
+					</div>
+					<svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#arrow_down"></use>
+					</svg>
+				</button>
+
+				<ul class="select-block__list" role="listbox" aria-labelledby="warehouse-select-label" data-block="select-list">
+					<li class="select-block__header" aria-hidden="true">
+						<span class="select-label">Выберите склад</span>
+					</li>
+
+					<li class="select-block__item is-selected" role="option" aria-selected="true" data-select-item="" tabindex="-1">
+						Москва
+					</li>
+					<li class="select-block__item" role="option" aria-selected="false" data-select-item="" tabindex="-1">
+						Санкт-Петербург
+					</li>
+
+					<li class="select-block__note-wrapper" aria-hidden="true">
+												<div class="info-note" role="note">
+							<svg class="info-note__icon" width="12" height="12" aria-hidden="true">
+								<use href="images/sprite.svg#tooltip"></use>
+							</svg>
+							<p class="info-note__text">Наличие товара зависит от выбранного склада и обновится автоматически</p>
+						</div>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+			<div class="header__info">
+				<div class="header__rate">
+				<span class="header__rate-date">
+					Курс
+					<span class="header__rate-separator">:</span>
+					<span class="header__rate-text">на <span data-element="rate-date">04.12.2025</span></span>
+				</span>
+					<span class="header__rate-value">1$ = <span data-element="rate-value">77,9556</span> ₽</span>
+				</div>
+
+				<a class="header__price-link" href="#" download="">
+					<div class="header__price-btn">
+						<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+							<use href="images/sprite.svg#blank"></use>
+						</svg>
+					</div>
+					<span class="header__price-text">Скачать <br> прайс-лист</span>
+				</a>
+
+				<div class="header__contacts">
+					<a class="header__phone" href="tel:88000000000">
+						<span>8 (800) 000-00-00</span>
+						<svg class="header__control-icon header__control-icon--mobile" width="12" height="12" aria-hidden="true">
+							<use href="images/sprite.svg#phone"></use>
+						</svg>
+					</a>
+					<span class="header__worktime"><span class="header__worktime-prefix">Работаем с</span> 9:00 до 18:00 по мск</span>
+				</div>
+			</div>
+
+			<button class="header__price-btn header__control-btn--burger" type="button" data-button="open">
+				<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+					<use href="images/sprite.svg#burger"></use>
+					<use href="images/sprite.svg#close"></use>
+				</svg>
+			</button>
+
+			<nav class="sidebar__nav sidebar__nav--mobile" aria-label="Мобильное меню">
+				<ul class="sidebar__menu">
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="/" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_home"></use>
+							</svg>
+							<span class="sidebar__text">Главная</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="catalog.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_catalog"></use>
+							</svg>
+							<span class="sidebar__text">Каталог</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="orders.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_orders"></use>
+							</svg>
+							<span class="sidebar__text">Мои заказы</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="reserves.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_lock"></use>
+							</svg>
+							<span class="sidebar__text">Резервы</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="favorites.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#star"></use>
+							</svg>
+							<span class="sidebar__text">Избранное</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="contacts.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#phone"></use>
+							</svg>
+							<span class="sidebar__text">Контакты</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="profile.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#profile"></use>
+							</svg>
+							<span class="sidebar__text">Профиль</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<button class="sidebar__link" type="button" data-button-open="feedback">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#question"></use>
+							</svg>
+							<span class="sidebar__text">Задать вопрос</span>
+						</button>
+					</li>
+					<li class="sidebar__item sidebar__item--mobile">
+						<button class="sidebar__link" type="button" data-element="login">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#profile"></use>
+							</svg>
+							<span class="sidebar__text">Войти</span>
+						</button>
+						<button class="is-hidden sidebar__link" type="button" data-element="exit" data-need-auth="">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#exit"></use>
+							</svg>
+							<span class="sidebar__text">Выйти</span>
+						</button>
+					</li>
+				</ul>
+				<ul class="sidebar__footer">
+					<li>
+						<a href="404.html">Обучение</a>
+					</li>
+					<li>
+						<a href="404.html">Услуги</a>
+					</li>
+					<li>
+						<a href="404.html">Новости</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header__controls">
+				<button class="is-active header__control-btn header__control-btn--notification" type="button" aria-label="Уведомления" data-button-open="notification">
+					<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#notification"></use>
+					</svg>
+				</button>
+
+				<div class="header__basket" data-button-open="basket">
+					<a class="is-active header__control-btn header__control-btn--basket" href="basket.html" aria-label="Перейти в корзину">
+						<svg class="header__control-icon" width="12" height="12" aria-hidden="true">
+							<use href="images/sprite.svg#basket"></use>
+						</svg>
+					</a>
+
+					<div class="header__basket-info">
+						<div class="header__basket-item">
+							<span>Товары</span>
+							<span class="header__basket-count">1</span>
+						</div>
+						<hr>
+						<div class="header__basket-item">
+							<span>Образцы</span>
+							<span class="header__basket-count">1</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="is-hidden popup popup--notification" data-popup="notification" aria-labelledby="notification-title">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="notification-title">Уведомления</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="">
+					<div class="popup__body">
+						<div class="popup__section" data-block="parent">
+							<ul class="popup__list">
+								<li class="popup__item popup__item--notification" data-element="item">
+									<div class="popup__item-info">
+										<div class="popup__item-meta">
+											<time class="popup__item-date" datetime="2025-12-14">14.12.2025</time>
+											<time class="popup__item-time" datetime="12:25">12:25</time>
+										</div>
+										<span class="popup__item-message">Добро пожаловать в личный кабинет VALTEX Trading</span>
+									</div>
+								</li>
+								<li class="popup__item popup__item--notification" data-element="item">
+									<div class="popup__item-info">
+										<div class="popup__item-meta">
+											<time class="popup__item-date" datetime="2025-12-14">14.12.2025</time>
+											<time class="popup__item-time" datetime="12:25">12:24</time>
+										</div>
+										<span class="popup__item-message">Учетная карточка для Tnum («TEST») активирована</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			
+			<section class="is-hidden popup popup--basket" data-popup="basket" aria-labelledby="basket-title" data-block="basket">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="basket-title">Корзина</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="">
+					<div class="popup__body">
+						<div class="popup__section popup__section--white" data-block="parent">
+							<header class="popup__section-header">
+								<h3 class="popup__section-title">Основной заказ</h3>
+								<span class="popup__section-badge" data-element="badge">4</span>
+							</header>
+
+							<ul class="popup__list">
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<span class="popup__item-price" data-element="item-price" data-base-price="1200">$2 400,00</span>
+									</div>
+									<div class="popup__item-controls">
+										<div class="counter popup__item-quantity">
+											<label class="counter__label" for="quantity-item-1">Количество:</label>
+											<div class="counter__controls" data-block="quantity">
+												<button class="counter__btn" type="button" aria-label="Уменьшить количество на 1" data-counter="minus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="images/sprite.svg#minus"></use>
+													</svg>
+												</button>
+												<input class="counter__input" type="text" id="quantity-item-1" value="2" data-quantity-input="">
+												<button class="counter__btn" type="button" aria-label="Увеличить количество на 1" data-counter="plus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="images/sprite.svg#plus"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="images/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<span class="popup__item-price" data-element="item-price" data-base-price="1200">$2 400,00</span>
+									</div>
+									<div class="popup__item-controls">
+										<div class="counter popup__item-quantity">
+											<label class="counter__label" for="quantity-item-2">Количество:</label>
+											<div class="counter__controls" data-block="quantity">
+												<button class="counter__btn" type="button" aria-label="Уменьшить количество на 1" data-counter="minus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="images/sprite.svg#minus"></use>
+													</svg>
+												</button>
+												<input class="counter__input" type="text" id="quantity-item-2" value="2" data-quantity-input="">
+												<button class="counter__btn" type="button" aria-label="Увеличить количество на 1" data-counter="plus">
+													<svg class="popup__counter-icon" width="7" height="7" aria-hidden="true">
+														<use href="images/sprite.svg#plus"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="images/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="popup__section" data-block="parent">
+							<header class="popup__section-header">
+								<h3 class="popup__section-title">Образцы</h3>
+								<span class="popup__section-badge" data-element="badge">2</span>
+							</header>
+
+							<ul class="popup__list">
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="images/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+								<li class="popup__item" data-element="item">
+									<div class="popup__item-info">
+										<span class="popup__item-name">Бразилия АМА гейша УМ 48ч сухой</span>
+										<button class="popup__delete-btn" type="button" aria-label="Удалить" data-button="delete-item">
+											<svg class="popup__delete-icon" width="12" height="12" aria-hidden="true">
+												<use href="images/sprite.svg#delete"></use>
+											</svg>
+										</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="popup__footer basket-checkout">
+						<div class="basket-checkout__note">
+							<svg class="basket-checkout__note-icon" width="12" height="12" aria-hidden="true">
+								<use href="images/sprite.svg#tooltip"></use>
+							</svg>
+							<span class="basket-checkout__note-text">Курс на 04.12.2025: 1$ = 77,9556 ₽</span>
+						</div>
+
+						<div class="basket-checkout__total">
+							<span class="basket-checkout__total-label">Итого:</span>
+							<strong class="basket-checkout__total-sum" data-element="total-price">$ 4 800,00</strong>
+						</div>
+
+						<a class="button basket-checkout__action-btn" href="basket.html">
+							<span>Перейти к оплате</span>
+						</a>
+
+						<p class="basket-checkout__note">
+							<svg class="basket-checkout__note-icon" width="12" height="12" aria-hidden="true">
+								<use href="images/sprite.svg#tooltip"></use>
+							</svg>
+							<span class="basket-checkout__note-text">Нажимая на кнопку "Перейти к оплате", вы предоставляете Компании свое согласие на обработку ваших персональных данных.</span>
+						</p>
+					</div>
+				</div>
+			</section>
+			
+
+			<section class="is-hidden popup popup--feedback" data-popup="feedback" aria-labelledby="feedback-title">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="notification-title">Связаться</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="" data-wrapper-form="">
+					<form class="form-feedback" action="#" method="post" data-form-feedback="">
+						<div class="form-feedback__wrapper-inputs">
+							<div class="wrapper-input" data-wrapper-input="">
+								<label class="wrapper-input__label" for="text-a1f64e">Тема</label>
+								<input type="text" id="text-a1f64e" placeholder="Укажите тему" data-required="true" data-validate="theme">
+							</div>
+							<div class="wrapper-input" data-wrapper-input="">
+								<label class="wrapper-input__label" for="popup-message">Текст вопроса</label>
+								<textarea id="popup-message" placeholder="Напишите Ваше сообщение" data-required="true" data-validate="message"></textarea>
+							</div>
+						</div>
+
+						<div class="wrapper-input-file" data-wrapper-input-file="">
+							<div class="is-hidden wrapper-input-file__file-info" data-file-info="" data-element="item">
+								<span class="wrapper-input-file__file-name" data-file-name=""></span>
+								<button type="button" data-button="remove-file">
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#close"></use>
+									</svg>
+								</button>
+							</div>
+
+							<input type="file" name="file" id="file" accept=".doc,.docx,.pdf" multiple="" data-input-file="">
+							<label class="button button--transparent" for="file">
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="images/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить файл</span>
+							</label>
+						</div>
+
+						<div class="wrapper-input wrapper-input--agreement" data-wrapper-input="">
+							<input class="is-hidden" type="checkbox" id="checkbox-2cd3ba" placeholder="Согласие" data-required="true">
+							<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-2cd3ba">Нажимая кнопку “Отправить”, вы соглашаетесь <br> с <a href="404.html">политикой конфиденциальности</a></label>
+							<span class="error-message">Необходимо согласие</span>
+						</div>
+
+						<button class="button form-feedback__submit" type="submit">
+							<span>Отправить</span>
+						</button>
+					</form>
+					<div class="is-hidden finish-form" data-finish-form="">
+						<h2>Заявка отправлена</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="is-hidden popup popup--help" data-popup="help" aria-labelledby="help-title">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="notification-title">Помощь специалиста</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="" data-wrapper-form="">
+					<form class="form-feedback" action="#" method="post" data-form-feedback="">
+						<div class="form-feedback__wrapper-inputs">
+							<div class="wrapper-input" data-wrapper-input="">
+								<label class="wrapper-input__label" for="text-94a55e">Тема</label>
+								<input type="text" id="text-94a55e" placeholder="Укажите тему" data-required="true" data-validate="theme">
+							</div>
+							<div class="wrapper-input" data-wrapper-input="">
+								<label class="wrapper-input__label" for="popup-message">Текст вопроса</label>
+								<textarea id="popup-message" placeholder="Напишите Ваше сообщение" data-required="true" data-validate="message"></textarea>
+							</div>
+						</div>
+
+						<div class="wrapper-input-file" data-wrapper-input-file="">
+							<div class="is-hidden wrapper-input-file__file-info" data-file-info="" data-element="item">
+								<span class="wrapper-input-file__file-name" data-file-name=""></span>
+								<button type="button" data-button="remove-file">
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#close"></use>
+									</svg>
+								</button>
+							</div>
+
+							<input type="file" name="file" id="file" accept=".doc,.docx,.pdf" multiple="" data-input-file="">
+							<label class="button button--transparent" for="file">
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="images/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить документы</span>
+							</label>
+						</div>
+
+						<div class="wrapper-input wrapper-input--agreement" data-wrapper-input="">
+							<input class="is-hidden" type="checkbox" id="checkbox-2dc29e" placeholder="Согласие" data-required="true">
+							<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-2dc29e">Нажимая кнопку “Отправить”, вы соглашаетесь <br> с <a href="404.html">политикой конфиденциальности</a></label>
+							<span class="error-message">Необходимо согласие</span>
+						</div>
+
+						<button class="button form-feedback__submit" type="submit" disabled="">
+							<span>Отправить</span>
+						</button>
+					</form>
+					<div class="is-hidden finish-form" data-finish-form="">
+						<h2>Заявка отправлена</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="is-hidden popup" data-popup="qr-code" aria-labelledby="qr-code">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="qr-code-title">QR-code</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="">
+					<div class="popup__body">
+						<h2>qr-code</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="is-hidden popup popup--filters" data-popup="filters" aria-labelledby="filters">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="filters-title">Фильтры</h2>
+					<button class="popup__reset" type="button" data-button="reset-popup">
+						<svg width="12" height="12" aria-hidden="true">
+							<use href="images/sprite.svg#close"></use>
+						</svg>
+						<span>Сбросить </span>
+					</button>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<form class="popup__body">
+					<div class="popup__wrapper-content" data-scrollable-block="">
+													<div class="filter-item is-open" data-block="filter-item">
+								<div class="filter-item__header" data-button="open-parent">
+									<span>Группы</span>
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#arrow_down"></use>
+									</svg>
+								</div>
+
+								<div class="filter-item__list">
+									<ul class="filter-item__list-inner">
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-b2084e" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-b2084e">Арабика</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-fe22f3" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-fe22f3">Микролоты</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-0f662d" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-0f662d">Робусты</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-856ddb" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-856ddb">Смеси</label>
+</div>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+
+
+													<div class="filter-item is-open" data-block="filter-item">
+								<div class="filter-item__header" data-button="open-parent">
+									<span>Наличие</span>
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#arrow_down"></use>
+									</svg>
+								</div>
+
+								<div class="filter-item__list">
+									<ul class="filter-item__list-inner">
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-12c2e6" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-12c2e6">Все</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-8e0998" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-8e0998">В наличии</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-cc24f6" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-cc24f6">Ожидаются</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-91afef" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-91afef">Нет в наличии</label>
+</div>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+
+
+													<div class="filter-item is-open" data-block="filter-item">
+								<div class="filter-item__header" data-button="open-parent">
+									<span>География</span>
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#arrow_down"></use>
+									</svg>
+								</div>
+
+								<div class="filter-item__list">
+									<ul class="filter-item__list-inner">
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-d7d034" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-d7d034">Азия</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-7d5ee1" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-7d5ee1">Африка</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-307025" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-307025">Центральная Америка</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-7a13a5" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-7a13a5">Южная Америка</label>
+</div>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+
+
+						<div class="filter-item is-open" data-block="parent">
+							<div class="filter-item__header" data-button="open-parent">
+								<span>Способ обработки</span>
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="images/sprite.svg#arrow_down"></use>
+								</svg>
+							</div>
+
+							<div class="filter-item__list">
+								<div class="filter-item__list-inner">
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="processing-59fac7" type="checkbox" name="processing">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="processing-59fac7">Гилинг-басас</label>
+</div>
+
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="processing-200960" type="checkbox" name="processing">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="processing-200960">Мытый</label>
+</div>
+
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="processing-160fec" type="checkbox" name="processing">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="processing-160fec">Сухой</label>
+</div>
+
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="processing-e81ce2" type="checkbox" name="processing">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="processing-e81ce2">УМ 48ч сухой</label>
+</div>
+
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="processing-864e05" type="checkbox" name="processing">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="processing-864e05">Хани</label>
+</div>
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class="filter-item is-open" data-block="parent">
+							<div class="filter-item__header" data-button="open-parent">
+								<span>Упаковка</span>
+								<svg width="12" height="12" aria-hidden="true">
+									<use href="images/sprite.svg#arrow_down"></use>
+								</svg>
+							</div>
+
+							<div class="filter-item__list">
+								<div class="filter-item__list-inner">
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="package-b281f7" type="checkbox" name="package">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="package-b281f7">Грейн про</label>
+</div>
+
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="package-2621ce" type="checkbox" name="package">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="package-2621ce">Джутовый мешок</label>
+</div>
+
+									<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="package-52816c" type="checkbox" name="package">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="package-52816c">Мешок-полипропилен</label>
+</div>
+
+								</div>
+							</div>
+						</div>
+
+													<div class="filter-item" data-block="filter-item">
+								<div class="filter-item__header" data-button="open-parent">
+									<span>Цена $/кг</span>
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#arrow_down"></use>
+									</svg>
+								</div>
+
+								<div class="filter-item__list">
+									<ul class="filter-item__list-inner">
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-ee08b7" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-ee08b7">До $10</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-e165e7" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-e165e7">$10 – $20</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-8c2b9b" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-8c2b9b">$20 – $30</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-dfa7de" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-dfa7de">Более $30</label>
+</div>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+
+
+													<div class="filter-item" data-block="filter-item">
+								<div class="filter-item__header" data-button="open-parent">
+									<span>Цена $/кг со скидкой</span>
+									<svg width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#arrow_down"></use>
+									</svg>
+								</div>
+
+								<div class="filter-item__list">
+									<ul class="filter-item__list-inner">
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-ce3963" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-ce3963">До $5</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-6ea4ff" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-6ea4ff">$5 – $15</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-83dab5" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-83dab5">$15 – $25</label>
+</div>
+
+										</li>
+										<li class="filter-item__list-item">
+											<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-2f3133" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-2f3133">Более $25</label>
+</div>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+
+					</div>
+					<button class="button" type="submit">
+						<span>Применить</span>
+					</button>
+				</form>
+			</section>
+
+
+			<section class="is-hidden popup popup--add-organization" data-popup="add-organization" aria-labelledby="add-organization">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="add-organization-title">Добавить организацию</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="">
+					<form class="popup__body total-form">
+						<span class="total-form__subtitle">Организация</span>
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="country-6dffc0">Страна <span class="u-color-green">*</span></label>
+							<input type="text" id="country-6dffc0" name="country" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">Например: Россия</span>
+								
+								
+						</div>
+
+
+						<div class="total-form__row">
+													<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="inn-703574">ИНН <span class="u-color-green">*</span></label>
+							<input type="text" id="inn-703574" name="inn" placeholder="" data-required="true" data-validate="inn">
+
+								
+								<span class="wrapper-input__placeholder">0000000000 / 000000000000</span>
+								
+								
+						</div>
+
+							<button class="button total-form__btn-autofill" type="button">
+								<span>Заполнить по ИНН</span>
+							</button>
+						</div>
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="kpp-0af1c0">КПП <span class="u-color-green">*</span></label>
+							<input type="text" id="kpp-0af1c0" name="kpp" placeholder="" data-required="true" data-validate="kpp">
+
+								
+								<span class="wrapper-input__placeholder">000000000</span>
+								
+								
+						</div>
+
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="company_full_name-a3078c">Полное наименование организации <span class="u-color-green">*</span></label>
+							<input type="text" id="company_full_name-a3078c" name="company_full_name" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">Пример: Акционерное общество «Trum.corp»</span>
+								
+								
+						</div>
+
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="company_short_name-7b0af5">Краткое наименование организации <span class="u-color-green">*</span></label>
+							<input type="text" id="company_short_name-7b0af5" name="company_short_name" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">Пример: Trum.corp</span>
+								
+								
+						</div>
+
+
+						<hr class="split-line">
+
+						<div class="total-form__wrapper-data" data-block="legal-address">
+							<span class="total-form__subtitle">Юридический адрес</span>
+
+							<div class="total-form__row">
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="postal_code-e7a87f">Индекс <span class="u-color-green">*</span></label>
+							<input type="text" id="postal_code-e7a87f" name="postal_code" placeholder="" data-required="true" data-type="index" data-validate="postal_code">
+
+								
+								<span class="wrapper-input__placeholder">_ _ _ _ _ _</span>
+								
+								
+						</div>
+
+
+								<div class="select-wrapper select-wrapper--value select-wrapper--dark" data-select-wrapper="">
+	<span class="select-label" id="city-select-label">Город <span class="u-color-green" aria-hidden="true">*</span></span>
+
+    <div class="select-block" data-block="select" data-element="duplicate">
+        <button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="city-select-label city-title-text" data-element="select-button" data-required="true">
+            <div class="select-block__wrapper-text">
+                <span class="select__title" id="city-title-text" data-element="select-title" data-type="city" data-default-text="Москва">Москва</span>
+            </div>
+            <svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+                <use href="images/sprite.svg#arrow_down"></use>
+            </svg>
+        </button>
+
+        <ul class="select-block__list" aria-labelledby="city-select-label" data-block="select-list">
+            <li><button class="select-block__item" type="button" data-select-item="">Москва</button></li><li><button class="select-block__item" type="button" data-select-item="">Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item="">Минск</button></li><li><button class="select-block__item" type="button" data-select-item="">Нур-Султан</button></li>
+        </ul>
+    </div>
+</div>
+
+							</div>
+
+													<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="address-19f531">Адрес <span class="u-color-green">*</span></label>
+							<input type="text" id="address-19f531" name="address" placeholder="" data-required="true" data-type="address">
+
+								
+								<span class="wrapper-input__placeholder">Пример: Тверская улица, 6</span>
+								
+								
+						</div>
+
+
+							<div class="total-form__row">
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="tel-412608">Телефон <span class="u-color-green">*</span></label>
+							<input type="text" id="tel-412608" name="tel" placeholder="" data-required="true" data-type="phone">
+
+								
+								<span class="wrapper-input__placeholder">+7 (_ _ _) _ _ _ — _ _ — –_ _</span>
+								
+								
+						</div>
+
+
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="email-53a7c2">Email <span class="u-color-green">*</span></label>
+							<input type="email" id="email-53a7c2" name="email" placeholder="" data-required="true" data-type="email" data-input="email">
+
+								
+								<span class="wrapper-input__placeholder">example@mail.ru</span>
+								
+								
+						</div>
+
+							</div>
+						</div>
+
+						<div class="total-form__wrapper-data" data-block="actual-address">
+							<span class="total-form__subtitle">Фактический адрес</span>
+
+							<div class="address-toggle-block" data-block="toggle-parent">
+								<div class="wrapper-input">
+									<input class="is-hidden" id="address_match-59c37e" type="checkbox" name="address_match" data-element="legal-address">
+									<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match-59c37e">Совпадает с юридическим</label>
+								</div>
+
+								<div class="total-form__row">
+															<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="postal_code-a9ce5b">Индекс <span class="u-color-green">*</span></label>
+							<input type="text" id="postal_code-a9ce5b" name="postal_code" placeholder="" data-required="true" data-type="index" data-validate="postal_code">
+
+								
+								<span class="wrapper-input__placeholder">_ _ _ _ _ _</span>
+								
+								
+						</div>
+
+
+									<div class="select-wrapper select-wrapper--value select-wrapper--dark" data-select-wrapper="">
+	<span class="select-label" id="city-select-label">Город <span class="u-color-green" aria-hidden="true">*</span></span>
+
+    <div class="select-block" data-block="select" data-element="duplicate">
+        <button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="city-select-label city-title-text" data-element="select-button" data-required="true">
+            <div class="select-block__wrapper-text">
+                <span class="select__title" id="city-title-text" data-element="select-title" data-type="city" data-default-text="Москва">Москва</span>
+            </div>
+            <svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+                <use href="images/sprite.svg#arrow_down"></use>
+            </svg>
+        </button>
+
+        <ul class="select-block__list" aria-labelledby="city-select-label" data-block="select-list">
+            <li><button class="select-block__item" type="button" data-select-item="">Москва</button></li><li><button class="select-block__item" type="button" data-select-item="">Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item="">Минск</button></li><li><button class="select-block__item" type="button" data-select-item="">Нур-Султан</button></li>
+        </ul>
+    </div>
+</div>
+
+								</div>
+
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="address-d561af">Адрес <span class="u-color-green">*</span></label>
+							<input type="text" id="address-d561af" name="address" placeholder="" data-required="true" data-type="address">
+
+								
+								<span class="wrapper-input__placeholder">Пример: Тверская улица, 6</span>
+								
+								
+						</div>
+
+							</div>
+						</div>
+
+						<span class="total-form__subtitle">Адрес для отправки оригиналов документов</span>
+
+						<div class="address-toggle-block" data-block="toggle-parent">
+							<div class="total-form__choice-group">
+								<div class="wrapper-input">
+									<input class="is-hidden" id="address_match_legal_2-2ab377" type="checkbox" name="address_match_legal_2" data-element="legal-address">
+									<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match_legal_2-2ab377">Совпадает с юридическим</label>
+								</div>
+
+								<div class="wrapper-input">
+									<input class="is-hidden" id="address_match_actual_2-9c9665" type="checkbox" name="address_match_actual_2" data-element="actual-address">
+									<label class="wrapper-input__label wrapper-input__label--checkbox" for="address_match_actual_2-9c9665">Совпадает с фактическим</label>
+								</div>
+							</div>
+
+							<div class="total-form__row">
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="postal_code-541d8d">Индекс <span class="u-color-green">*</span></label>
+							<input type="text" id="postal_code-541d8d" name="postal_code" placeholder="" data-required="true" data-type="index" data-validate="postal_code">
+
+								
+								<span class="wrapper-input__placeholder">_ _ _ _ _ _</span>
+								
+								
+						</div>
+
+
+								<div class="select-wrapper select-wrapper--value select-wrapper--dark" data-select-wrapper="">
+	<span class="select-label" id="city-select-label">Город <span class="u-color-green" aria-hidden="true">*</span></span>
+
+    <div class="select-block" data-block="select" data-element="duplicate">
+        <button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="city-select-label city-title-text" data-element="select-button" data-required="true">
+            <div class="select-block__wrapper-text">
+                <span class="select__title" id="city-title-text" data-element="select-title" data-type="city" data-default-text="Москва">Москва</span>
+            </div>
+            <svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+                <use href="images/sprite.svg#arrow_down"></use>
+            </svg>
+        </button>
+
+        <ul class="select-block__list" aria-labelledby="city-select-label" data-block="select-list">
+            <li><button class="select-block__item" type="button" data-select-item="">Москва</button></li><li><button class="select-block__item" type="button" data-select-item="">Санкт-Петербург</button></li><li><button class="select-block__item" type="button" data-select-item="">Минск</button></li><li><button class="select-block__item" type="button" data-select-item="">Нур-Султан</button></li>
+        </ul>
+    </div>
+</div>
+
+							</div>
+
+													<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="address-dacb5c">Адрес <span class="u-color-green">*</span></label>
+							<input type="text" id="address-dacb5c" name="address" placeholder="" data-required="true" data-type="address">
+
+								
+								<span class="wrapper-input__placeholder">Пример: Тверская улица, 6</span>
+								
+								
+						</div>
+
+
+													<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="tel-598eb8">Телефон <span class="u-color-green">*</span></label>
+							<input type="text" id="tel-598eb8" name="tel" placeholder="" data-required="true" data-type="phone">
+
+								
+								<span class="wrapper-input__placeholder">+7 (_ _ _) _ _ _ — _ _ — –_ _</span>
+								
+								
+						</div>
+
+						</div>
+
+						<hr class="split-line">
+
+						<span class="total-form__subtitle">Банковские реквизиты</span>
+
+						<div class="total-form__row">
+													<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="bik-7e504e">БИК банка <span class="u-color-green">*</span></label>
+							<input type="text" id="bik-7e504e" name="bik" placeholder="" data-required="true" data-validate="bik">
+
+								
+								<span class="wrapper-input__placeholder">_ _ _ _ _ _ _ _ _</span>
+								
+								
+						</div>
+
+
+													<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="bank_name-32b8c4">Название банка <span class="u-color-green">*</span></label>
+							<input type="text" id="bank_name-32b8c4" name="bank_name" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">Пример: СберБанк</span>
+								
+								
+						</div>
+
+						</div>
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="checking_account-6307eb">Расчетный счет <span class="u-color-green">*</span></label>
+							<input type="text" id="checking_account-6307eb" name="checking_account" placeholder="" data-required="true" data-validate="checking_account">
+
+								
+								<span class="wrapper-input__placeholder">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</span>
+								
+								
+						</div>
+
+
+						<hr class="split-line">
+
+						<span class="total-form__subtitle">Контакты</span>
+
+						<div data-block="parent">
+							<div class="clone-block" data-block="copy-data">
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="full_name-4a2220">ФИО <span class="u-color-green">*</span></label>
+							<input type="text" id="full_name-4a2220" name="full_name" placeholder="" data-required="true" data-validate="full-name">
+
+								
+								<span class="wrapper-input__placeholder wrapper-input__placeholder--desktop">Пример: Константинов Константин Константинович</span>
+								
+								
+								<span class="wrapper-input__placeholder wrapper-input__placeholder--mobile">Пр: Константинов Константин Константинович</span>
+								
+						</div>
+
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="email-42b8ef">Email <span class="u-color-green">*</span></label>
+							<input type="email" id="email-42b8ef" name="email" placeholder="" data-required="true" data-input="email">
+
+								
+								<span class="wrapper-input__placeholder">example@mail.ru</span>
+								
+								
+						</div>
+
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="tel-dfaa80">Телефон <span class="u-color-green">*</span></label>
+							<input type="text" id="tel-dfaa80" name="tel" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">+7 (_ _ _) _ _ _ — _ _ — –_ _</span>
+								
+								
+						</div>
+
+
+								<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="notify_account-ef9ca8" type="checkbox" name="notify_account">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="notify_account-ef9ca8">Обновление информации об аккаунте</label>
+</div>
+
+								<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="notify_reserves-b87f58" type="checkbox" name="notify_reserves">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="notify_reserves-b87f58">Обновление информации о резервах</label>
+</div>
+
+							</div>
+
+							<button class="button button--transparent-green total-form__add-recipient" type="button" data-button="add-recipient">
+								<svg width="10" height="10" aria-hidden="true">
+									<use href="images/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить получателя</span>
+							</button>
+						</div>
+
+						<hr class="split-line">
+
+						<span class="total-form__subtitle">Уставные документы</span>
+
+						<div data-block="parent">
+							<button class="button button--transparent-green total-form__add-recipient" type="button" data-button="add-recipient">
+								<svg width="10" height="10" aria-hidden="true">
+									<use href="images/sprite.svg#plus"></use>
+								</svg>
+								<span>Добавить получателя</span>
+							</button>
+						</div>
+
+						<button class="button total-form__save" type="submit" disabled="">
+							<span>Сохранить</span>
+						</button>
+					</form>
+				</div>
+			</section>
+
+			<section class="is-hidden popup popup--education" data-popup="education" aria-labelledby="education">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="education-title">Записаться на курс</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<header class="popup__course-header">
+					<div class="popup__logo-education">
+						<img src="images/education-logo-2.png" alt="Логотип курса SCA">
+					</div>
+					<h3 class="popup__course-title">SCA Coffee Roasting Foundation</h3>
+				</header>
+
+				<div class="u-bg-panel" data-element="scrollable"></div>
+
+				<div class="popup__wrapper-content" data-scrollable-block="">
+					<div class="popup__body">
+						<div class="popup__course-info">
+							<div class="popup__meta">
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">
+										<span class="popup__meta-mobile">Продолж-ть:</span>
+										<span class="popup__meta-desktop">Продолжительность:</span>
+									</span>
+									<span class="u-color-green popup__meta-value">1 день</span>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Группа: </span>
+									<span class="u-color-green popup__meta-value">до 12 человек</span>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Дата:</span>
+									<span class="u-color-green popup__meta-value">20 февраля</span>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Место проведения:</span>
+									<a class="u-link popup__meta-value" href="404.html" target="_blank">Тренинг-центр</a>
+								</div>
+								<div class="popup__meta-item">
+									<span class="popup__meta-label">Курс проводит:</span>
+									<span class="u-color-green popup__meta-value">Иван Иванов</span>
+								</div>
+							</div>
+
+							<div class="popup__price-info">
+								<span class="popup__price-label">Цена:</span>
+								<strong class="u-color-green h1 popup__price-value">30 000 ₽</strong>
+								<span class="popup__price-notice">В стоимость не входит сертификация SCA</span>
+							</div>
+						</div>
+
+						<div class="popup__form-fields">
+							<h3 class="popup__form-title">Данные участника</h3>
+
+							<form action="#" method="post" data-form-education="">
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="name-98652b">Имя <span class="u-color-green">*</span></label>
+							<input type="text" id="name-98652b" name="name" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">Как Вас зовут?</span>
+								
+								
+						</div>
+
+
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="phone-5b045a">Телефон <span class="u-color-green">*</span></label>
+							<input type="text" id="phone-5b045a" name="phone" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">+7 (_ _ _) _ _ _ — _ _ — _ _</span>
+								
+								
+						</div>
+
+
+														<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="email-b9b4d1">Email </label>
+							<input type="email" id="email-b9b4d1" name="email" placeholder="" data-input="email">
+
+								
+								<span class="wrapper-input__placeholder">example@mail.ru</span>
+								
+								
+						</div>
+
+
+								<div class="select-wrapper select-wrapper--value" data-select-wrapper="">
+	<span class="select-label" id="organization-select-label">Организация <span class="u-color-green" aria-hidden="true">*</span></span>
+
+    <div class="select-block" data-block="select" data-element="duplicate">
+        <button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="organization-select-label organization-title-text" data-element="select-button" data-required="true">
+            <div class="select-block__wrapper-text">
+                <span class="select__title" id="organization-title-text" data-element="select-title" data-default-text="Выберите из списка доступных организаций">Выберите из списка доступных организаций</span>
+            </div>
+            <svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+                <use href="images/sprite.svg#arrow_down"></use>
+            </svg>
+        </button>
+
+        <ul class="select-block__list" aria-labelledby="organization-select-label" data-block="select-list">
+            <li><button class="select-block__item" type="button" data-select-item="">Организация 1</button></li><li><button class="select-block__item" type="button" data-select-item="">Организация 2</button></li><li><button class="select-block__item" type="button" data-select-item="">Организация 3</button></li>
+        </ul>
+    </div>
+</div>
+
+
+								<div class="select-wrapper select-wrapper--value" data-select-wrapper="">
+	<span class="select-label" id="options-select-label">Дополнительные опции </span>
+
+    <div class="select-block" data-block="select" data-element="duplicate">
+        <button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="options-select-label options-title-text" data-element="select-button">
+            <div class="select-block__wrapper-text">
+                <span class="select__title" id="options-title-text" data-element="select-title" data-default-text="С выдачей сертификата <span>+ 15 000 ₽</span>">С выдачей сертификата <span>+ 15 000 ₽</span></span>
+            </div>
+            <svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+                <use href="images/sprite.svg#arrow_down"></use>
+            </svg>
+        </button>
+
+        <ul class="select-block__list" aria-labelledby="options-select-label" data-block="select-list">
+            <li><button class="select-block__item" type="button" data-select-item="">С выдачей сертификата SCA</button></li><li><button class="select-block__item" type="button" data-select-item="">Без сертификата SCA</button></li>
+        </ul>
+    </div>
+</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="popup__footer" data-block="popup-footer">
+					<div class="popup__total">
+						<span class="popup__total-label">Итого:</span>
+						<strong class="u-color-green popup__total-value">45 000 ₽</strong>
+					</div>
+
+					<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="agreement_data-7ac4c4" type="checkbox" name="agreement_data">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="agreement_data-7ac4c4">Даю согласие на обработку своих персональных данных</label>
+</div>
+
+					<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="agreement_policy-44dd13" type="checkbox" name="agreement_policy">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="agreement_policy-44dd13">Я ознакомлен и согласен с <a class="u-link" href="#">Политикой обработки персональных данных</a></label>
+</div>
+
+
+					<button class="button popup__submit" type="submit">
+						<span>Записаться</span>
+					</button>
+				</div>
+			</section>
+
+			<section class="is-hidden popup popup--detail-product" data-popup="detail-product" aria-labelledby="detail-product">
+				<header class="popup__header" data-block="header-popup">
+					<h2 class="popup__title" id="detail-product-title">Бразилия АМА гейша УМ 48ч сухой</h2>
+				</header>
+
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="popup__wrapper-content" data-scrollable-block="">
+					<div class="popup__body detail-product">
+						<section class="detail-product__section">
+							<h3 class="detail-product__title">Галерея</h3>
+
+							<div class="detail-product__gallery product-gallery swiper" data-slider="product-gallery">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="images/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="images/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="images/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="images/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="images/catalog_1.png" alt="Фото товара Geisha Ama, вид 1">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="product-gallery__slide">
+											<img class="product-gallery__img" src="images/catalog_2.png" alt="Фото товара Geisha Ama, вид 2">
+										</div>
+									</div>
+								</div>
+
+								<div class="product-gallery__navigation swiper-navigation">
+									<button class="button button--white product-gallery__btn product-gallery__btn--prev swiper-button-prev" type="button" aria-label="Предыдущий слайд">
+										<svg width="16" height="16" aria-hidden="true" focusable="false">
+											<use href="images/sprite.svg#arrow_left"></use>
+										</svg>
+									</button>
+									<button class="button button--white product-gallery__btn product-gallery__btn--next swiper-button-next" type="button" aria-label="Следующий слайд">
+										<svg width="16" height="16" aria-hidden="true" focusable="false">
+											<use href="images/sprite.svg#arrow_right"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</section>
+
+						<section class="detail-product__section u-panel">
+							<dl class="detail-product__specs-list">
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Производитель</dt>
+									<dd class="detail-product__specs-value">Луис Пауло Диас Перейра</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Регион</dt>
+									<dd class="detail-product__specs-value">Минас-Жерайс, Кармо-ди-Минас</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Ферма</dt>
+									<dd class="detail-product__specs-value">Ама</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Площадь фермы</dt>
+									<dd class="detail-product__specs-value">100 га</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Площадь посадок деревьев</dt>
+									<dd class="detail-product__specs-value">70 га</dd>
+								</div>
+								<div class="detail-product__specs-item">
+									<dt class="detail-product__specs-label">Высота:</dt>
+									<dd class="detail-product__specs-value">1100–1300 м</dd>
+								</div>
+							</dl>
+						</section>
+
+						<section class="detail-product__section u-panel detail-product__section--files">
+							<h3 class="detail-product__title">Файлы</h3>
+
+							<div class="detail-product__files-links">
+								<a class="u-color-green detail-product__file-link" href="#" download="">
+									<svg width="16" height="16" aria-hidden="true">
+										<use href="images/sprite.svg#simple_blank"></use>
+									</svg>
+									<span>Договор оферты</span>
+								</a>
+								<a class="u-color-green detail-product__file-link" href="#" download="">
+									<svg width="16" height="16" aria-hidden="true">
+										<use href="images/sprite.svg#simple_blank"></use>
+									</svg>
+									<span>Описание товара</span>
+								</a>
+							</div>
+
+							<button class="button detail-product__btn-ask" type="button" data-button-open="feedback">
+								<span>Задать вопрос</span>
+							</button>
+						</section>
+
+						<section class="detail-product__section detail-product__section--info">
+							<h3 class="detail-product__title">Описание</h3>
+
+							<div class="detail-product__intro">
+								<p class="detail-product__lead-text">Ама — это необычная ферма, где на площади 100 га <br> выращивают кофейную разновидность гейша (геша).</p>
+
+								<div class="detail-product__rating">
+									<span class="detail-product__rating-label">Оценка:</span>
+									<div class="u-color-green detail-product__rating-badge">
+										<span>85.2</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="split-line"></div>
+
+							<ul class="detail-product__text-content">
+								<li>Назвав ферму Ама, производители вдохновлялись японскими ныряльщицами за жемчугом. Подобно тому, как ама ищут драгоценности, семья Перейра привозит редкие и особенные кофейные зерна. О своей любви производитель пишет так: «Это уникальный результат преданных и непоколебимых рук. Кофе, который нигде в мире нельзя назвать обыкновенным».</li>
+								<li>*Издавна в Японии словом ама называли японских ныряльщиц, которые добывали в море ежей, ракообразных и т. д., но самой драгоценной добычей был жемчуг из редких моллюсков. Первые добытчицы жемчуга появились несколько тысяч лет назад (по разным источникам профессии ама от 2-х до 3-х тысяч лет), каждая из ныральщиц — хорошо подготовленная и обладающая твердым характером.</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+
+				<aside class="sidebar">
+			<header class="sidebar__header">
+				<a class="sidebar__logo-link" href="/" aria-label="На главную страницу">
+					<svg class="sidebar__logo-icon" width="200" height="50" aria-hidden="true">
+						<use href="images/sprite.svg#logo"></use>
+					</svg>
+				</a>
+			</header>
+
+			<nav class="sidebar__nav" aria-label="Боковое меню" data-scrollable-block="">
+				<ul class="sidebar__menu">
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="/" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_home"></use>
+							</svg>
+							<span class="sidebar__text">Главная</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="catalog.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_catalog"></use>
+							</svg>
+							<span class="sidebar__text">Каталог</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="orders.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_orders"></use>
+							</svg>
+							<span class="sidebar__text">Мои заказы</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="reserves.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#aside_lock"></use>
+							</svg>
+							<span class="sidebar__text">Резервы</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="favorites.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#star"></use>
+							</svg>
+							<span class="sidebar__text">Избранное</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<a class="sidebar__link" href="contacts.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#phone"></use>
+							</svg>
+							<span class="sidebar__text">Контакты</span>
+						</a>
+					</li>
+					<li class="is-hidden sidebar__item" data-need-auth="">
+						<a class="sidebar__link" href="profile.html" data-element="sidebar-link">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#profile"></use>
+							</svg>
+							<span class="sidebar__text">Профиль</span>
+						</a>
+					</li>
+					<li class="sidebar__item">
+						<button class="sidebar__link" type="button" data-button-open="feedback">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#question"></use>
+							</svg>
+							<span class="sidebar__text">Задать вопрос</span>
+						</button>
+					</li>
+					<li class="is-hidden sidebar__item sidebar__item--mobile">
+						<button class="sidebar__link sidebar__link--exit" type="button" data-element="exit">
+							<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+								<use href="images/sprite.svg#exit"></use>
+							</svg>
+							<span class="sidebar__text">Выйти</span>
+						</button>
+					</li>
+				</ul>
+
+				<div class="sidebar__bottom">
+					<button class="sidebar__link" type="button" data-element="login">
+						<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+							<use href="images/sprite.svg#profile"></use>
+						</svg>
+						<span class="sidebar__text">Войти</span>
+					</button>
+					<button class="is-hidden sidebar__link" type="button" data-element="exit" data-need-auth="">
+						<svg class="sidebar__icon" width="16" height="16" aria-hidden="true">
+							<use href="images/sprite.svg#exit"></use>
+						</svg>
+						<span class="sidebar__text">Выйти</span>
+					</button>
+				</div>
+			</nav>
+		</aside>
+
+	</header>
+
+
+<main class="wrapper">
+	<div class="main-orders" data-block="products-list">
+		<h1>Мои заказы</h1>
+
+		<div class="section-header">
+			<div class="tabs" role="tablist" aria-label="Тип заказа">
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-1" tabindex="-1" aria-controls="panel-1" data-tab-products="1">
+					<span class="tabs__text">Все</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">10</span>
+					</span>
+				</button>
+				<button class="button button--light-green" type="button" role="tab" aria-selected="true" id="tab-2" aria-controls="panel-2" data-tab-products="2">
+					<span class="tabs__text">Активные</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">3</span>
+					</span>
+				</button>
+				<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3" tabindex="-1" data-tab-products="3">
+					<span class="tabs__text">Завершенные</span>
+					<span class="tabs__wrapper-count">
+						<span class="tabs__count">7</span>
+					</span>
+				</button>
+			</div>
+		</div>
+
+		<button class="button button--filter" type="button" data-button-open="filters">
+			<svg width="16" height="16" aria-hidden="true" focusable="false">
+				<use href="images/sprite.svg#filter"></use>
+			</svg>
+			<span>Все фильтры</span>
+		</button>
+
+		<div class="main-orders-table" role="table" aria-label="Список заказов">
+			<div class="main-orders-table__head" role="row">
+				<div class="main-orders-table__th" role="columnheader">Номер <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Дата заказа <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Документы <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Юр.лицо <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th" role="columnheader">Статус заказа <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Сумма <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">К оплате <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Статус оплаты <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Дата оплаты <svg class="main-orders-table__sort-icon"><use href="images/sprite.svg#sort"></use></svg></div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">
+					<span class="main-orders-table__th-text main-orders-table__th-text--short">Отгр. дата</span>
+					<span class="main-orders-table__th-text main-orders-table__th-text--full">Дата отгрузки</span>
+					<svg class="main-orders-table__sort-icon">
+						<use href="images/sprite.svg#sort"></use>
+					</svg>
+				</div>
+				<div class="main-orders-table__th orders-table__th--tablet" role="columnheader">Тип доставки </div>
+			</div>
+
+			<div class="is-hidden main-orders-table__list" data-list-products="1">
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-not-paid.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--red">Не оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-partially-paid.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--yellow">частично оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-not-paid.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--red">Не оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11735</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11734</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">ПЭК (ПВЗ)</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11733</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Доставка по городу</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11732</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Деловые Линии (ПВЗ)</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11731</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			</div>
+
+			<div class="main-orders-table__list" data-list-products="2">
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-not-paid.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--red">Не оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-partially-paid.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--yellow">частично оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-not-paid.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--red">Не оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">—</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать счет</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Новый</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">оплачен</span>
+						<button type="button" class="main-orders-table__qr-btn" data-button-open="qr-code">QR-code</button>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">до 17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Отгр. дата">
+					<span class="main-orders-table__cell-caption">Отгр. дата</span>
+					<span class="main-orders-table__value">—</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			</div>
+
+			<div class="is-hidden main-orders-table__list" data-list-products="3">
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11735</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11734</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">ПЭК (ПВЗ)</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11733</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Доставка по городу</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11732</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Деловые Линии (ПВЗ)</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+							<div class="main-orders-table__row" role="row" data-block="parent">
+				<a class="product-link" href="order-card-done.html"></a>
+				<div class="main-orders-table__td" role="cell" data-label="Номер">
+					<span class="main-orders-table__cell-caption">Номер</span>
+					<span class="main-orders-table__value main-orders-table__value--link">A563</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата заказа">
+					<span class="main-orders-table__cell-caption">Дата заказа</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Документы">
+					<span class="main-orders-table__cell-caption">Документы</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value">25-11731</span>
+						<a class="main-orders-table__sublink" href="#" download="">
+							<svg width="16" height="16" aria-hidden="true" focusable="false">
+								<use href="images/sprite.svg#simple_blank"></use>
+							</svg>
+							<span>Скачать документы</span>
+						</a>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Юр.лицо">
+					<span class="main-orders-table__cell-caption">Юр.лицо</span>
+					<span class="main-orders-table__value">Trum.comp</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Статус заказа">
+					<span class="main-orders-table__cell-caption">Статус заказа</span>
+					<span class="main-orders-table__status-badge main-orders-table__status-badge--new">
+						<span>Отгружен</span>
+					</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Сумма">
+					<span class="main-orders-table__cell-caption">Сумма</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="К оплате">
+					<span class="main-orders-table__cell-caption">К оплате</span>
+					<span class="main-orders-table__value">$400,00</span>
+				</div>
+				<div class="main-orders-table__td main-orders-table__td--status" role="cell" data-label="Статус оплаты">
+					<span class="main-orders-table__cell-caption">Статус оплаты</span>
+					<div class="main-orders-table__content-box">
+						<span class="main-orders-table__value main-orders-table__value--green">Оплачен</span>
+					</div>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата оплаты">
+					<span class="main-orders-table__cell-caption">Дата оплаты</span>
+					<span class="main-orders-table__value">17.11.25</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Дата отгрузки">
+					<span class="main-orders-table__cell-caption">Дата отгрузки</span>
+					<span class="main-orders-table__value">15.05.2026</span>
+				</div>
+				<div class="main-orders-table__td" role="cell" data-label="Тип доставки">
+					<span class="main-orders-table__cell-caption">Тип доставки</span>
+					<span class="main-orders-table__value">Самовывоз <br class="main-orders-table__value--tablet"> со склада</span>
+				</div>
+
+				<div class="main-orders-table__td main-orders-table__td--toggle">
+					<button class="button button--transparent-green button--square" type="button" aria-label="Показать детали заказа" data-button="open-parent">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="images/sprite.svg#arrow_down"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			</div>
+		</div>
+
+	</div>
+</main>
+
+		<footer class="footer" style="background-image: url(images/background-footer.png);">
+			<div class="wrapper">
+				<div class="footer__grid footer__grid--top">
+					<div class="footer__top">
+						<a class="footer__logo" href="/">
+							<svg class="footer__logo-icon" width="83" height="75" aria-hidden="true">
+								<use href="images/sprite.svg#logo_white"></use>
+							</svg>
+						</a>
+						<address class="footer__contacts">
+							<div class="footer__contact-item footer__contact-item--desktop">
+								<a class="footer__phone" href="tel:88000000000">8 (800) 000-00-00</a>
+								<span class="footer__text">Работаем с 9:00 до 18:00 по мск</span>
+							</div>
+
+							<div class="footer__socials">
+								<a class="footer__social-link" href="https://tg" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+									<svg class="footer__social-icon" width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#telegram"></use>
+									</svg>
+								</a>
+								<a class="footer__social-link" href="https://vk" target="_blank" rel="noopener noreferrer" aria-label="Вконтакте">
+									<svg class="footer__social-icon" width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#vk"></use>
+									</svg>
+								</a>
+								<a class="footer__social-link" href="https://youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+									<svg class="footer__social-icon" width="12" height="12" aria-hidden="true">
+										<use href="images/sprite.svg#youtube"></use>
+									</svg>
+								</a>
+							</div>
+
+							<p class="footer__text footer__text--desktop">
+								115000, г. Москва, <br>
+								вн. тер. г. м. о. Даниловский, <br>
+								Проектируемый проезд № 9412, <br> д. 8, стр. 15
+							</p>
+						</address>
+						<div class="footer__contact-item footer__contact-item--mobile">
+							<a class="footer__phone" href="tel:88000000000">8 (800) 000-00-00</a>
+							<span class="footer__text">Работаем с 9:00 до 18:00 по мск</span>
+						</div>
+					</div>
+
+					<nav class="footer__nav-col">
+						<h3>
+							<a class="footer__link footer__link--title" href="catalog.html">Зеленый кофе</a>
+						</h3>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Арабика</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Робуста</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Смеси</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Экзотика</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Микролоты</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="footer__nav-col">
+						<h3>
+							<a class="footer__link footer__link--title" href="catalog.html">Какао</a>
+						</h3>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Какао-бобы</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Какао-масло</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="footer__nav-col">
+						<h3>
+							<a class="footer__link footer__link--title" href="catalog.html">Ростеры и софт</a>
+						</h3>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Каталог оборудования</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Лизинг оборудования</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="catalog.html">Софт</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="footer__nav-col">
+						<h3>
+							<a class="footer__link footer__link--title" href="404.html">О компании</a>
+						</h3>
+						<ul class="footer__nav-list">
+							<li class="footer__nav-item">
+								<a class="footer__link" href="404.html">О нас</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="404.html">Команда</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="404.html">Склад кофе</a>
+							</li>
+							<li class="footer__nav-item">
+								<a class="footer__link" href="404.html">Склад какао</a>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="footer__nav-col">
+						<ul class="footer__nav-list footer__nav-list--big">
+							<li>
+								<h3>
+									<a class="footer__link footer__link--title" href="education.html">Обучение</a>
+								</h3>
+							</li>
+							<li class="footer__nav-item">
+								<h3>
+									<a class="footer__link footer__link--title" href="404.html">Услуги</a>
+								</h3>
+							</li>
+							<li class="footer__nav-item">
+								<h3>
+									<a class="footer__link footer__link--title" href="news.html">Новости</a>
+								</h3>
+							</li>
+							<li class="footer__nav-item">
+								<h3>
+									<a class="footer__link footer__link--title" href="contacts.html">Контакты</a>
+								</h3>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<address class="footer__contacts footer__contacts--tablet">
+					<p class="footer__text">
+						129085, г. Москва, вн. тер. г. м. о. <br class="footer--mobile"> Останкинский, <br class="footer--tablet"> пр-д Ольминского, д.5, пом.1Н/9
+					</p>
+				</address>
+
+				<div class="footer__grid footer__grid--bottom">
+					<span class="footer__copyright">© <span data-element="current-year"></span>, ООО «ВАЛТЕКС ТРЕЙДИНГ»</span>
+					<a class="footer__link" href="404.html">Договор оферты</a>
+					<a class="footer__link" href="404.html">Бланк доверенности</a>
+					<a class="footer__link" href="404.html">Политика обработки ПД</a>
+					<a class="footer__link" href="404.html">Реквизиты</a>
+					<a href="https://github.com/denis-heise" class="footer__developer" target="_blank" rel="noopener noreferrer">
+						<span>Фронтенд-инжиниринг</span>
+						<svg class="footer__developer-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://w3.org" aria-hidden="true">
+							<path d="M5 4L1 8L5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+							<path d="M11 4L15 8L11 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+							<path d="M10 2L6 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+
+		<div class="button-up hidden" data-button="up">
+	<svg viewBox="0 0 21.7526 13.0886" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21.752563" height="13.088623" fill="none" customframe="#000000">
+		<path id="Vector 10" d="M0.376282 12.7593L10.8763 0.759277L21.3763 12.7593" stroke="rgb(255,255,255)" stroke-width="1"></path>
+	</svg>
+</div>
+
+
+		<section class="is-hidden popup popup--address popup--pvz" data-popup="edit-address" aria-labelledby="edit-address">
+			<header class="popup__header" data-block="header-popup">
+				<h2 class="popup__title" id="edit-address-title">
+					<span class="popup__title-text popup__title-text--pvz">Выберите ПВЗ</span>
+					<span class="popup__title-text popup__title-text--address">Укажите адрес доставки</span>
+				</h2>
+			</header>
+
+			<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+				<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+					<use href="images/sprite.svg#close"></use>
+				</svg>
+			</button>
+
+			<div class="popup__wrapper-content" data-scrollable-block="">
+				<div class="popup__body">
+					<div class="popup__map-address" data-block="map-address"></div>
+
+					<div class="wrapper-input wrapper-input--address" data-wrapper-input="">
+						<label class="wrapper-input__label" for="address_city-de8ae9">Москва</label>
+						<input placeholder="Введите адрес или метро" id="address_city-de8ae9" type="text" name="address_city" data-required="true" data-element="input-address-pvz">
+					</div>
+
+					<div class="popup__list-items popup__pvz" data-scrollable-block="">
+									<article class="pickup-point" data-block="pickup-point">
+				<address class="pickup-point__address" data-element="address-name">
+					г. Москва, Варшавское шоссе, д. 125, корп. 3, офис 216
+				</address>
+
+				<div class="pickup-point__footer">
+					<div class="pickup-point__schedule">
+						<span class="pickup-point__hidden">Режим работы:</span>
+						<time datetime="Mo-Sa 08:00-20:00">Пн-Сб 08:00–20:00</time>
+					</div>
+
+					<input type="checkbox" id="address_1" class="pickup-point__checkbox">
+
+					<label class="pickup-point__button-label" for="address_1" data-index="1" data-button="show-on-popup-map">
+						<div class="button">
+							<span class="pickup-point__text-select">Выбрать</span>
+						</div>
+
+						<span class="u-color-green pickup-point__text-selected">Выбран</span>
+					</label>
+				</div>
+			</article>
+
+									<article class="pickup-point" data-block="pickup-point">
+				<address class="pickup-point__address" data-element="address-name">
+					г. Москва, Варшавское шоссе, д. 125, корп. 3, офис 216
+				</address>
+
+				<div class="pickup-point__footer">
+					<div class="pickup-point__schedule">
+						<span class="pickup-point__hidden">Режим работы:</span>
+						<time datetime="Mo-Sa 08:00-20:00">Пн-Сб 08:00–20:00</time>
+					</div>
+
+					<input type="checkbox" id="address_2" class="pickup-point__checkbox">
+
+					<label class="pickup-point__button-label" for="address_2" data-index="2" data-button="show-on-popup-map">
+						<div class="button">
+							<span class="pickup-point__text-select">Выбрать</span>
+						</div>
+
+						<span class="u-color-green pickup-point__text-selected">Выбран</span>
+					</label>
+				</div>
+			</article>
+
+									<article class="pickup-point" data-block="pickup-point">
+				<address class="pickup-point__address" data-element="address-name">
+					г. Москва, Варшавское шоссе, д. 125, корп. 3, офис 216
+				</address>
+
+				<div class="pickup-point__footer">
+					<div class="pickup-point__schedule">
+						<span class="pickup-point__hidden">Режим работы:</span>
+						<time datetime="Mo-Sa 08:00-20:00">Пн-Сб 08:00–20:00</time>
+					</div>
+
+					<input type="checkbox" id="address_3" class="pickup-point__checkbox">
+
+					<label class="pickup-point__button-label" for="address_3" data-index="3" data-button="show-on-popup-map">
+						<div class="button">
+							<span class="pickup-point__text-select">Выбрать</span>
+						</div>
+
+						<span class="u-color-green pickup-point__text-selected">Выбран</span>
+					</label>
+				</div>
+			</article>
+
+									<article class="pickup-point" data-block="pickup-point">
+				<address class="pickup-point__address" data-element="address-name">
+					г. Москва, Варшавское шоссе, д. 125, корп. 3, офис 216
+				</address>
+
+				<div class="pickup-point__footer">
+					<div class="pickup-point__schedule">
+						<span class="pickup-point__hidden">Режим работы:</span>
+						<time datetime="Mo-Sa 08:00-20:00">Пн-Сб 08:00–20:00</time>
+					</div>
+
+					<input type="checkbox" id="address_4" class="pickup-point__checkbox">
+
+					<label class="pickup-point__button-label" for="address_4" data-index="4" data-button="show-on-popup-map">
+						<div class="button">
+							<span class="pickup-point__text-select">Выбрать</span>
+						</div>
+
+						<span class="u-color-green pickup-point__text-selected">Выбран</span>
+					</label>
+				</div>
+			</article>
+
+									<article class="pickup-point" data-block="pickup-point">
+				<address class="pickup-point__address" data-element="address-name">
+					г. Москва, Варшавское шоссе, д. 125, корп. 3, офис 216
+				</address>
+
+				<div class="pickup-point__footer">
+					<div class="pickup-point__schedule">
+						<span class="pickup-point__hidden">Режим работы:</span>
+						<time datetime="Mo-Sa 08:00-20:00">Пн-Сб 08:00–20:00</time>
+					</div>
+
+					<input type="checkbox" id="address_5" class="pickup-point__checkbox">
+
+					<label class="pickup-point__button-label" for="address_5" data-index="5" data-button="show-on-popup-map">
+						<div class="button">
+							<span class="pickup-point__text-select">Выбрать</span>
+						</div>
+
+						<span class="u-color-green pickup-point__text-selected">Выбран</span>
+					</label>
+				</div>
+			</article>
+
+									<article class="pickup-point" data-block="pickup-point">
+				<address class="pickup-point__address" data-element="address-name">
+					г. Москва, Варшавское шоссе, д. 125, корп. 3, офис 216
+				</address>
+
+				<div class="pickup-point__footer">
+					<div class="pickup-point__schedule">
+						<span class="pickup-point__hidden">Режим работы:</span>
+						<time datetime="Mo-Sa 08:00-20:00">Пн-Сб 08:00–20:00</time>
+					</div>
+
+					<input type="checkbox" id="address_6" class="pickup-point__checkbox">
+
+					<label class="pickup-point__button-label" for="address_6" data-index="6" data-button="show-on-popup-map">
+						<div class="button">
+							<span class="pickup-point__text-select">Выбрать</span>
+						</div>
+
+						<span class="u-color-green pickup-point__text-selected">Выбран</span>
+					</label>
+				</div>
+			</article>
+
+					</div>
+
+					<div class="popup__list-items popup__address" data-scrollable-block="" data-block="info-address">
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="address_city-6c2617">Адрес <span class="u-color-green">*</span></label>
+							<input type="text" id="address_city-6c2617" name="address_city" placeholder="" data-required="true">
+
+								
+								<span class="wrapper-input__placeholder">Пр: пр-т Обуховской Обороны 118, корп. 2, стр. 1, лит. А</span>
+								
+								
+						</div>
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="popup_apartment-0e34a2">Офис/Квартира <span class="u-color-green">*</span></label>
+							<input type="text" id="popup_apartment-0e34a2" name="popup_apartment" placeholder="" data-required="true" data-validate="apartment">
+
+								
+								<span class="wrapper-input__placeholder">Введите номер</span>
+								
+								
+						</div>
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="popup_floor-05c353">Этаж <span class="u-color-green">*</span></label>
+							<input type="text" id="popup_floor-05c353" name="popup_floor" placeholder="" data-required="true" data-validate="floor">
+
+								
+								<span class="wrapper-input__placeholder">Введите номер</span>
+								
+								
+						</div>
+
+
+						<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="popup-message">Комментарий к заказу</label>
+							<textarea id="popup-message" placeholder="Напишите Ваше сообщение" data-validate="message"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="popup__result">
+				<div class="popup__row">
+					<span class="h2">Стоимость доставки:</span>
+					<span class="u-color-green" data-element="price-address">387,00 ₽</span>
+				</div>
+										<div class="info-note" role="note">
+							<svg class="info-note__icon" width="12" height="12" aria-hidden="true">
+								<use href="images/sprite.svg#tooltip"></use>
+							</svg>
+							<p class="info-note__text">Оформляя заказ на доставку, вы подтверждаете согласие с&nbsp;офертой.</p>
+						</div>
+
+				<button class="button" type="button">
+					<span>Доставить сюда</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="is-hidden popup popup--delivery" data-popup="edit-delivery" aria-labelledby="edit-delivery">
+			<header class="popup__header" data-block="header-popup">
+				<h2>Способ доставки заказа</h2>
+				<div class="delivery__col">
+					<div class="wrapper-input delivery__field" data-wrapper-input="">
+						<label class="wrapper-input__label" for="text-781ba3">Город доставки<span class="u-color-green" aria-hidden="true">*</span></label>
+						<input class="wrapper-input__input" type="text" id="text-781ba3" value="Москва" required="">
+					</div>
+											<div class="info-note" role="note">
+							<svg class="info-note__icon" width="12" height="12" aria-hidden="true">
+								<use href="images/sprite.svg#tooltip"></use>
+							</svg>
+							<p class="info-note__text">Доступные варианты доставки меняются в зависимости от города</p>
+						</div>
+
+				</div>
+			</header>
+
+			<div class="popup__wrapper-content" data-scrollable-block="">
+				<div class="popup__body">
+					<div class="checkout__section delivery" data-sync-group="radio">
+						<div class="delivery__list" data-block="products-list">
+							<div class="tabs tabs--big" role="tablist" aria-label="Тип заказа">
+								<button class="button button--light-green is-active" type="button" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1" data-tab-products="1">
+									<span class="h2 tabs__text">Самовывоз со склада</span>
+									<span>Бесплатно</span>
+								</button>
+										<article class="warehouse-card" data-list-products="1">
+			<header class="warehouse-card__header">
+				<h3 class="h2">Склад поставщика</h3>
+			</header>
+
+			<div class="warehouse-card__body">
+				<address class="warehouse-card__address">
+					109443, Россия, Москва, <br> пр-т Волгоградский, 106 корп. 1
+				</address>
+
+				<div class="schedule warehouse-card__schedule">
+					<h4 class="schedule__title">Часы работы:</h4>
+					<ul class="schedule__list">
+						<li class="schedule__item">
+							<span class="schedule__days">Пн–Чт</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Пт–Сб</span>
+							<time class="schedule__time" datetime="10:00-20:00">с 10:00 до 20:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Вс</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer class="warehouse-card__footer">
+				<div class="warehouse-card__delivery">
+					Доставка – <time datetime="2025-03-21">21 Марта 2025</time>
+				</div>
+				<div class="u-color-green warehouse-card__price">
+					Бесплатно
+				</div>
+			</footer>
+		</article>
+
+
+								<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1" data-tab-products="2">
+									<div class="delivery__col">
+										<span class="h2 tabs__text">ПЭК</span>
+										<span>До адреса / до ПВЗ</span>
+									</div>
+
+									<span>От 300₽</span>
+								</button>
+								<article class="is-hidden warehouse-card" data-list-products="2">
+									<div class="warehouse-card__row" data-block="parent">
+										<fieldset class="delivery-choice">
+											<legend class="h2">Куда доставить</legend>
+
+											<div class="delivery-choice__group">
+												<div class="wrapper-input wrapper-input--radio">
+													<input type="radio" name="delivery_type_mobile" id="delivery_type_mobile-3d0630" value="pvz" checked="true" data-sync-radio="">
+
+													<label for="delivery_type_mobile-3d0630">
+														<span class="delivery-choice__card"><span class="delivery-choice__name">Доставка до терминала</span>
+													</span></label>
+
+													<div class="warehouse-card__col">
+														<div class="warehouse-card__col">
+															<address class="warehouse-card__address">
+																115000, г. Москва, <br>
+																вн. тер. г. м. о. Даниловский, <br>
+																Проектируемый проезд № 9412, <br> д. 8, стр. 15
+															</address>
+
+															<div class="schedule warehouse-card__schedule">
+																<h4 class="schedule__title">Часы работы:</h4>
+																<ul class="schedule__list">
+																	<li class="schedule__item">
+																		<span class="schedule__days">Пн–Сб</span>
+																		<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+																	</li>
+																</ul>
+															</div>
+														</div>
+
+														<div class="warehouse-card__delivery">Стоимость доставки: <span class="u-color-green">387,00 ₽</span></div>
+														<button class="button button--transparent-green warehouse-card__button-edit" type="button" data-button-open="edit-address">
+															<svg class="warehouse-card__icon" width="12" height="12" aria-hidden="true">
+																<use href="images/sprite.svg#edit_address"></use>
+															</svg>
+															<span>Изменить</span>
+														</button>
+													</div>
+												</div>
+
+												<div class="wrapper-input wrapper-input--radio">
+													<input type="radio" name="delivery_type_mobile" id="delivery_type_mobile-fa23c7" value="address" data-sync-radio="">
+
+													<label for="delivery_type_mobile-fa23c7">
+														<span class="delivery-choice__card">
+															<span class="delivery-choice__name">Доставка до адреса</span>
+															<span class="delivery-choice__info">
+																<span class="delivery-choice__label">Стоимость доставки</span>
+																<span class="delivery-choice__price">от 900 ₽</span>
+															</span>
+														</span>
+													</label>
+
+													<div class="warehouse-card__col">
+														<button class="button button--transparent-green warehouse-card__button-edit" type="button" data-button-open="edit-address">
+															<svg class="warehouse-card__icon" width="12" height="12" aria-hidden="true">
+																<use href="images/sprite.svg#edit_address"></use>
+															</svg>
+															<span>Изменить</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</article>
+
+								<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3" tabindex="-1" data-tab-products="3">
+									<div class="delivery__col">
+										<span class="h2 tabs__text">Деловые Линии</span>
+										<span>До адреса / до ПВЗ</span>
+									</div>
+
+									<span>От 300₽</span>
+								</button>
+										<article class="is-hidden warehouse-card" data-list-products="3">
+			<header class="warehouse-card__header">
+				<h3 class="h2">Склад поставщика 3</h3>
+			</header>
+
+			<div class="warehouse-card__body">
+				<address class="warehouse-card__address">
+					109443, Россия, Москва, <br> пр-т Волгоградский, 106 корп. 1
+				</address>
+
+				<div class="schedule warehouse-card__schedule">
+					<h4 class="schedule__title">Часы работы:</h4>
+					<ul class="schedule__list">
+						<li class="schedule__item">
+							<span class="schedule__days">Пн–Чт</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Пт–Сб</span>
+							<time class="schedule__time" datetime="10:00-20:00">с 10:00 до 20:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Вс</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer class="warehouse-card__footer">
+				<div class="warehouse-card__delivery">
+					Доставка – <time datetime="2025-03-21">21 Марта 2025</time>
+				</div>
+				<div class="u-color-green warehouse-card__price">
+					Бесплатно
+				</div>
+			</footer>
+		</article>
+
+
+								<button class="button button--transparent" type="button" role="tab" aria-selected="false" id="tab-4" aria-controls="panel-4" tabindex="-1" data-tab-products="4">
+									<span class="h2 tabs__text">Доставка по городу</span>
+									<span>По договоренности</span>
+								</button>
+										<article class="is-hidden warehouse-card" data-list-products="4">
+			<header class="warehouse-card__header">
+				<h3 class="h2">Склад поставщика 4</h3>
+			</header>
+
+			<div class="warehouse-card__body">
+				<address class="warehouse-card__address">
+					109443, Россия, Москва, <br> пр-т Волгоградский, 106 корп. 1
+				</address>
+
+				<div class="schedule warehouse-card__schedule">
+					<h4 class="schedule__title">Часы работы:</h4>
+					<ul class="schedule__list">
+						<li class="schedule__item">
+							<span class="schedule__days">Пн–Чт</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Пт–Сб</span>
+							<time class="schedule__time" datetime="10:00-20:00">с 10:00 до 20:00</time>
+						</li>
+						<li class="schedule__item">
+							<span class="schedule__days">Вс</span>
+							<time class="schedule__time" datetime="10:00-21:00">с 10:00 до 21:00</time>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer class="warehouse-card__footer">
+				<div class="warehouse-card__delivery">
+					Доставка – <time datetime="2025-03-21">21 Марта 2025</time>
+				</div>
+				<div class="u-color-green warehouse-card__price">
+					Бесплатно
+				</div>
+			</footer>
+		</article>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="popup__footer">
+				<button class="button" type="button" aria-label="Сохранить" data-button="close-popup">
+					<span>Сохранить изменения</span>
+				</button>
+				<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+					<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+						<use href="images/sprite.svg#close"></use>
+					</svg>
+				</button>
+			</div>
+		</section>
+
+		<section class="is-hidden popup popup--login" data-popup="login" aria-labelledby="login" data-block="parent">
+			<header class="popup__header" data-block="header-popup">
+				<h2 class="popup__title" id="login-title">
+					<span class="popup__title-text popup-element-login" data-title="auth">Авторизация</span>
+					<span class="is-hidden popup-element-registration popup__title-text" data-title="registration">Регистрация</span>
+					<span class="is-hidden popup-element-forgot popup__title-text" data-title="forgot">Восстановление пароля</span>
+				</h2>
+			</header>
+
+			<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+				<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+					<use href="images/sprite.svg#close"></use>
+				</svg>
+			</button>
+
+			<div class="popup__wrapper-content">
+				<div class="popup__body" data-scrollable-block="">
+					<form class="popup-element-login" action="#" method="post" data-form="auth" data-form-feedback="auth">
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="email-7c7354">Email <span class="u-color-green">*</span></label>
+							<input type="email" id="email-7c7354" name="email" placeholder="" data-required="true" data-input="email">
+
+								
+								<span class="wrapper-input__placeholder">example@mail.ru</span>
+								
+								
+						</div>
+
+						<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="login_password-e06f9d">Пароль <span class="u-color-green">*</span></label>
+							<div class="wrapper-input__field-group">
+								<input class="wrapper-input__field" type="text" id="login_password-e06f9d" placeholder="Пароль" name="login_password" data-required="true" data-validate="password" data-input="password">
+								<button class="wrapper-input__icon-btn" type="button" data-button="toggle-password-visibility" aria-label="Показать/скрыть пароль">
+									<svg class="wrapper-input__icon" width="20" height="20" aria-hidden="true">
+										<use href="images/sprite.svg#eye_close"></use>
+										<use href="images/sprite.svg#eye"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="popup__row">
+							<div class="wrapper-input" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-f5edca" type="checkbox" name="checkbox">
+	<label class="wrapper-input__label wrapper-input__label--checkbox wrapper-input__label--remember" for="checkbox-f5edca">Запомнить меня</label>
+</div>
+
+							<button class="u-link simple-button-form" type="button" data-button-toggle="forgot">Забыли пароль?</button>
+						</div>
+
+						<button class="button form-feedback__submit" type="submit" data-button="auth">
+							<span>Войти</span>
+						</button>
+					</form>
+
+					<form class="is-hidden popup-element-registration" action="#" method="post" data-form="registration" data-form-feedback="registration">
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="inn-4fd0cd">ИНН <span class="u-color-green">*</span></label>
+							<input type="text" id="inn-4fd0cd" name="inn" placeholder="" data-required="true" data-validate="inn">
+
+								
+								<span class="wrapper-input__placeholder">0000000000 / 000000000000</span>
+								
+								
+						</div>
+
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="tel-f7254a">Телефон <span class="u-color-green">*</span></label>
+							<input type="text" id="tel-f7254a" name="tel" placeholder="" data-required="true" data-type="phone">
+
+								
+								<span class="wrapper-input__placeholder">+7 (_ _ _) _ _ _ — _ _ — –_ _</span>
+								
+								
+						</div>
+
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="full_name-88819a">ФИО <span class="u-color-green">*</span></label>
+							<input type="text" id="full_name-88819a" name="full_name" placeholder="" data-required="true" data-validate="full-name">
+
+								
+								<span class="wrapper-input__placeholder wrapper-input__placeholder--desktop">Пример: Константинов Константин Константинович</span>
+								
+								
+								<span class="wrapper-input__placeholder wrapper-input__placeholder--mobile">Пр: Константинов Константин Константинович</span>
+								
+						</div>
+
+
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="email-fe61d2">Email <span class="u-color-green">*</span></label>
+							<input type="email" id="email-fe61d2" name="email" placeholder="" data-required="true" data-input="email">
+
+								
+								<span class="wrapper-input__placeholder">example@mail.ru</span>
+								
+								
+						</div>
+
+
+						<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="new_password-7bafdb">Пароль <span class="u-color-green">*</span></label>
+							<div class="wrapper-input__field-group">
+								<input class="wrapper-input__field" type="text" placeholder="Пароль" id="new_password-7bafdb" name="new_password" data-required="true" data-validate="password" data-input="password" data-element="new-password">
+								<button class="wrapper-input__icon-btn" type="button" data-button="toggle-password-visibility" aria-label="Показать/скрыть пароль">
+									<svg class="wrapper-input__icon" width="20" height="20" aria-hidden="true">
+										<use href="images/sprite.svg#eye_close"></use>
+										<use href="images/sprite.svg#eye"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+
+						<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="confirm_password-950679">Повторите пароль <span class="u-color-green">*</span></label>
+							<div class="wrapper-input__field-group">
+								<input class="wrapper-input__field" type="text" placeholder="Пароль" id="confirm_password-950679" name="confirm_password" data-required="true" data-validate="password" data-input="password" data-element="confirm-password">
+								<button class="wrapper-input__icon-btn" type="button" data-button="toggle-password-visibility" aria-label="Показать/скрыть пароль">
+									<svg class="wrapper-input__icon" width="20" height="20" aria-hidden="true">
+										<use href="images/sprite.svg#eye_close"></use>
+										<use href="images/sprite.svg#eye"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+
+						<div class="wrapper-input wrapper-input--recaptcha" data-wrapper-input="">
+							<input class="is-hidden" id="recaptcha-d9596e" type="checkbox" name="recaptcha" data-required="true" data-validate="recaptcha">
+							<label class="wrapper-input__label wrapper-input__label--checkbox wrapper-input__label--recaptcha" for="recaptcha-d9596e">
+								<span>Я не робот</span>
+								<img src="images/recaptcha.png" alt="recaptcha" width="50" height="50">
+							</label>
+						</div>
+
+						<div class="wrapper-input wrapper-input--agreement" data-wrapper-input="">
+	<input class="is-hidden" id="checkbox-3c4eaf" type="checkbox" name="checkbox" data-required="true" data-input="agreement">
+	<label class="wrapper-input__label wrapper-input__label--checkbox" for="checkbox-3c4eaf">Даю согласие на обработку персональных данных в соответствии с <a class="u-link" href="404.html" target="_blank">Политикой в отношении обработки персональных данных</a></label>
+</div>
+
+
+						<button class="button form-feedback__submit" type="submit" data-button="register">
+							<span>Зарегистрироваться</span>
+						</button>
+					</form>
+
+					<form class="is-hidden popup-element-forgot" action="#" method="post" data-form="forgot" data-form-feedback="forgot">
+												<div class="wrapper-input" data-wrapper-input="">
+							<label class="wrapper-input__label" for="email-10aa85">Email <span class="u-color-green">*</span></label>
+							<input type="email" id="email-10aa85" name="email" placeholder="" data-required="true" data-input="email">
+
+								
+								<span class="wrapper-input__placeholder">example@mail.ru</span>
+								
+								
+						</div>
+
+						<button class="button form-feedback__submit" type="submit">
+							<span>Восстановить пароль</span>
+						</button>
+					</form>
+
+					<div class="is-hidden finish-form" data-finish-form="">
+						Ссылка для восстановление пароля отправлена
+					</div>
+
+					<hr class="split-line" data-element="split-line">
+
+					<div class="popup-form-footer">
+						<div class="is-hidden popup-element-registration" data-wrapper-button="auth">
+							<span>Есть учетная запись?</span>
+							<button class="u-link simple-button-form" type="button" data-button-toggle="auth">Войти</button>
+						</div>
+						<div class="popup-element-login" data-wrapper-button="registration">
+							<span>Нет учетной записи?</span>
+							<button class="u-link simple-button-form" type="button" data-button-toggle="registration">Зарегистрироваться</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="is-hidden popup popup--sample" data-popup="sample" aria-labelledby="sample-title">
+			<header class="popup__header" data-block="header-popup">
+				<h2 class="popup__title" id="sample-title">Выберите тип образца</h2>
+			</header>
+
+			<button class="popup__close-btn" type="button" aria-label="Закрыть" data-button="close-popup">
+				<svg class="popup__close-icon" width="12" height="12" aria-hidden="true">
+					<use href="images/sprite.svg#close"></use>
+				</svg>
+			</button>
+
+			<div class="popup__wrapper-content">
+				<div class="popup__body">
+					<div class="select-wrapper" data-select-wrapper="">
+						<div class="select-block" data-block="select">
+							<button class="select-block__button" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="warehouse-select-label warehouse-title-text" data-element="select-button">
+								<div class="select-block__wrapper-text">
+									<span class="select__title" id="warehouse-title-text" data-element="select-title">Зеленый</span>
+								</div>
+								<svg class="select-block__arrow" width="12" height="12" aria-hidden="true">
+									<use href="images/sprite.svg#arrow_down"></use>
+								</svg>
+							</button>
+
+							<ul class="select-block__list" aria-labelledby="warehouse-select-label" data-block="select-list">
+								<li>
+									<button class="select-block__item is-selected" type="button" data-select-item="">Зеленый</button>
+								</li>
+								<li>
+									<button class="select-block__item" type="button" data-select-item="">Зеленый 2</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="popup__footer">
+					<button class="button button--select" type="button" disabled="" data-button-type="select" data-button="close-popup">
+						<span>Выбрать</span>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<div class="is-hidden overlay" data-popup="other"></div>
+
+		<script src="./js/utils.js?_v=20261023194823"></script>
+		<script src="./js/phone.js?_v=20261023194823"></script>
+		<script src="./js/sliders.js?_v=20261023194823"></script>
+		<script src="./js/map.js?_v=20261023194823"></script>
+		<script src="./js/map-address.js?_v=20261023194823"></script>
+		<script src="./js/forms.js?_v=20261023194823"></script>
+		<script src="./js/ui-fields.js?_v=20261023194823"></script>
+		<script src="./js/catalog-basket.js?_v=20261023194823"></script>
+		<script src="./js/animations.js?_v=20261023194823"></script>
+		<script src="./js/auth.js?_v=20261023194823"></script>
+		<script src="./js/ui-elements.js?_v=20261023194823"></script>
+		<script src="./js/popups.js?_v=20261023194823"></script>
+		<script src="./js/script.js?_v=20261023194823"></script>
+    
+
+
+</body></html>
